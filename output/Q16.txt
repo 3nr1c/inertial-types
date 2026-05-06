@@ -1,0 +1,397 @@
+Magma V2.29-3     Wed Apr  1 2026 11:03:12 on enric-ThinkPad [Seed = 2351507357]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "Q16.m"
+Computed all quadratic extensions (63)
+N=8
+Computed 303 principal series types
+Computed 240 supercuspidal unramified types
+Computed 7584 SCR types in 1.970s
+Grouping triply imprimitive types...
+We have 604 field triples (Sel generators = 6)
+Grouping triply imprimitive types took 696.880s
+Computed 2528 supercuspidal ramified types
+Computing exceptional types from 85 Selmer orbits
+Selmer orbit #1 yields 32 exceptional types
+Selmer orbit #2 yields 0 exceptional types
+Selmer orbit #3 yields 32 exceptional types
+Selmer orbit #4 yields 0 exceptional types
+Selmer orbit #5 yields 32 exceptional types
+Selmer orbit #6 yields 0 exceptional types
+Selmer orbit #7 yields 32 exceptional types
+Selmer orbit #8 yields 0 exceptional types
+Selmer orbit #9 yields 32 exceptional types
+Selmer orbit #10 yields 32 exceptional types
+Selmer orbit #11 yields 32 exceptional types
+Selmer orbit #12 yields 32 exceptional types
+Selmer orbit #13 yields 0 exceptional types
+Selmer orbit #14 yields 0 exceptional types
+Selmer orbit #15 yields 32 exceptional types
+Selmer orbit #16 yields 32 exceptional types
+Selmer orbit #17 yields 0 exceptional types
+Selmer orbit #18 yields 32 exceptional types
+Selmer orbit #19 yields 32 exceptional types
+Selmer orbit #20 yields 0 exceptional types
+Selmer orbit #21 yields 32 exceptional types
+Selmer orbit #22 yields 32 exceptional types
+Selmer orbit #23 yields 0 exceptional types
+Selmer orbit #24 yields 0 exceptional types
+Selmer orbit #25 yields 0 exceptional types
+Selmer orbit #26 yields 32 exceptional types
+Selmer orbit #27 yields 32 exceptional types
+Selmer orbit #28 yields 0 exceptional types
+Selmer orbit #29 yields 32 exceptional types
+Selmer orbit #30 yields 0 exceptional types
+Selmer orbit #31 yields 32 exceptional types
+Selmer orbit #32 yields 0 exceptional types
+Selmer orbit #33 yields 0 exceptional types
+Selmer orbit #34 yields 0 exceptional types
+Selmer orbit #35 yields 0 exceptional types
+Selmer orbit #36 yields 0 exceptional types
+Selmer orbit #37 yields 32 exceptional types
+Selmer orbit #38 yields 0 exceptional types
+Selmer orbit #39 yields 0 exceptional types
+Selmer orbit #40 yields 32 exceptional types
+Selmer orbit #41 yields 0 exceptional types
+Selmer orbit #42 yields 0 exceptional types
+Selmer orbit #43 yields 32 exceptional types
+Selmer orbit #44 yields 32 exceptional types
+Selmer orbit #45 yields 0 exceptional types
+Selmer orbit #46 yields 0 exceptional types
+Selmer orbit #47 yields 0 exceptional types
+Selmer orbit #48 yields 0 exceptional types
+Selmer orbit #49 yields 32 exceptional types
+Selmer orbit #50 yields 0 exceptional types
+Selmer orbit #51 yields 32 exceptional types
+Selmer orbit #52 yields 0 exceptional types
+Selmer orbit #53 yields 32 exceptional types
+Selmer orbit #54 yields 0 exceptional types
+Selmer orbit #55 yields 32 exceptional types
+Selmer orbit #56 yields 0 exceptional types
+Selmer orbit #57 yields 32 exceptional types
+Selmer orbit #58 yields 32 exceptional types
+Selmer orbit #59 yields 32 exceptional types
+Selmer orbit #60 yields 32 exceptional types
+Selmer orbit #61 yields 32 exceptional types
+Selmer orbit #62 yields 32 exceptional types
+Selmer orbit #63 yields 0 exceptional types
+Selmer orbit #64 yields 0 exceptional types
+Selmer orbit #65 yields 32 exceptional types
+Selmer orbit #66 yields 0 exceptional types
+Selmer orbit #67 yields 0 exceptional types
+Selmer orbit #68 yields 32 exceptional types
+Selmer orbit #69 yields 32 exceptional types
+Selmer orbit #70 yields 32 exceptional types
+Selmer orbit #71 yields 32 exceptional types
+Selmer orbit #72 yields 32 exceptional types
+Selmer orbit #73 yields 32 exceptional types
+Selmer orbit #74 yields 0 exceptional types
+Selmer orbit #75 yields 32 exceptional types
+Selmer orbit #76 yields 0 exceptional types
+Selmer orbit #77 yields 0 exceptional types
+Selmer orbit #78 yields 32 exceptional types
+Selmer orbit #79 yields 32 exceptional types
+Selmer orbit #80 yields 0 exceptional types
+Selmer orbit #81 yields 0 exceptional types
+Selmer orbit #82 yields 0 exceptional types
+Selmer orbit #83 yields 32 exceptional types
+Selmer orbit #84 yields 32 exceptional types
+Selmer orbit #85 yields 32 exceptional types
+Computed 1440 exceptional types of size 24 for cubic extension #1
+Computing exceptional types from 85 Selmer orbits
+Selmer orbit #1 yields 32 exceptional types
+Selmer orbit #2 yields 32 exceptional types
+Selmer orbit #3 yields 0 exceptional types
+Selmer orbit #4 yields 0 exceptional types
+Selmer orbit #5 yields 32 exceptional types
+Selmer orbit #6 yields 32 exceptional types
+Selmer orbit #7 yields 32 exceptional types
+Selmer orbit #8 yields 32 exceptional types
+Selmer orbit #9 yields 0 exceptional types
+Selmer orbit #10 yields 0 exceptional types
+Selmer orbit #11 yields 32 exceptional types
+Selmer orbit #12 yields 32 exceptional types
+Selmer orbit #13 yields 0 exceptional types
+Selmer orbit #14 yields 32 exceptional types
+Selmer orbit #15 yields 0 exceptional types
+Selmer orbit #16 yields 32 exceptional types
+Selmer orbit #17 yields 32 exceptional types
+Selmer orbit #18 yields 0 exceptional types
+Selmer orbit #19 yields 0 exceptional types
+Selmer orbit #20 yields 32 exceptional types
+Selmer orbit #21 yields 32 exceptional types
+Selmer orbit #22 yields 0 exceptional types
+Selmer orbit #23 yields 32 exceptional types
+Selmer orbit #24 yields 0 exceptional types
+Selmer orbit #25 yields 32 exceptional types
+Selmer orbit #26 yields 0 exceptional types
+Selmer orbit #27 yields 0 exceptional types
+Selmer orbit #28 yields 32 exceptional types
+Selmer orbit #29 yields 0 exceptional types
+Selmer orbit #30 yields 0 exceptional types
+Selmer orbit #31 yields 0 exceptional types
+Selmer orbit #32 yields 0 exceptional types
+Selmer orbit #33 yields 0 exceptional types
+Selmer orbit #34 yields 0 exceptional types
+Selmer orbit #35 yields 32 exceptional types
+Selmer orbit #36 yields 32 exceptional types
+Selmer orbit #37 yields 0 exceptional types
+Selmer orbit #38 yields 32 exceptional types
+Selmer orbit #39 yields 0 exceptional types
+Selmer orbit #40 yields 32 exceptional types
+Selmer orbit #41 yields 32 exceptional types
+Selmer orbit #42 yields 0 exceptional types
+Selmer orbit #43 yields 0 exceptional types
+Selmer orbit #44 yields 32 exceptional types
+Selmer orbit #45 yields 0 exceptional types
+Selmer orbit #46 yields 0 exceptional types
+Selmer orbit #47 yields 0 exceptional types
+Selmer orbit #48 yields 0 exceptional types
+Selmer orbit #49 yields 32 exceptional types
+Selmer orbit #50 yields 32 exceptional types
+Selmer orbit #51 yields 0 exceptional types
+Selmer orbit #52 yields 0 exceptional types
+Selmer orbit #53 yields 32 exceptional types
+Selmer orbit #54 yields 0 exceptional types
+Selmer orbit #55 yields 32 exceptional types
+Selmer orbit #56 yields 0 exceptional types
+Selmer orbit #57 yields 32 exceptional types
+Selmer orbit #58 yields 0 exceptional types
+Selmer orbit #59 yields 0 exceptional types
+Selmer orbit #60 yields 32 exceptional types
+Selmer orbit #61 yields 32 exceptional types
+Selmer orbit #62 yields 32 exceptional types
+Selmer orbit #63 yields 32 exceptional types
+Selmer orbit #64 yields 32 exceptional types
+Selmer orbit #65 yields 32 exceptional types
+Selmer orbit #66 yields 32 exceptional types
+Selmer orbit #67 yields 0 exceptional types
+Selmer orbit #68 yields 0 exceptional types
+Selmer orbit #69 yields 0 exceptional types
+Selmer orbit #70 yields 32 exceptional types
+Selmer orbit #71 yields 0 exceptional types
+Selmer orbit #72 yields 32 exceptional types
+Selmer orbit #73 yields 32 exceptional types
+Selmer orbit #74 yields 0 exceptional types
+Selmer orbit #75 yields 0 exceptional types
+Selmer orbit #76 yields 32 exceptional types
+Selmer orbit #77 yields 32 exceptional types
+Selmer orbit #78 yields 32 exceptional types
+Selmer orbit #79 yields 32 exceptional types
+Selmer orbit #80 yields 32 exceptional types
+Selmer orbit #81 yields 0 exceptional types
+Selmer orbit #82 yields 0 exceptional types
+Selmer orbit #83 yields 32 exceptional types
+Selmer orbit #84 yields 32 exceptional types
+Selmer orbit #85 yields 32 exceptional types
+Computed 1440 exceptional types of size 24 for cubic extension #2
+Computing exceptional types from 85 Selmer orbits
+Selmer orbit #1 yields 32 exceptional types
+Selmer orbit #2 yields 32 exceptional types
+Selmer orbit #3 yields 0 exceptional types
+Selmer orbit #4 yields 0 exceptional types
+Selmer orbit #5 yields 32 exceptional types
+Selmer orbit #6 yields 32 exceptional types
+Selmer orbit #7 yields 32 exceptional types
+Selmer orbit #8 yields 32 exceptional types
+Selmer orbit #9 yields 32 exceptional types
+Selmer orbit #10 yields 32 exceptional types
+Selmer orbit #11 yields 0 exceptional types
+Selmer orbit #12 yields 0 exceptional types
+Selmer orbit #13 yields 32 exceptional types
+Selmer orbit #14 yields 0 exceptional types
+Selmer orbit #15 yields 32 exceptional types
+Selmer orbit #16 yields 0 exceptional types
+Selmer orbit #17 yields 32 exceptional types
+Selmer orbit #18 yields 0 exceptional types
+Selmer orbit #19 yields 0 exceptional types
+Selmer orbit #20 yields 32 exceptional types
+Selmer orbit #21 yields 32 exceptional types
+Selmer orbit #22 yields 32 exceptional types
+Selmer orbit #23 yields 0 exceptional types
+Selmer orbit #24 yields 0 exceptional types
+Selmer orbit #25 yields 32 exceptional types
+Selmer orbit #26 yields 32 exceptional types
+Selmer orbit #27 yields 32 exceptional types
+Selmer orbit #28 yields 32 exceptional types
+Selmer orbit #29 yields 32 exceptional types
+Selmer orbit #30 yields 0 exceptional types
+Selmer orbit #31 yields 0 exceptional types
+Selmer orbit #32 yields 32 exceptional types
+Selmer orbit #33 yields 32 exceptional types
+Selmer orbit #34 yields 0 exceptional types
+Selmer orbit #35 yields 32 exceptional types
+Selmer orbit #36 yields 0 exceptional types
+Selmer orbit #37 yields 0 exceptional types
+Selmer orbit #38 yields 0 exceptional types
+Selmer orbit #39 yields 32 exceptional types
+Selmer orbit #40 yields 32 exceptional types
+Selmer orbit #41 yields 0 exceptional types
+Selmer orbit #42 yields 0 exceptional types
+Selmer orbit #43 yields 0 exceptional types
+Selmer orbit #44 yields 0 exceptional types
+Selmer orbit #45 yields 0 exceptional types
+Selmer orbit #46 yields 32 exceptional types
+Selmer orbit #47 yields 32 exceptional types
+Selmer orbit #48 yields 0 exceptional types
+Selmer orbit #49 yields 0 exceptional types
+Selmer orbit #50 yields 32 exceptional types
+Selmer orbit #51 yields 0 exceptional types
+Selmer orbit #52 yields 32 exceptional types
+Selmer orbit #53 yields 0 exceptional types
+Selmer orbit #54 yields 0 exceptional types
+Selmer orbit #55 yields 32 exceptional types
+Selmer orbit #56 yields 32 exceptional types
+Selmer orbit #57 yields 0 exceptional types
+Selmer orbit #58 yields 0 exceptional types
+Selmer orbit #59 yields 0 exceptional types
+Selmer orbit #60 yields 0 exceptional types
+Selmer orbit #61 yields 0 exceptional types
+Selmer orbit #62 yields 32 exceptional types
+Selmer orbit #63 yields 32 exceptional types
+Selmer orbit #64 yields 0 exceptional types
+Selmer orbit #65 yields 0 exceptional types
+Selmer orbit #66 yields 32 exceptional types
+Selmer orbit #67 yields 0 exceptional types
+Selmer orbit #68 yields 32 exceptional types
+Selmer orbit #69 yields 32 exceptional types
+Selmer orbit #70 yields 32 exceptional types
+Selmer orbit #71 yields 0 exceptional types
+Selmer orbit #72 yields 0 exceptional types
+Selmer orbit #73 yields 32 exceptional types
+Selmer orbit #74 yields 32 exceptional types
+Selmer orbit #75 yields 32 exceptional types
+Selmer orbit #76 yields 32 exceptional types
+Selmer orbit #77 yields 32 exceptional types
+Selmer orbit #78 yields 0 exceptional types
+Selmer orbit #79 yields 0 exceptional types
+Selmer orbit #80 yields 32 exceptional types
+Selmer orbit #81 yields 32 exceptional types
+Selmer orbit #82 yields 0 exceptional types
+Selmer orbit #83 yields 32 exceptional types
+Selmer orbit #84 yields 0 exceptional types
+Selmer orbit #85 yields 32 exceptional types
+Computed 1440 exceptional types of size 24 for cubic extension #3
+Computing exceptional types from 85 Selmer orbits
+Selmer orbit #1 yields 32 exceptional types
+Selmer orbit #2 yields 32 exceptional types
+Selmer orbit #3 yields 32 exceptional types
+Selmer orbit #4 yields 0 exceptional types
+Selmer orbit #5 yields 0 exceptional types
+Selmer orbit #6 yields 0 exceptional types
+Selmer orbit #7 yields 0 exceptional types
+Selmer orbit #8 yields 32 exceptional types
+Selmer orbit #9 yields 32 exceptional types
+Selmer orbit #10 yields 32 exceptional types
+Selmer orbit #11 yields 32 exceptional types
+Selmer orbit #12 yields 32 exceptional types
+Selmer orbit #13 yields 32 exceptional types
+Selmer orbit #14 yields 0 exceptional types
+Selmer orbit #15 yields 32 exceptional types
+Selmer orbit #16 yields 0 exceptional types
+Selmer orbit #17 yields 0 exceptional types
+Selmer orbit #18 yields 0 exceptional types
+Selmer orbit #19 yields 32 exceptional types
+Selmer orbit #20 yields 32 exceptional types
+Selmer orbit #21 yields 32 exceptional types
+Selmer orbit #22 yields 32 exceptional types
+Selmer orbit #23 yields 32 exceptional types
+Selmer orbit #24 yields 32 exceptional types
+Selmer orbit #25 yields 0 exceptional types
+Selmer orbit #26 yields 32 exceptional types
+Selmer orbit #27 yields 32 exceptional types
+Selmer orbit #28 yields 0 exceptional types
+Selmer orbit #29 yields 32 exceptional types
+Selmer orbit #30 yields 32 exceptional types
+Selmer orbit #31 yields 0 exceptional types
+Selmer orbit #32 yields 0 exceptional types
+Selmer orbit #33 yields 32 exceptional types
+Selmer orbit #34 yields 0 exceptional types
+Selmer orbit #35 yields 32 exceptional types
+Selmer orbit #36 yields 0 exceptional types
+Selmer orbit #37 yields 0 exceptional types
+Selmer orbit #38 yields 32 exceptional types
+Selmer orbit #39 yields 32 exceptional types
+Selmer orbit #40 yields 0 exceptional types
+Selmer orbit #41 yields 0 exceptional types
+Selmer orbit #42 yields 0 exceptional types
+Selmer orbit #43 yields 0 exceptional types
+Selmer orbit #44 yields 0 exceptional types
+Selmer orbit #45 yields 32 exceptional types
+Selmer orbit #46 yields 0 exceptional types
+Selmer orbit #47 yields 32 exceptional types
+Selmer orbit #48 yields 0 exceptional types
+Selmer orbit #49 yields 0 exceptional types
+Selmer orbit #50 yields 0 exceptional types
+Selmer orbit #51 yields 32 exceptional types
+Selmer orbit #52 yields 32 exceptional types
+Selmer orbit #53 yields 32 exceptional types
+Selmer orbit #54 yields 32 exceptional types
+Selmer orbit #55 yields 0 exceptional types
+Selmer orbit #56 yields 0 exceptional types
+Selmer orbit #57 yields 0 exceptional types
+Selmer orbit #58 yields 32 exceptional types
+Selmer orbit #59 yields 0 exceptional types
+Selmer orbit #60 yields 32 exceptional types
+Selmer orbit #61 yields 0 exceptional types
+Selmer orbit #62 yields 0 exceptional types
+Selmer orbit #63 yields 0 exceptional types
+Selmer orbit #64 yields 0 exceptional types
+Selmer orbit #65 yields 0 exceptional types
+Selmer orbit #66 yields 32 exceptional types
+Selmer orbit #67 yields 32 exceptional types
+Selmer orbit #68 yields 0 exceptional types
+Selmer orbit #69 yields 0 exceptional types
+Selmer orbit #70 yields 32 exceptional types
+Selmer orbit #71 yields 0 exceptional types
+Selmer orbit #72 yields 32 exceptional types
+Selmer orbit #73 yields 0 exceptional types
+Selmer orbit #74 yields 0 exceptional types
+Selmer orbit #75 yields 32 exceptional types
+Selmer orbit #76 yields 32 exceptional types
+Selmer orbit #77 yields 0 exceptional types
+Selmer orbit #78 yields 32 exceptional types
+Selmer orbit #79 yields 32 exceptional types
+Selmer orbit #80 yields 0 exceptional types
+Selmer orbit #81 yields 32 exceptional types
+Selmer orbit #82 yields 32 exceptional types
+Selmer orbit #83 yields 32 exceptional types
+Selmer orbit #84 yields 32 exceptional types
+Selmer orbit #85 yields 32 exceptional types
+Computed 1440 exceptional types of size 8
+Time: 2833.060
+
+========================================
+    Computed Inertia Types : Summary
+========================================
+
+PrincipalSeries  : 303
+SCU              : 240
+SCR              : 2528
+Ex8              : 1440
+Ex24             : 4320
+----------------------------------------
+Total inertial types : 8831
+
+------------------------------------------------------------
+e   v(N)  Character order  Description               Count  
+------------------------------------------------------------
+2   4     2                principal series          15     
+2   6     2                principal series          16     
+3   2     3                principal series          1      
+4   6     4                principal series          112    
+4   6     4                supercuspidal unramified  112    
+4   8     4                supercuspidal unramified  128    
+4   8     4                principal series          128    
+6   4     6                principal series          15     
+6   6     6                principal series          16     
+8   5     4                supercuspidal ramified    80     
+8   5     4                exceptional, Q8           160    
+8   6     4                exceptional, Q8           1280   
+8   6     4                supercuspidal ramified    528    
+8   8     4                supercuspidal ramified    1920   
+24  3     4                exceptional, SL(2,3)      15     
+24  4     4                exceptional, SL(2,3)      225    
+24  6     4                exceptional, SL(2,3)      240    
+24  7     4                exceptional, SL(2,3)      3840   
+------------------------------------------------------------
