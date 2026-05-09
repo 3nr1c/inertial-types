@@ -1,7 +1,7 @@
 AttachSpec("../spec");
 
-SetVerbose("InTypes", 2);
-SetVerbose("InFields", 2);
+SetVerbose("InTypes", 1);
+SetVerbose("InFields", 1);
 
 Q3 := pAdicField(3, 100);
 Q9 := UnramifiedExtension(Q3, 2);

@@ -1,6 +1,6 @@
 AttachSpec("../spec");
 
-SetVerbose("InTypes", true);
+SetVerbose("InTypes", 1);
 
 Q3 := pAdicField(3, 100);
 

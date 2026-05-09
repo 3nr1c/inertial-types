@@ -5,10 +5,10 @@ SetVerbose("InTypes", true);
 SetVerbose("InFields", 1);
 
 Qp := pAdicField(3, 100);
-i := 6; i;
+i := 10; i;
 F := FieldOfFractions(AllExtensions(Qp,3)[i]);
 // F := SplittingField(quadratics[i]); 
-// F := Qp;
+// F := Qp; // ((\n|\t| )*\+(\n|\t| )*?)O\((F.1|\d|\$.1|a)\^\d+\)
 F;
 MinimalPolynomial(F.1);
 

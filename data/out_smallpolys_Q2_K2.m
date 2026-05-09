@@ -1,0 +1,2830 @@
+Qp := pAdicField(2, 100);
+F := FieldOfFractions(AllExtensions(Qp,2)[2]);
+
+Twist := 
+[ ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | F.1, F.1 + 1, (F.1 + 
+    1)*F.1, 5, 5*F.1, F.1 + 5, (F.1 + 5)*F.1, 2*F.1 + 5, (2*F.1 + 5)*F.1, 3*F.1 + 1, (3*F.1 + 1)*F.1, 2*F.1 + 1, (2*F.1 + 1)*F.1, 3*F.1 + 5, (3*F.1 + 
+    5)*F.1 ]
+;
+data := [*
+[* "principal series", 2, 4, 2,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], [0, 1], [1]])
+*]
+,
+[* "principal series", 4, 6, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], [2], [0, 1], [2], [1]])
+*]
+,
+[* "principal series", 2, 8, 2,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], [2], [1]])
+*]
+,
+[* "principal series", 2, 8, 2,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], [2, 2], [1]])
+*]
+,
+[* "principal series", 4, 8, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], [0, 2], [0, 3], [2], [1]])
+*]
+,
+[* "principal series", 2, 10, 2,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 7], O($.1^200), 
+    [1]])
+*]
+,
+[* "principal series", 2, 10, 2,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 1], O($.1^200), 
+    [1]])
+*]
+,
+[* "principal series", 2, 10, 2,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 1], O($.1^200), 
+    [1]])
+*]
+,
+[* "principal series", 2, 10, 2,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], O($.1^200), 
+    [1]])
+*]
+,
+[* "principal series", 4, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], [0, 2], [4, 3], O($.1^200), [1]])
+*]
+,
+[* "principal series", 4, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 5], [4, 2], [2, 3], [4], [1]])
+*]
+,
+[* "principal series", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 5], [4], [2], [4], [1]])
+*]
+,
+[* "principal series", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [8, 7], [4, 4], [10, 2], [12], [1]])
+*]
+,
+[* "principal series", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [8, 1], [12], [2], [4], [1]])
+*]
+,
+[* "principal series", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [8, 7], [12, 4], [10, 6], [4], [1]])
+*]
+,
+[* "principal series", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], [4, 4], [2, 6], [4], [1]])
+*]
+,
+[* "principal series", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 3], [4], [2], [4], [1]])
+*]
+,
+[* "principal series", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], [4, 4], [2, 2], [4], [1]])
+*]
+,
+[* "principal series", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [8, 7], [12], [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 3, 2, 3,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3], [3], [6], [7], [6], [3], [1]])
+*]
+,
+[* "supercuspidal unramified", 6, 4, 6,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [1], [0, 1], [1, 1], [0, 1], O($.1^200), [0, 1], [1, 1], O($.1^200), [0, 1], 
+    O($.1^200), [1], O($.1^200), [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 6, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3], O($.1^200), [2, 
+    1], [2], [1, 1], [2], 
+    O($.1^200), O($.1^200), [1]])
+*]
+,
+[* "supercuspidal unramified", 6, 8, 6,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3], O($.1^200), [1, 
+    1], O($.1^200), [0, 3], [0, 2], [3, 
+    2], [2], O($.1^200), [2], [1], [2], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 8, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [1, 2], [2], [0, 3], [2], [1, 1], [2, 
+    2], [0, 2], O($.1^200), [1]])
+*]
+,
+[* "supercuspidal unramified", 6, 8, 6,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3], [0, 2], [1, 1], [0, 2], [0, 1], 
+    O($.1^200), [3], [2], [0, 2], [2], [1], [2], [1]])
+*]
+,
+[* "supercuspidal unramified", 6, 10, 6,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3], [2, 2], [7, 3], [2], [4, 3], [2, 
+    2], [1, 2], [6], [2], 
+    [2], [5], [6], [1]])
+*]
+,
+[* "supercuspidal unramified", 6, 10, 6,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3], [2, 2], [7, 1], [2], [4, 1], [2, 
+    2], [1, 2], [6], [2], 
+    [2], [5], [6], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [7, 2], [4, 2], [4, 3], O($.1^200), [1, 3], [4, 2], [6, 2], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [5], [0, 2], [2, 3], O($.1^200), [7, 3], [0, 2], [2, 2], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 6, 10, 6,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3], [6, 2], [5, 3], [2], [2, 3], [6, 
+    2], [5, 2], [6], [2], 
+    [2], [5], [6], [1]])
+*]
+,
+[* "supercuspidal unramified", 6, 10, 6,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3], [6, 2], [1, 1], [2], [6, 1], [6, 
+    2], [5, 2], [6], [2], 
+    [2], [5], [6], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [9, 7], [4], [0, 6], [12, 4], [9, 6], 
+    [8], [2], [12], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [1, 3], [4, 4], [4, 4], [12], [5], 
+    O($.1^200), [10], [12], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [13, 5], [4, 4], [12], [12], [13, 4], 
+    O($.1^200), [10], [12], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [5, 5], [4], [0, 6], [12, 4], [9, 6], 
+    [8], [2], [12], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [9, 5], [12, 4], O($.1^200), [4, 4], [9], [0, 4], [10, 4], [12], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [13, 1], [4], [8, 2], [4, 4], [9, 2], 
+    O($.1^200), [10], [12], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [7, 5], [4, 4], [0, 4], [12, 4], [9, 4], 
+    [8, 4], [2, 4], [12], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 12, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3, 5], [4], [12, 2], [12, 4], [13, 2], O($.1^200), [10], [12], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [7, 1], [4], [2, 6], [0, 4], [3, 6], 
+    O($.1^200), [2], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [15, 1], [4], [2, 6], [0, 4], [11, 6], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [5, 7], [4], [14, 2], [8, 4], [7, 2], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [9, 1], [4], [14, 6], [8, 4], [7, 6], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [15, 5], [4], [2, 2], [0, 4], [11, 2], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [7, 7], [4], [2, 2], [0, 4], [3, 2], 
+    O($.1^200), [2], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [5, 3], [4], [14, 6], [8, 4], [7, 6], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [13, 7], [4], [6, 2], [8, 4], [15, 2], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [1, 7], [4], [14, 2], [8, 4], [7, 2], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [11, 5], [4], [10, 2], [0, 4], [3, 2], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3, 5], [4], [2, 2], [0, 4], [3, 2], 
+    O($.1^200), [2], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [9, 7], [4], [14, 2], [8, 4], [7, 2], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [5, 1], [4], [6, 6], [8, 4], [15, 6], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [3, 3], [4], [2, 6], [0, 4], [3, 6], 
+    O($.1^200), [2], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [11, 3], [4], [10, 6], [0, 4], [3, 6], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal unramified", 4, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [9, 3], [4], [6, 6], [8, 4], [15, 6], 
+    O($.1^200), [10], [4], [1]])
+*]
+,
+[* "supercuspidal ramified", 8, 5, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], [2], [2], O($.1^200), [2], O($.1^200), [2, 
+    1], [2], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (223012605595707024337382971316*F.1 + 
+        516450244537426793202360565153)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 5, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 1], [2], [2], O($.1^200), O($.1^200), [2], [2, 
+    1], [2], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (246487616711044605846581178823*F.1 - 
+        563400266768101956220756980167)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 8, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], O($.1^200), 
+    O($.1^200), O($.1^200), [2], [0, 2], [2, 3], [2, 2], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (223012605595707024337382971316*F.1 + 
+        516450244537426793202360565153)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 8, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 3], O($.1^200), 
+    O($.1^200), [0, 2], O($.1^200), [0, 2], [2, 1], [2], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (246487616711044605846581178823*F.1 - 
+        563400266768101956220756980167)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 5], [4, 4], [6, 4], [0, 6], [2], [4, 
+    2], [4, 5], [4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (223012605595707024337382971316*F.1 + 
+        516450244537426793202360565153)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 1], O($.1^200), 
+    [2], [0, 2], [2], [4, 2], [0, 3], [4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (246487616711044605846581178823*F.1 - 
+        563400266768101956220756980167)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 7], [4], [4, 2], [4, 2], [6, 2], 
+    O($.1^200), [6, 5], [4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (246487616711044605846581178823*F.1 - 
+        563400266768101956220756980167)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 5], [0, 4], [0, 4], [4, 2], [2, 2], 
+    [0, 4], [6, 1], [4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (223012605595707024337382971316*F.1 + 
+        516450244537426793202360565153)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 3], O($.1^200), 
+    [4, 2], [4], O($.1^200), [4], [0, 2], [4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735125)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 3], O($.1^200), 
+    [4, 2], [4], [4, 4], [0, 4], O($.1^200), [4, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735125)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 7], O($.1^200), 
+    [0, 6], [4, 4], [4, 4], [4], [4, 4], O($.1^200), [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735127)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], O($.1^200), 
+    [0, 2], [4, 4], O($.1^200), O($.1^200), [0, 6], [4, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -1*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 3], O($.1^200), 
+    [4, 2], [4], [0, 4], O($.1^200), 
+    O($.1^200), [4, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735125)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 1], O($.1^200), 
+    [0, 2], [4, 4], O($.1^200), O($.1^200), [0, 6], [4, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735125)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 3], O($.1^200), 
+    [4, 2], [4], O($.1^200), [4], 
+    O($.1^200), [4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735127)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 3], O($.1^200), 
+    [4, 2], [4], O($.1^200), [4], [0, 2], [4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -1*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 1], [0, 4], [0, 6], [4, 4], [4], [4], [4, 2], [0, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -3*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 5], O($.1^200), 
+    [0, 6], [4], [4, 4], [4], [0, 6], O($.1^200), [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735127)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 3], O($.1^200), 
+    [0, 2], [4], O($.1^200), [4], [4], O($.1^200), [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -3*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 3], O($.1^200), 
+    [0, 6], [4, 4], [0, 4], O($.1^200), 
+    [0, 2], [4, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -3*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 3], O($.1^200), 
+    [4, 2], [4], [0, 4], O($.1^200), 
+    O($.1^200), [4, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -1*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 7], O($.1^200), 
+    [4, 6], [4, 4], [4], [4], [0, 4], [4, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -3*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 3], O($.1^200), 
+    [4, 2], [4], [4, 4], [0, 4], O($.1^200), [4, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -1*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 11, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 3], O($.1^200), 
+    [0, 6], [4, 4], [0, 4], O($.1^200), 
+    [0, 2], [4, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735127)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 15], [8], [12, 8], [0, 4], [14, 6],
+    [0, 8], [8, 10], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735125)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [8, 15], [8], [12, 8], [0, 4], [6, 14],
+    [0, 8], [0, 10], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -1*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [8, 7], [8], [4], [0, 4], [14, 6], [8]
+, [8, 2], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -1*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [12, 9], [8, 12], [12, 10], [8, 4], [10, 13], [8, 8], [12, 4], [8], [1]
+]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (223012605595707024337382971316*F.1 + 
+        516450244537426793202360565153)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [12, 3], O($.1^200), 
+    [4, 4], [0, 4], [14, 2], [8], [0, 6], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735125)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 7], [8], [4], [0, 4], [6, 6], [8], [0, 2], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735125)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 1], O($.1^200), 
+    [8], [8, 4], [2], [0, 4], [0, 2], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -3*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 1], O($.1^200), 
+    [12, 4], [0, 4], [14, 6], O($.1^200),
+    [8, 2], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -3*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 11], [0, 8], [4, 4], [0, 12], [6, 10],
+    [8], [0, 6], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735125)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 5], [8], [0, 4], [8, 4], [2, 4], 
+    [0, 4], [8, 6], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -3*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 11], [8, 4], [4, 6], [8, 12], [6, 11],
+    [8], [4], [8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (223012605595707024337382971316*F.1 + 
+        516450244537426793202360565153)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 13], [0, 12], [8, 10], [0, 4], [8, 13],
+    [8, 8], [4, 4], [8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (246487616711044605846581178823*F.1 - 
+        563400266768101956220756980167)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [0, 3], O($.1^200), 
+    [4, 4], [0, 4], [6, 2], [8], [8, 6], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -1*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [8, 11], [0, 8], [4, 4], [0, 12], [14, 2],
+    [8], [8, 6], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -1*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [14, 15], [0, 4], [8, 6], [0, 12], [12, 7],
+    [8], [12, 4], [8, 8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (246487616711044605846581178823*F.1 - 
+        563400266768101956220756980167)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 5], [0, 4], [0, 2], [0, 4], [4, 1], 
+    O($.1^200), [4], O($.1^200), [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (246487616711044605846581178823*F.1 - 
+        563400266768101956220756980167)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 3], [8, 4], [4, 6], [8, 4], [2, 7], 
+    [8], [12, 4], [8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (223012605595707024337382971316*F.1 + 
+        516450244537426793202360565153)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [8, 5], [8], [4], [0, 4], [6, 2], [8], [8, 6], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -3*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 9], O($.1^200), 
+    [12, 12], [0, 4], [14, 14], [0, 8], [0, 2], [8, 12], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735127)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 1], O($.1^200), 
+    [8], [8, 4], [10], [0, 4], [8, 2], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735127)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [4, 5], [8], [4], [0, 4], [14, 2], [8]
+, [0, 6], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735127)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [14, 5], [8], [0, 4], [8, 4], [10], [8,
+    4], [0, 6], [8, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (-211275100038038233582783867562*F.1 - 
+        422550200076076467165567735127)*F.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*F.1^2, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [8, 1], [8, 4], [12, 2], [8, 4], [14, 1],
+    [8], [4], [8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (223012605595707024337382971316*F.1 + 
+        516450244537426793202360565153)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "supercuspidal ramified", 8, 14, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 7], [0, 4], [0, 6], [0, 4], [0, 3], 
+    O($.1^200), [4], O($.1^200), [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | 
+        (246487616711044605846581178823*F.1 - 
+        563400266768101956220756980167)*F.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*F.1, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 3, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18, 18], [8, 28], [28], [8, 10], [4, 18], 
+    [8, 20], [0, 30], [16, 24], [12, 6], [8, 8], [20, 12], [0, 16], [12, 22], [4, 20], [0, 8], [12, 8], [2, 30], [4, 8],
+    [16], [20, 18], [20, 10], [0, 2], [26, 12], [16, 24], [2, 12], [30], [18, 22], [16, 30],
+    [18, 2], [22, 28], [4, 16], [16, 8], [30, 14], [26, 2], [8, 24], [18], [12, 29], [0, 18], 
+    [26, 28], [24, 22], [0, 29], [4, 4], [14, 2], [0, 20], [0, 28], [2, 17], [14, 20], [14, 8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*$.1, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 4], [0, 20], [28, 10], [0, 16], [24, 16], [16, 12], [28, 22], [0, 16], [24, 4], [28], [20, 6], 
+    [8, 20], [14, 16], [28], [20], [0, 12], [12, 14], [20, 16], [22, 14], [28], [8, 22], 
+    [8, 24], [28, 28], [20, 12], [2, 12], [8, 8], [18, 12], [28, 8], [8, 30], [0, 16], [30, 24], [16, 8], [2, 16], [20, 26], [18, 4], [4], [10, 10], 
+    [12, 30], [16, 14], [28, 26], [10, 
+    22], [24, 2], [10, 13], [20], [8, 26], [28, 22], [8, 16], [8, 12], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*$.1, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 8, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [14, 24], [12, 28], [4, 22], [28, 4], O($.1^200), [20, 28]
+, [20, 18], [20], [20, 24], [28, 20], [12, 18], [20],
+    [10, 4], [0, 28], [4, 28], [28, 16], [0, 10], [8, 12], [30, 10], [4, 28], [16, 18], [8, 6], [12, 8], [24, 4], [6, 30], [8, 2], [30, 20], [20], 
+    [28, 6], [28, 18], [10, 4], [12, 12], [26, 10], [20, 16], [2, 16], [12, 4], [10], [8, 2], 
+    [8, 18], [28, 8], [26, 12], [12, 10], [10, 5], [20, 22], [12, 28], [26, 24], [8, 20], [8, 16], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*$.1, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 20], [8, 12], [24, 14], [16, 16], [16, 8], [16, 20], [8, 22], [0, 24], [8, 12], [28, 24], [16, 14], [8, 4], [2, 24], [12], 
+    [20, 20], [16, 28], [24, 10], [20, 
+    16], [10, 2], [20, 8], [16, 26], [24, 8], [28, 28], [20, 12], [26, 12], [0, 8], [2, 16], [12, 20], [12, 14], [8, 24], [6, 16], [16, 8], [14], 
+    [16, 10], [14, 20], [12, 16], [2, 22]
+, [0, 2], [12, 26], [12, 30], [30, 26], [12, 10], [16, 17], [28, 24], [0, 26], [20, 2], [24], [8, 12], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*$.1, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 4, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [30, 16], [24, 22], [12, 10], [20, 12], [8, 6], [12, 18], [12], [12], 
+    [24, 12], [28, 8], [4, 24], [12, 20], [26, 24], [24, 22], [24, 14], [4, 10], [0, 12], [28, 14], [26, 28], [16, 26], [4], 
+    [2, 28], O($.1^200), [24, 30], [6, 10], [2, 24], [22, 18], [10, 12], [26, 28], [30, 6], [30, 4], [14, 12], [14, 2], [0, 14], [18, 12], [26, 16], [18, 10], [10, 12], [10, 26], [28, 6], [16, 28], [22, 10], [18, 27], [14, 18], [14, 28], [0, 31], [20], [10, 26], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*$.1, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18, 4], [0, 20], [20, 2], [0, 16], [8, 16], [16, 12], [4, 6], [0, 16], [8, 20], [12, 16], [28, 6], [24, 20], [6, 8], [28, 16], [4, 16], [0, 12], [20, 6], [4, 16], [6, 30], [28], 
+    [16, 6], [24, 24], [12, 12], [20, 12]
+, [26, 12], [8, 16], [26, 20], [12, 24], [16, 14], [16, 16], [14], [16, 8], [10, 8], 
+    [12, 2], [2, 4], [20, 16], [10, 10], [4, 30], [8, 30], [28, 18], [18, 14], [0, 10], [14, 21], [20], [24, 10], [28, 30],
+    [8, 16], [8, 12], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*$.1, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 8, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [22, 4], [12, 4], [28, 26], [28, 4], [16, 8], [20, 28], [4, 6], [4, 8],
+    [4], [28, 4], [12, 30], [20, 16], [18, 8], [16, 20], [4, 20], [12], [8, 30], [16, 20], 
+    [6, 2], [4, 12], [8, 6], [24, 14], [28], [16, 4], [14, 14], 
+    [24, 30], [30, 16], [12, 24], [12, 2]
+, [4, 30], [18, 28], [4, 20], [18, 18], [28], [26, 8], 
+    [12, 4], [26, 4], [8, 22], [24, 22], [4, 8], [18, 12], [4, 14], [18, 11], [4, 22], [12, 24], [22, 8], [8, 4], [8, 16],
+    [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*$.1, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18, 28], [8, 12], [16, 30], [16, 16], [0, 24], [16, 20], [0, 14], [0, 24], [24, 12], [12, 8], [8, 22], [24, 20], [10, 8], [12, 16], [20, 20], [16, 28], [0, 10], [4, 16], [10, 2], [20, 8], [8, 2], [8, 8], [12, 12],
+    [20, 12], [18, 20], O($.1^200), [26],
+    [28, 4], [20, 22], [24, 8], [22, 8], [16, 8], [6, 16], [24, 10], [30, 20], [28, 16], [2, 6], [24, 10], [4, 2], [28, 22], [6, 10], [4, 26], [28, 5], [28, 24], [16, 26], [4, 26], [24], [8, 12], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1, 
+        (70425033346012744527594622521*F.1 - 70425033346012744527594622521)*$.1, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 24], [16], [8, 12], [16], [8], [0, 
+    16], [16, 4], [24], [20, 2], [16, 16], [16, 16], [24, 16], [20, 20], [0, 24], [24, 16], [24, 24], [28, 14], O($.1^200), [8, 
+    16], [0, 24], [28, 8], [16, 8], [16], [0, 16], [14, 16], 
+    [0, 24], [28, 20], [24, 8], [24, 4], O($.1^200), [20, 4], [24, 20], [6, 24]
+, [16, 16], O($.1^200), [16, 28], [12,
+    22], [8], [0, 12], [24, 28], [10, 26], [16], [20, 20],
+    [24, 16], [12, 22], [8, 24], [16, 24]
+, [16], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 24], [0, 24], [24, 24], [0, 8], [12, 4], [24, 16], [16, 12], [8, 8], [14, 16], [24, 8], [0, 12], [16, 16], [8, 16], [24, 8], [16, 28], [24], [30, 18],
+    [24], [0, 4], [0, 24], [12, 20], [0, 8], [24, 4], [0, 8], 
+    [22, 18], [16, 8], [4, 8], [0, 16], [20, 22], [24, 28], [28, 20], [8, 12], [8, 29], [8, 28], [24, 16], [0, 12], [4, 30], [16, 20], [8, 8], [24, 20], [24, 28], [16, 12], [16, 16], [24, 16], [16, 2], [0, 4], [24, 20], [16, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18, 12], [0, 16], [8, 20], [16, 8], [16, 4], [16], [8, 28], [24, 24], 
+    [12, 2], [16, 24], [24], [8, 24], [28, 4], [24], [24, 24], 
+    [24, 8], [16, 12], [24, 24], [8, 24], [8, 8], [8, 20], [16, 8], [24, 16], [0, 8], [22, 4], [0, 16], [28, 28], [16, 16], [20, 28], [0, 16], [12, 24], [0, 12], [30, 16], [24], 
+    [16, 8], [8, 4], [20, 18], [24, 12], [0, 4], [16, 28], [28, 24], [8, 12], [28, 12], [8, 20], [8, 28], [0, 8], [8], 
+    [24, 8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18, 16], [0, 24], [24, 16], [16, 16], [20, 28], [24], [8, 20], [8, 16], 
+    [14, 16], [8], [8, 20], [16, 24], [8], [8], [8, 28], [8], [30, 2], [16, 8], [8, 12], [16, 24], [20, 20], [24, 8], [16, 4], [8, 8], [14, 22], [0, 8], [28, 4], [16], 
+    [20, 30], [0, 4], [4, 16], [24, 28], [16, 5], [8, 28], [8, 16], [24, 12], [12, 18], [24, 20], [16, 16], [24, 4], [24, 12], [24], [0, 24], [0, 24], 
+    [8, 30], [24, 8], [8, 20], [8, 28], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 16], [0, 16], [8, 28], [16], [24, 8], 
+    O($.1^200), [16, 4], [24], [20, 26], 
+    [0, 16], [16], [24, 16], [4, 12], [0, 24], [24, 16], [24, 24], [28, 6], [16, 16], [24], 
+    [0, 8], [28, 24], [0, 8], [0, 16], [0, 16], [6, 8], [0, 16],
+    [12, 20], [24, 24], [16, 4], [16, 16]
+, [20, 20], [24, 20], [30, 8], [0, 8], [16], [16, 12], 
+    [12, 30], [8], [16, 12], [24, 28], [2, 26], [16, 24], [20, 12], [8, 16], [4, 14], [24, 24], [16], [16], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10], [0, 8], [24, 8], [0, 8], [28, 4],
+    [24], [16, 12], [8, 8], [14], [24, 8], [0, 28], [16, 16], [8, 8], [8, 24], [16, 28], [24], [22, 10], [24, 16],
+    [16, 20], [0, 8], [4, 20], [0, 8], [8, 20], [0, 8], [6, 10],
+    [16, 24], [20, 24], [0, 16], [20, 14]
+, [8, 20], [12, 20], [8, 12], [24, 29], [24, 4], [8, 16], [0, 12], [28, 6], [0, 12], [8, 24], [24, 20], O($.1^200), [0, 28]
+, [0, 24], [8, 16], [0, 10], [16, 20], [8, 12], [16, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 20], [16], [8, 4], [16, 8], [16, 12], [16, 16], [8, 28], [24, 24], [12, 2], [0, 8], [24, 16], [8, 24], [12, 12], [8, 16], [24, 24], [24, 8], [0, 20], [8, 24], [24, 8], [8, 24], [8, 4], [16, 8], [8, 16],
+    [0, 8], [14, 20], [0, 8], [12, 12], [16], [12, 28], [16], 
+    [12, 8], [0, 12], [30, 24], [8, 8], [0, 24], [8, 4], [20, 10], [8, 20], [16, 4], [16, 28], [4, 24], [24, 4], [28, 20], [24, 4], [0, 4], [16, 16], [24, 24], [24, 8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18, 8], [0, 8], [24], [16, 16], [4, 28], 
+    [24, 16], [8, 20], [8, 16], [14, 16], [8, 16], [8, 4], [16, 24], [8, 8], [8, 16], [8, 28],
+    [8], [22, 10], [16, 24], [24, 12], [16, 8], [28, 4], [8, 8],
+    [0, 4], [8, 8], [30, 30], [16, 8], [12, 4], [16], [20, 6], 
+    [0, 28], [20], [24, 28], [16, 21], [24, 4], [24], [24, 12], 
+    [20, 26], [24, 20], [16], [24, 4], [16, 16], [24, 8], O($.1^200), [16, 
+    24], [24, 6], [8], [8, 12], [8, 28], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 9, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 30], O($.1^200),
+    [0, 16], O($.1^200), O($.1^200), [0, 24], [16, 16]
+, [8, 8], [8, 28], O($.1^200), [16, 4]
+, [24, 28], [16, 12], [16, 16], [16, 4], [16, 16], [16, 4], [16, 16], [0, 8], [0, 24], [20, 24], O($.1^200), [0, 24], [24, 
+    16], [16, 26], [16, 16], [24, 24], [16, 8], [8], [16], [16, 
+    24], [0, 28], [12, 20], [16, 8], [12, 24], [28, 20], [8, 24], [16, 8], [28, 28], [16, 24], [12], [0, 24], [24], [8, 
+    16], [12, 2], [16, 8], [24, 24], [0, 20], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | $.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [-7611468484088424538023823418, 
+    -237321224408384138930455798566], 
+    [-621466386115421391920698809920, -352896488712081243601847701752], [-86414742740609702745519040440, 301322359114989836912105814560]
+, [-20710719464661344890484529568, 
+    -170373650867834528137994069136], 
+    [202780358251750811109488073544, -425683680924437821200895648960], [73313825755298586330023085584, -599817108393440883096569739688]
+, [45084802928648160116691302400, 
+    180850474901435984809113008032], 
+    [-617654801088574830145804433008, 133753729069948811194202747152], [-72768802788997388354193555928, 
+    -549300908841829591802065618152], 
+    [341116473456915706766900750176, -288397965515790056179074362072], [-33299397947939835531494839160, 
+    -177061429369949803103260849712], 
+    [-67781354497151292165309144480, -612577283671992985378432497824], [-451606809307269857203907702408, 
+    -243722073181173564411408225016], 
+    [404730023809355878509548178168, -250763376725504182927590344800], [151161722860209352252053694112, 
+    -251190805649815372435798861480], 
+    [335734451507136815467763668480, 433551262379911232135391585312], [311889525980015999058515198192, 84253164557787134733995841924], [276267223839883187345712547136, 
+    -418730471953612359701963540432], 
+    [62514931687472885303289240408, -163436956756943451507541888500], [41524479143801893380299463600, 349063818545875800672631316864], [-613425962342561822785335475456, 
+    -351905251433399592523288784820], 
+    [-576476629902862121729679422872, -5229946937571285702924381632], [-447316385216462195213295257192, 
+    -498772599490719239705311398632], 
+    [-147466758957500803559691674688, -227431023623877544687596783032], [599198240677724131807789158796, 336164492383278487680331019606]
+, [183328725873987613427543750936, 
+    -156738904080599564366877624584], 
+    [153040151696804803168553542528, -215236166406112118496896908956], [394623699965637175351513174848, 
+    -517613307130233570608661983744], 
+    [46137553733567981024502559232, -257800530754238904424669094884], [-272933299121171781038714191448, 
+    -363672510494570898247958267504], 
+    [-244821805470453740197911006640, -431766309382515440746240732280], [-579288954009160414827499364512, 
+    -364968205233060103881053028128], 
+    [-226738242287140541623736545880, -460945798924360764710080741276], [-136200448670109354250286275960, 
+    -369018706758687130895012206584], 
+    [449402230041155950930015112312, -241483933291378961137681276484], [50257665340202323420483664624, 499048316250131730969255204000], [397900012866763286345408342620, 
+    412277939336532101143188090584], 
+    [-585220431780880516287192470688, -217171341479723115883408987676], [338829538538349688118126352256, 267231811755979278548451048400]
+, [610235778156229945365613511216, 
+    -150280651556294335947410477160], 
+    [497219049448412536706039486724, 537585229074284509905901297212], [429488977284930338661282348208, -39721868783915819361546693432]
+, [-249490793302055313585601228292, 
+    -248767267363515567986483766752], 
+    [290612385598153867243944344160, -404074658962161345615172775192], [47493976840895027635444917044, -45452386130086510909206037172], [317737302327549879988197267680, 
+    -601079916102146046696232128164], 
+    [-332009459122068356738096381720, -400069096261628818286298986556], [530336601826584742188590253352, 
+    -324811737210834938235914430008], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | $.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 9, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 18], [16], [8, 16], O($.1^200), [24, 8], [24], [8, 24], [24], [8, 20], 
+    [0, 16], [8, 12], [8, 20], [8, 4], [24, 16], [24, 20], [16, 16], [0, 16], [24, 20], [8, 8], [8, 8], [28, 24], [24, 16], [8, 20], [8, 4], [12, 22], [0, 24], [16, 4], [0, 8],
+    [16, 4], [24, 12], [8, 28], [0, 12], [20, 16], [16], [12, 8], 
+    [20, 8], [0, 20], [0, 4], [20, 12], [16], [24, 24], [28, 16],
+    [0, 28], [8, 4], [0, 22], [16, 4], [4, 24], [4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | $.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [12393809721419815315155114726, 
+    118232070266136635021224420562], 
+    [514096428419473991110507803824, 455104605439342705006233597672], [448522103681166737726341566744, 
+    -281436251671945790618976781720], 
+    [485358373423836135279971003328, -612527437467301928356519799056], [-112931536524990145731498531184, 
+    607586518134376880528014867864], 
+    [551268851667657359067091450112, -508760935161502334565651824632], [-75675028635252882081155578240, 
+    -387037919083530476009082650848], 
+    [411440685398639904736182882000, -334967992726328612985617778832], [-434345205633624818768216349296, 
+    -354391941498928664881244337024], 
+    [379626741171411967670884578960, -308366499314103041353778224336], [339335149553390948866405407048, 207089779374151919960457824568]
+, [-530514383102395498045038324320, 
+    628440109710091351705768947504], 
+    [-198051344025253136784443687232, 587312531046070094107042381192], [294150210606111434580378790376, 116756385607401733840629811008]
+, [-77669414456237136806146681888, 
+    -165460158361643647355816933968], 
+    [37757514772657780642931034112, 456462590035020051364140609648], [248628826653904708621040211256, 
+    -194546573334901988561676681420], 
+    [-462092146831927619860009775600, 339325104781472589977910177944], [157041803358445306633088183176, 364573388503856393158049023996]
+, [-90521785679933873081695884400, 
+    -628114304593915056649254805872], 
+    [-400488497783251689688236750024, -614657225308819890996989741844], [-202553597111598963259089757400, 
+    562932983311124089325816144448], 
+    [-198841980631601946594976075720, 341226114237702763307594781328], [173766112806898829210864100448, 
+    -184472076421987347600588334712], 
+    [327618143999953399473829469100, 175684257154440677775621860302], [-528811385981899521268936246616, 
+    407401507998887714538253318336], 
+    [101582781133539548124808282680, 127826945517715193202930302956], [-605610460664970806266427973136, 68693658214118200822391763712]
+, [577261420355971259832014908808, 
+    191971302973796929617884028928], 
+    [255280745313595119178746765336, -263981489120261777787590725928], [-410072931816632199083236973920, 34636032518417506249576027360]
+, [356610425399424509592362974528, 
+    -239900578110905949714636995680], 
+    [33090192767559562941255004128, 170626084620050842521893089672], [499146878655915731568477514832, 
+    -497659852122195969835971962200], 
+    [-86107843518943567060188118384, 122572909943643779136119365700], [316148840521694268699875971808, 
+    -241176798573815595279362209952], 
+    [302748162957609976670371517196, 583888687611879302949074393724], [-543248098884816809638178627008, 
+    260127581719303807473501741964], 
+    [-428216388525993687666840912360, 369416149444844939453384953584], [-67350082496246064351306456160, 
+    -212145018037633545069526135864], 
+    [-127310095338336952687210455212, 278130162250082992170089332424], [-569355416168852057759218941304, 
+    -538701878923356861920430916456], 
+    [-294211673296863218324934270452, -553823567100689334120219563928], [514613351883366865409322159744, 278419203494177447208417392280]
+, [-241030032643194368578013541212, 
+    -67217672615619684748380376056], 
+    [124476284294411158646814314688, 147867367774195036250863809276], [-142562393244973633473612821304, 
+    216403588027805855137896542524], 
+    [-74728410457774133010420432664, 105705502971403697356376867080], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | $.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 9, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [26, 30], O($.1^200),
+    [0, 8], O($.1^200), [0, 24], [24, 8],
+    O($.1^200), [8, 24], [8, 12], O($.1^200), [16, 4], [8, 12], [16, 20], [0, 16], [0, 28], [16], [16, 28], 
+    [16], [16, 24], [0, 16], [20], [16, 16], O($.1^200), [8, 16], [8, 10]
+, O($.1^200), O($.1^200), [16, 24], [16, 8], [24, 20], [16, 8], [0, 28], [20, 20], [16, 24], [12, 16], [12, 20], [16], [0, 16], 
+    [4, 12], [16, 8], [4, 24], [0, 8], [8, 24], O($.1^200), [4, 2], [16, 24], [24, 24], [0, 20], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | $.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [553984150117684606724658596598, 
+    -125379181494438594944263908894], 
+    [369236769498963405345903442912, 19447356802513536432834881112], [-60370464090602595766000544792, 250773736965196582357090094176]
+, [-12479688407866319894660107200, 
+    301562506476070368129180766000], 
+    [253171600300373864508669791896, 419906383322227401282389758400], [-381795813273325707315173850992, 
+    -290538958345840059020040194136], 
+    [-298763194978299869214914742240, -117007110379035831041824139504], [-473277302319602284816737569840, 
+    -510056431498998962320963796016], 
+    [-277160137962194416862925361448, -109972173920381094303807212128], [415513868789772011937012496896, -78677634640333974469458084776]
+, [-516729803061758694811619546680, 
+    -261498474209756036210237777280], 
+    [-290985945168293814366034652640, -30434612323112104027442287520], [-436579326814647142027551346616, 
+    -15299362868070687729513332696], 
+    [-155854020706340664996815696968, 272295064163695950638085672800], [586571577222364695449158112896, 
+    -501884104116775633426943696168], 
+    [9747608597587575975673526016, -535204761028126964815691439200], [-592327542609663387509558790784, 
+    -557864772443975166803410001140], 
+    [163137605767424560390173785824, 560009922025678237167103356512], [533631644873861880636982896520, 
+    -168340579089814047701883027396], 
+    [-161217039341439490318028572112, 205381321872889052878841666480], [501535814166090439939516880672, 
+    -473237101698080898636101009620], 
+    [-409701064624640648242761031512, 22876473396223180133227975824], [596130496070525179325623214744, -3489279976080156313817287416], [180907879632954387887503160704, 
+    244039535298069435836869711112], 
+    [81110256400190571739187233844, -51939315469950619137611894626], [-539960621251023353152474901144, 
+    -628925606451248514647104259048], 
+    [-188667709210949272344260252672, -281887553104829702517458528140], [-7301811803442387653035659616, -293096816189161914939332538416]
+, [-226298818008268120622440049792, 
+    487167358621248772388327988532], 
+    [250387705601210329682169467352, 276570642870021720433649506848], [502862488327516922936074839424, 417999428281108136540457669624]
+, [393701445022045967264782167968, 
+    171434637955739265684313414560], [4735725537812089401755944592,
+    100531205307232730309897232404], 
+    [144339402994281252798986620120, -90348820726414813259461325256], [-569011856184030013901763926200, 
+    170525698112316009345076525836], 
+    [342835576268205984555539178608, 270474871068469038765496861216], [443342449708151461015596488940, 
+    -346512037592376718579840433568], 
+    [388614790509747811259159830288, -463430670467227142111632403500], [318382115411667859815581461248, 
+    -519262688064473918364219736192], 
+    [21275971857492934575186803248, -419068616856830893374977713480], [-178064328400407876197599431828, 
+    -36964559596571656445871309644], 
+    [-423525499167173600585755688672, -190979092924803520841988080872], [165877072115090046663766613516, 
+    -204095758243420347659890319504], 
+    [163633740730821243674922731824, -534772172341331675454979748568], [393957809184052818923626709396, 
+    -330957191435870433946505162172], 
+    [365763010793949107251129094816, 486083667989806280561784977884], [200079408791257440547512269464, 
+    -622263968423588438681213412380], 
+    [530336601826584742188590253352, -324811737210834938235914430008], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | $.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 9, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 10], [16, 16], [8, 8], O($.1^200), [8], O($.1^200), 
+    [24, 8], [24, 16], [8, 4], [16, 16], [8, 20], [24, 12], [24, 28], [8, 24], [24, 12], [16], 
+    O($.1^200), [24, 12], [24, 16], [24, 16], [12, 24], [8], [8, 28], 
+    [8, 20], [12, 22], [0, 24], [8, 20], [0, 8], [24, 4], [24, 16], [8, 28], [0, 28], [28, 16], [16, 24], [20], [28, 16],
+    [24, 4], [8, 20], [28, 28], [16, 16], [8], [4, 24], [8, 4], 
+    [16, 4], [16, 14], [0, 4], [4, 24], [4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | $.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [-451929952001252118791818179738, 
+    -16200465112164374647799510054], 
+    [-198148835069858953413879375216, -169309872428219408163687307656], [-359225121320133442402328379656, 
+    -623423597525672190765048126008], 
+    [533210021737552848904496005280, 322882488357686378707346163664], [-587930477621630788239723424928, 
+    610034693566363381319887487256], 
+    [-57887705572167509385346882976, -562842083675496464304161936520], [-583732606365841407111675689280, 
+    244551389977221797868549691504], 
+    [-89588338731667476540570400880, -75384156332423108650827926736], [460794372469857685620476403488, 
+    -215077994241385434887357217608], 
+    [266141523699312859423310637648, -543410768030558182413961429824], [-355696548915664759590652110680, 
+    -256678083751410070404001504232], 
+    [533346843966184716187143029728, 416927371633957349248020982128], [301139162806446823485923332144, 64101536621033548856966078520], [-50153987665143496675141366232, 
+    -420171934990972092985528111136], 
+    [417149934605416483728553767552, 388907299982902323241310935504], [-349255209221460402557749012736, 9899524262319787107273062896], [-16659376364042687370460881512, 
+    -181304786663457077319168732228], 
+    [-69675863021673867009691409008, 314213577458257863631020387240], [591566923524795050004039603928, 2555209883056514930261814028], [454435960984000611586813224880, 311503571247427155629960623328]
+, [291526093113613005788752215880, 
+    -597449995104859443147539644612], 
+    [-34884721954729940591951437208, 416338453808835677706041987568], [8814015501394743958133859608, -559656710129390336562740130176], [367290341482739267451977343840, 
+    -355199035431372509407045642808], 
+    [152376037208047220105678806388, -444287161812308617624172410194], [54434122984719938235672149144, 275131746674423298536170086880], [524172932037710304127322961368, 
+    -397864494802939363940910691972], 
+    [577599916996519384432232812720, 591635124274323901365055107504], [-611873510797490085710697784744, 
+    -121247892604162639976091449864], 
+    [184293851078813523218943553256, -150732821094251819240562006472], [-38706846352081574051690538832, 
+    -324456559522205438679032059328], 
+    [425729476366132235065595236864, -233836822235128790058553938016], [443597198670318857200858561224, 384176218894990187678309448184]
+, [-316540188168501592970220904896, 
+    -468683220127483234980608499272], 
+    [-234538930837016473511395884176, 333543190660800134373554575844], [300166351636841112487003446432, 
+    -520710212748639058931888764704], 
+    [-598954902960171028222417589668, 194184795126857154242355694100], [-503023716754310444287276658576, 
+    474303033969590148002246314380], 
+    [-476725017646935337984047350376, -89848815251440877144448876288], [538551453732245283690062406816, 41614216486425114896758848200], [-558801209909262500435649034932, 
+    449959992213313980748071872328], 
+    [373459811630219261674707133688, 230895374201761812446232714360], [427275936799125349764201641516, 151307241810369035667853017672]
+, [141868326816605128062698729648, 
+    -460698536908552585375764336216], 
+    [437506571138585902262713947444, 600801956151711991987416499368], [-140940252320090649384705599328, 
+    -165851358931141178762453455636], 
+    [-152643365165534702940751489736, 436883239401573477870408327340], [-74728410457774133010420432664, 105705502971403697356376867080]
+, [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | $.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [26, 8], [16, 16], [16, 4], O($.1^200), [8, 4], [0, 16], [24, 4], [24, 24], [28, 26], [16], [8, 20], O($.1^200), [12, 4], [0, 8], [24, 20], [8, 16], [24, 30], [0, 8], [16, 16], [0, 16], [12, 20], [16, 8], [8, 24], [16, 16], [30, 28], [16, 24], [12, 16], [24, 24], [4, 28], [0, 16], [28, 20], [16, 28], [26, 12], [16, 16], [4, 12], [0, 16], [0, 6],
+    [8], [12, 28], [24, 4], [10, 24], [8, 8], [20, 4], [0, 8], 
+    [12, 18], [24], [0, 12], [24], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735124)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 
+        3))*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 20], [16, 16], [24, 4], [16, 16], [8, 16], [0, 8], [24, 12], [8, 16], [8, 6], [8, 24], [16, 28], [16, 24], [12, 20], [24, 24], [8, 4], [16, 24], [26, 4], [16], [24, 8], [8], [0, 
+    16], [0, 16], [8, 28], [0, 16], [30, 2], [24, 8], [28, 12], [16, 16], [8], [8, 8], 
+    [4, 12], [24, 20], [4, 12], [0, 20], [8, 8], [8], [4, 30], [0,
+    4], [8, 28], [16, 28], [22, 4], [24, 4], [12, 28], [24, 20], [4, 22], [24, 28], [28], 
+    [0, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735124)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 
+        3))*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 12], [16, 24], [24, 12], [16, 8], [8, 16], [0, 24], [0, 28], [24], 
+    [12, 6], O($.1^200), [0, 28], [0, 16], [4, 20], [24, 16], [0, 12], [8], [4, 8], [24, 16], 
+    [0, 16], [8, 8], [24, 12], [0, 16], [0, 24], [24], [22, 12], 
+    [24, 24], [28, 4], [16, 8], [0, 28], [24, 16], [20], [24, 28],
+    [22, 12], [16], [28, 12], [16, 16], [24, 18], [24, 20], [28, 16], [0, 4], [16, 30], [0, 28], [28, 28], [24, 4], [4, 16], [0, 16], [8, 8], [8, 4], 
+    [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735124)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 
+        3))*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [26, 20], [16, 16], [0, 20], [16, 8], [16, 24], [16, 16], [16, 12], [8, 16], [8, 30], [8], [24, 20], 
+    [16, 8], [20, 4], [24, 16], [0, 28], [16, 16], [10, 28], [16, 8], [8, 8], [16, 8], [8, 12],
+    [8, 24], [16, 28], [8, 16], [14, 30], [8, 24], [20, 16], [0, 8], [0, 16], [24, 24], [12], 
+    [0, 4], [4, 24], [24, 4], [24, 8], O($.1^200), [12, 14], [0, 12], [8, 28]
+, [0, 28], [22, 24], [0, 12], [4, 24], [0, 24], [8, 30], [0, 24], [4, 28], [16], 
+    [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735124)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 
+        3))*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [26], [0, 16], [16, 4], O($.1^200), [24, 12], [16, 
+    16], [24, 4], [24, 24], [12, 2], O($.1^200), [8, 4], O($.1^200), [12, 28], [0, 24], [24, 20], [8, 16], [8, 22], [16, 8], O($.1^200), 
+    O($.1^200), [12, 28], [0, 24], [24, 24], [16, 16], [6, 12], [0, 16], [12], [24, 8], [28, 12], 
+    [0, 8], [28, 4], [16, 28], [18, 28], [16, 24], [20, 12], O($.1^200), [16, 
+    22], [24, 16], [28, 12], [24, 4], [2], [8, 16], [4, 28], 
+    [16, 8], [28, 18], [24], [0, 20], [24], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735124)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 
+        3))*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18, 28], O($.1^200),
+    [24, 20], [16, 16], [24, 24], [0, 24]
+, [24, 28], [8, 16], [8, 6], [8, 8], [16, 12], [16, 24], [28, 28], [8, 24], [8, 4], [16, 24], [26, 28], O($.1^200), [8, 8]
+, [8, 16], [16], [16, 16], [24, 12], [0, 16], [6, 2], [24], [28, 12], [16], [0,
+    8], [8, 24], [4, 28], [24, 20], [28, 12], [16, 12], [8, 24], [8, 16], [12, 6], [16, 28], [8, 12], [16, 28], [30, 20], [8, 20], [12, 20], [8, 4], [28, 30], [8, 4], [28, 24], [0, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735124)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 
+        3))*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18, 4], [0, 8], [24, 12], [16, 8], [8, 24], [16, 8], [0, 28], [24], 
+    [28, 6], [16, 16], [0, 28], [0, 16], [4, 28], [8], [0, 12], 
+    [8], [4], [24, 16], [16, 16], [8, 24], [24, 4], [0, 16], [16, 8], [24], [14, 20], 
+    [24], [28, 20], [16, 24], [24, 28], [8, 8], [20, 16], [24, 28], [22, 20], [16, 8], [28, 28], [16], [24, 18], [8, 28], 
+    [12], [0, 4], [24, 14], [0, 12], [28, 20], [8, 4], [4, 16], [16, 24], [24], [8, 4], 
+    [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735124)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 
+        3))*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 12], O($.1^200),
+    [0, 4], [16, 8], [0, 16], [16, 16], [16, 28], [8, 16], [8, 14], [8], [24, 4], [16, 8], 
+    [4, 28], [24], [0, 28], [16, 16], [26, 20], [16, 8], [24, 24], [16, 24], [24, 12], [24, 8], [0, 28], [8, 16], [22, 30], [24], [20, 16], [0, 24], 
+    [8, 24], [24, 24], [12, 16], [0, 4], [28, 24], [8, 12], [24, 8], O($.1^200), [4, 22], [16, 12], [8, 12]
+, [0, 28], [14], [0, 4], 
+    [20], [16, 8], [0, 22], [0, 8], [20, 4], [16], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735124)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 
+        3))*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 9, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [26, 14], O($.1^200),
+    O($.1^200), O($.1^200), [0, 16], [0, 8], [16, 16], [8, 8], [8, 4], O($.1^200), [16, 12]
+, [8, 20], [16, 4], [16, 16], [16, 20], [16, 16], [0, 28], [16, 16], [0, 8], [0, 8],
+    [20, 24], O($.1^200), [0, 24], [24], 
+    [16, 30], [16, 16], [8, 24], [16, 24]
+, [24], [16], [16, 8], 
+    [0, 20], [28, 28], [16, 24], [12, 24]
+, [28, 4], [8, 8], [16, 24], [4, 20], [16, 24], [12, 8], [0, 24], [8, 16], [8, 16], [4, 22], [16, 24], [8, 24], [0, 28], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | 3*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [-290998703942033750342412280766, 
+    256590456865975041363387682934], 
+    [-344475553244588828072281367888, -524826602245197903365119778320], [-163282384977949949180991158552, 
+    -34321472108370103536409499000], 
+    [151363793307420571044767155104, 339536893584047468634074018704], [-411872247188884215890537670376, 
+    551579167942611446238734617104], 
+    [421476895619568650261571977200, -40589368737397211454483433368], [11563139273919929331936480160, -514480650955748212111240542496]
+, [180435802584711890561485853648, 
+    56719930521680067058260055728], 
+    [494690390237309329678226759064, -105214436932930763778914619776], [184256272133002121351532131248, 268306847964804330107597286960]
+, [97958579077098239800249323432, 
+    -87960524260492468704003559256], 
+    [110892406458208511940552165296, 43827743999272542117126765296], [-227213647756023240862039884592, 
+    178149640304915735444126885200], 
+    [443093871625809557962897143576, 3904897962534050040002822208],
+    [-334469780008925329853197056512, 17569839540412330305288719912], [524858901683627280866576756736, 426985432597173903946897773216]
+, [-307550244443034814350404636200, 
+    -436458200437732165162164611196], 
+    [242615299518537846022058053072, -287252520973633456477265364584], [-610886472703458594898511416336, 
+    -109277273922713964208891223044], 
+    [95157346007566628205358837488, 632855374765724114346120481136], [-564303490690414861766241820680, 
+    516000576262435133406607991228], 
+    [247065599950158085493086584504, -488411256555815385954192427816], [426261832062186982993130510552, 
+    -324942418339693599380117775952], 
+    [-151027746606166757300483804688, -620226713767475044553596778520], [208426871287952274858997774432, -87622902991599403562224824618]
+, [-277003923793097783615210263488, 
+    330047279554427741529406903560], 
+    [453965756679419641920908028912, -347117071787205440261605228012], [440052430083631913135203033840, 
+    -321690918742913006248188117728], 
+    [-507424685326467686009173360328, -249865629869616637689964483772], [-484787454630109391197449322088, 
+    628323895904851901096208252152], 
+    [-147966439729075990010608853824, 568750151284857453477884896128], [37347538896861846201782088928, 291497299543150706739308876768], [150264550318251885754757757432, 
+    528370525694297674071351946260], 
+    [-222574180385013856456885469792, -88891388043664465904998654072], [-160255466621544963154156324056, 
+    367057893654494648911052928052], 
+    [-78996497504828737365276002384, -469370719622340291886863014520], [222028984709823363798168262804, 470028044570022722050589042844]
+, [276863334380202970720919904440, 
+    -8779315962607638007673673772], 
+    [569002111421816768325260304592, 368335516716424123811721285232], [505160191573220126192230702096, 
+    -429072347777976148924538412824], 
+    [-165877874483044401667592576676, 406215996384287654371082406748], [-556248904694821053963114792584, 
+    425473887312500498557529884672], 
+    [-75206571107497565234800894996, -526570596486568115975963634432], [65223879006949830463625825088, 578030220123502007681727538416], [539510079530272507437798120012, 
+    595023153499317357167919114892], 
+    [-472322810308173580418399926560, -614794144669829117765999612780], [-123623223858262628505656067000, 
+    -530384561009546819198330052388], 
+    [-622341404757242972621050508504, 48827215950084103515872244968], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | 3*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 9, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 18], [16, 16], [24, 8], O($.1^200), [8], O($.1^200), 
+    [24, 24], [24], [8, 28], [16, 16], [8, 12], [8, 4], [24, 4],
+    [8, 8], [8, 12], [16], O($.1^200), 
+    [24, 20], [24], [24], [12], [8, 16], [8, 20], [24, 12], [28, 26], [0, 8], [8, 20], [0, 24], [8, 12], [24, 16], [24, 20], [0, 20], [12], 
+    [16, 8], [20], [12, 8], [24, 28], [24, 12], [4, 20], [16], 
+    [8], [4, 8], [8, 28], [16, 28], [16, 2], [0, 28], [20, 8], [4, 8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | 3*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [-334106943111334423347062118238, 
+    16800387792883497903964970230], 
+    [-239966730480057848760131428288, -366376593668357501849044399984], [-632869592692801551315992798536, 
+    422980196439428777942915627072], 
+    [-86373409019928166498883425216, 127544356156735525212300957328], [82188106202404445367442576368, -583004035989196184849592322688]
+, [390311618449688179192016262496, 
+    -438396421591511352789545144024], 
+    [-212640810783594961403299187296, 408224440704979106195584248048], [-317886447341771014525550090224, 
+    515978249915546013182647488912], 
+    [-355112795602576982622032891456, 257528127600132608439858415960], [234210607401796112200926242464, 
+    -495153771302708583244655237768], 
+    [379713180303729972003576959672, 22924223574074587757581811360], [26867097544478729439017096592, -68267706991412287911112212448], [-19371250775909039676375925304, 
+    476910062777367381570150765696], 
+    [-138411011352595484308845577784, -515582862147549073999885313888], [441665044911656053371951077504, 396746111370044654091411938160]
+, [508641915588433966227050804224, 
+    164253950890178584091264163280], 
+    [-609185157674599240250891901576, -3779086769919112611609613484], [350290846377483819149365056128, 
+    -417688724234748653440255993920], 
+    [-212026867584103112691644974832, -532873914861082448318044839652], [502971260245301084246424923888, 
+    -537054291900254943834432910976], 
+    [96469251918030669845929209280, -142535582464467703463446498356], [455326674083925268342251083320, 
+    -375353428115592645354514001448], 
+    [-550937891349657936369004411688, 404710269356446436922013101752], [169474980471030623777708857424, 
+    -540305163364347148736734074200], 
+    [266332812159096556358860873832, -9712941865088278703683765410], [407394071713531050401265870752, -10107700204442836593075274576]
+, [488128190154380291688563348920, 
+    10564825256068009025744465204], 
+    [312612203887354129571810602944, -330488671000820487736996781168], [366847728213770600769296375440, 46464309776692655655193314312], [-4490262338725107912768394104, 
+    346093973708326847449145192112], 
+    [43086418953254634043225025840, -349978816118338347057307892264], [188653873180077072459307233280, 89368548027315187511046010208], [476410549009979073610244261208, 
+    -55874108092905141830242892880], 
+    [-17564499088371685595655210568, 86941488662020250748965635376], [324239519524506830976230830784, 32393065932282861573068988324], [-153742647244942451696570724640, 
+    -428822453728199297504330638808], 
+    [354178596753288737077338519324, -167094489247782361646673216072], [12430401900869616133987016904, 415934601647077617256262401852], [-326738429037209010517420106760, 
+    50306634523766525994351556968], 
+    [-195692110848279355937912921984, -357235914098877605506470671352], [-597564812215119649560589180388, 
+    302968712877725888802760293516], 
+    [-522906294691122310799349200752, -481821013431161050899654601256], [133430460953373343603485611116, 454323850985532384357119860792]
+, [185374621559234273231630332736, 
+    552045536642448450206539381808], 
+    [-83097859178388856783536096636, 204349715918512703740299116248], [-119344806451329172985022509904, 
+    266517720665873991782778474436], 
+    [174054149062916556661406761880, -143926455190527250374176993788], [-591439414626939433156721435672, 
+    -196860485231210131548314975448], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | 3*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 9, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 14], O($.1^200),
+    [0, 24], O($.1^200), [0, 24], [8, 24], O($.1^200), [8, 24], [8, 20], 
+    O($.1^200), [16, 12], [24, 4], [16, 28], [0, 16], [0, 12], [16], 
+    [0, 20], [16], [16, 24], [0, 16], [20], [16, 16], O($.1^200), [8], [8, 14], O($.1^200), [0, 16], [16, 8], [0, 8], [24, 20], [16, 24], [0, 20], [20, 12], [16, 8], [12], [12, 4], [16, 16], 
+    O($.1^200), [28, 20], [16, 8], [20, 16], [0, 24], [24, 8], O($.1^200), [28, 22]
+, [16, 8], [8, 24], [0, 28], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | 3*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [-255275795019750265346874107198, 
+    -386708247107840205144466118770], 
+    [609764105724740725444024420336, 508804703208689123545990170976], [-545553622546633033588576327352, 
+    -619152689198787513693333299608], 
+    [466046144995496182728713699264, 115863231882136507308826220592], [577942588484140032811539883976, -46042984633495634984190268032]
+, [460470324721651333091549195792, 
+    528824956119781959875555080984], 
+    [304095852312958302923219121120, -533912006079316656007934703664], [-325649056184597968454290654000, 
+    -406936000653757121475412903824], 
+    [161635622542424756787120428872, 188424486823009196097037064968], [-318743704162875809825855268688, 
+    -340878835022562836201333360416], 
+    [187979381712950186317009894312, -519024692580252273939755843496], [-495074587822115910769952728976, 
+    -118503387036788268922146662384], 
+    [-25927274252143204339240530400, -137229644827125574409579155648], [422149099022529824625054953432, 195242017754059933017393545856]
+, [-597678147545516091120087440352, 
+    512635958426804543646000305960], 
+    [619836594025128219339248697088, 43245134606361744011559431584], [98955587043150907920739274824, 572617350539429212109990844636], [-230785227251761522873171876112, 
+    605023666393206430674245856024], 
+    [393923495391289651389678819776, -77424614187042109021649816996], [-294732453778607177682162254000, 
+    325896212858043860009441190304], 
+    [-565487817359547142410207589224, -426183692243617030530514649092], [350261646234560506386115478968, 
+    -413722053240765290698483134904], 
+    [416400277096898082293178825720, -207588318515071346986483728928], [173708157883367527419515412272, 48591880399560978951643278248], [113429756573625656620240201512, 
+    600885936898948958275865169790], 
+    [-158392991256596156121997545904, 591907000246490583983045162776], [620572600592166287456296590736, 186835946316555370345616616324]
+, [133393353796325981922443333584, 
+    166940460526539338879320313456], 
+    [42050391719140783159642818680, 574113533843673911180014158348], [153840774605177590321669747624, 
+    -349308861126132528688886215448], 
+    [37834905636119242010380179728, -512738755235144887269666191472], [548964392946642310270190651680, 116804503023848229228031498400]
+, [14365339071679091889844712560, 
+    545611030026865852097033714380], 
+    [185264011259602456495863761584, 238197286769531348048391427560], [-325766723095103612714189324680, 
+    539588012036015233988276456756], 
+    [-36148184091072914718262036656, 38644453867280271431574094344], [-245332010164655357058183527820, 
+    -156936558268512762375540395724], 
+    [-157683498047913613207464315064, 202084362374027506707212877572], [-616148631686692056063784023920, 
+    -335960659517217211526517307808], 
+    [209319798454226041465971564688, 514135829146611020543305138152], [29691748099646263601932045316, 202218480852435656513036265596], [525911196120571331461921486968, 
+    -257214626267034383760816121728], 
+    [-203011618772894089980247235444, -347330399379229996313828541520], [72117047901516500422913821712, 8326983818592372583158198000], [27929264999689450572112256940, 286238586671838306318153015524], [524785056547335164336748608928, 
+    -109493976631436789945502835308], 
+    [66440659106048228958707298968, 174366936692055641719553589436], [-622341404757242972621050508504, 48827215950084103515872244968]
+, [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | 3*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 9, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [6, 10], [16], [24, 16], O($.1^200), [24, 8], [24, 
+    16], [8, 8], [24, 16], [24, 12], [0, 16], [8, 20], [24, 28], [8, 28], [24, 16], [8, 4], [16, 16], O($.1^200), [24, 12], [8, 8]
+, [8, 8], [28, 16], [24],
+    [8, 28], [24, 28], [28, 10], [0, 8], [0, 4], [0, 24], [16, 28], [24, 20], [24, 20], [0, 4], [4, 8], [16], [12, 8], 
+    [4, 16], [0, 12], [16, 28], [28, 20], [16, 16], [8, 24], [28, 16], [0, 4], [8, 12], [16, 26], [16, 28], [20, 8], [4, 8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | 3*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [92537473414884976724563355122, 
+    228212645539063298172754218334], 
+    [-106773968854571769510352732928, -112394383252986991235440966720], [-238962825464113283384445997416, 
+    -33707025752571709405381203488], 
+    [-136315768637934786163563715680, 1170491824802679932811054608], [-497167197641936736602865020864, 90225771808322148519702446160]
+, [-303601951912485406066992295904, 
+    197394416617473643594993192216], 
+    [-585024735526779175930556323904, 346242292990851165853410281632], [224497577435401727862128374160, 
+    -423980948450709628132003504368], 
+    [99150702225213321856114049296, 77120305363331571473081175296],
+    [-257354315555735494563930412736, -301575076180841720156733011128], [-10616761468895795293704017448, 
+    -344099861004186518932355503776], 
+    [-473617898513355429961105263472, -199630719095363633919316927808], [187382763904980313571541036760, 
+    -394614280607585621663381081856], 
+    [-279955980176131092611359395192, -560053298991500820605156744640], [-268460067501645149352181247392, 
+    -293956043050083058641847782640], 
+    [69319278856198546403870741504, -241293120135911421525371426224], [499823230380234019748412576280, 489224882118986459234250261132]
+, [546930910450896894355113805472, 
+    214008874609601288253364516544], 
+    [-520068816043219251453861644224, 463390367032521438989529603132], [-113464480317014742150626069712, 
+    135792836896830117364823112496], [5375378300259873551421930096,
+    -97956448060798269573372535764], 
+    [-614766723751707853056805693576, -209796960387365765634605123064], [296371933416464277973376130648, -51919611769353809065861492632]
+, [-487972749209278074273267893680, 
+    92072012841856298483543633896], 
+    [215328459201003354287132712816, -310031741601636388714542213650], [-619422302725922854497663002064, 
+    471771855084292873441338429056], 
+    [-624517743715613013513442113512, 509884629938261702879884168900], [253502215408505513574001991232, 543708623074737907347468901504]
+, [47170257450240524592313508960, 
+    406028579417452607752265344944], 
+    [-18071870035698917859850143496, -405754221938697344021877678640], [-180961762198434010317303662304, 
+    -596511521636105703063535610696], 
+    [-28218136530275064011684724928, -394568945529258125660524578208], [-169316984521155880029162916128, 
+    454816878122090820597690248184], 
+    [-194606222656655279199883229528, -19894991355730281296755129008], [-91806503839019679646368156320, -96710990990716444510953244124]
+, [74345654951637164172423308928, 
+    198326752257486369655641994312], 
+    [-383342741400134252788449015204, 591582766055081876421997349936], [-344195877981234680804358113256, 
+    -126342138072202398598506036644], 
+    [-504706340934869607578001398856, 430542977749725187477592656344], [45362422011337501159133921088, -67841944292676727048518899672], [-81269706331274404538595688396, 
+    -621350095241433098293278485180], 
+    [43083678364845513148588163120, -515114690741617999295084379240], [-263081640701220849083947308068, 
+    -188477115853100402710673253400], 
+    [-350583624524961410017862274512, -233694001515697249294899253824], [-110198576886380419454427201196, 
+    -257668597658341820934990464568], 
+    [-171392811780425788820283296560, -551107074436448178560533217132], [341265736590402894044018836840, 611822313781416654965178202964]
+, [-591439414626939433156721435672, 
+    -196860485231210131548314975448], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | 3*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^4, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 7, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [14, 26], [16, 28], [16, 12], [0, 8], [20, 24], [0, 8], [24, 4], O($.1^200), [8, 4], [24], [12, 8], [16], [12]
+, [8, 12], [8, 24], [0, 16], [4], [0, 28], [0, 28], 
+    [16, 24], [12, 12], [16, 12], [12], [16], [20, 22], [20, 24],
+    [28, 24], [16, 16], [16, 10], [16], [4], [16, 24], [28, 24], 
+    [8, 4], [4, 10], [16, 24], [24], [20, 12], [24, 16], [16],
+    [12, 22], [4, 8], [8, 8], [16], [28, 10], [12, 4], [20, 6], O($.1^200), [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-105637550019019116791391933781*F.1 - 
+        211275100038038233582783867562)*$.1 + 
+        (-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041))*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [358288947935797363838420550190, 
+    40819536209063796239520001826], 
+    [620818970039038757573013848984, -499735079938001877757807285088], [510391499909356446946796571928, 303353554155638378133153560348]
+, [-384688231374606412757579532656, 
+    -415181190880044223405966481192], 
+    [519929724982855068344063213472, -565415657223944731180661461360], [46176440973306202688291052824, -313275762131146062123416968304]
+, [-28502641352333049400763097768, 
+    -552983034710769594422591887500], 
+    [-291873896648310622225377620248, -366054243089405728936409372520], [354394818479971131613554557168, 
+    -371874102223260548217143556544], 
+    [55661998792249925769744142104, 138823697345523764789273832904], [22635533917113886803204668120, -424110732365657939752017753560]
+, [129383492257104728216680879872, 
+    51479486864230400501952931104], 
+    [371646940793869737759965698028, 89886027217808652452903517144], [-591620650317198701338322987040, 
+    599440099782405985784467038668], [6955530858111926366668454992,
+    118743137662097856927344855388], 
+    [-282944004248051190240564660720, 115851546197919117916476259064], [-452897210555700121887588639480, 
+    -179301474317784821608667442600], 
+    [75565404923497377918764095920, -77331721455814018615461897136], [96841869797667661973458694640, -366506964795628543693796128816]
+, [-88244167331639298896938618088, 
+    363174599946925298291997647476], 
+    [609333520599182225552722334576, -195127218615068696372901349932], [-262520271503810051805595593208, 30722874171019486926867048616]
+, [449312788696278618858701122176, 
+    -144605830889848988235677509676], 
+    [-491423600912785343565653631456, -195687284450457282043747352208], [196816045937823655459794900564, 
+    -382600761513941128045333596018], 
+    [626677343796250782890478404200, -143865943234543556350843777372], [549786190527863325390000414124, -8541570075987175889050426304], [596615839959124719212529713736, 
+    350378976981203318568279225544], 
+    [-566478904628538253319609499624, 411029678031351000554810111208], [404840538201194055504059793184, 
+    -442784659307023403586185034356], 
+    [-576452975034569904832634768732, 370357146568394175995102326208], [36993291869988445765016549584, -213465686436047454769597465716]
+, [4048502359073227183348463072, 
+    -429015706543501382604313298252], 
+    [371551125962319578458820662200, -556724742165003844233843054284], [92158466045593327757370646584, -257825086651998314213783373980]
+, [615341292363019497425788797032, 
+    337622579811845230669682851448], 
+    [442074281128316439643583478416, 604405169647343932761806301940], [-414024262665437234983935166484, 
+    200721495819065180026202502604], 
+    [399523065503871489558080359156, -70570937071307954304835204716], [279937354251977382416197318256, 620004013092078667115835138536]
+, [-209517915241600805883232288688, 
+    -227084296208413382094094961348], 
+    [-296081927028879451396329263560, 3209567257336878538638774248], [-338669823451957607973647823608, 27338886280082580292811130520]
+, [616297425705057676791621941540, 
+    192758293701856755503514299196], 
+    [576738033094958223913298061108, -631435125834341350191178257384], [-530263505426051359688262941720, 
+    604466247332998619831968243340], 
+    [-164946760358300741567990728396, 480211144669106467745533654548], [455673895382262948470916784544, 156875814450899096738459668296]
+, [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-105637550019019116791391933781*F.1 - 
+        211275100038038233582783867562)*$.1 + 
+        (-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041))*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 8, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18, 30], [16, 28], [24, 28], [16, 16], [24, 4], [8, 8], [16, 28], [16, 4], [16, 8], [16, 8], [16, 8], [0, 24], [12, 28], [8, 24], [16, 16], [24], [28, 16],
+    [8, 12], O($.1^200), O($.1^200), [24, 16], [8, 12]
+, [20, 28], [24, 12], [4, 2], [4], [28, 28], [24, 8], 
+    [20, 28], [8, 28], [28, 20], [4, 12], [16, 28], [16], [0, 16], [0, 8], [4, 20], [16, 20], [8, 28], [0, 20], [28, 14], [20, 12], [16], [16], 
+    [24, 4], [4, 4], [4, 18], [12, 24], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-105637550019019116791391933781*F.1 - 
+        211275100038038233582783867562)*$.1 + 
+        (-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041))*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18149944541825736481893176222, 
+    310747483747736111425938137730], 
+    [-210629484045723968307179018496, 173267364706354122240345669568], [217987825733912127505784767624, 211733881448942948935798320668]
+, [-126597118057998733252909721792, 
+    -156309234330578656665049165064], 
+    [-107130589328920902168996797568, 48274244608474667793834994176], [-633749939400924651170696137032, 
+    527057891122411738363704684888], 
+    [-552191290428045046404213346840, -60629746990149182075743579436], [-297876217768164929326232741216, 
+    538478756792934621759277141040], 
+    [-609105893729375110868408931048, 421878518769192113970755294024], [46846013046997079141380677320, -430899490682533241393300012856]
+, [229832756755548200898821512616, 
+    490870229424693991203598810384], 
+    [303191423303131915714151266688, -628530765964640327967016644808], [-99804245948759374622450433692, 563081184493525080704541680176]
+, [-84302938894413348056132503552, 3981055476666299385345527380]
+, [-65298948820364439668452195840, 
+    -455060686118238740279355009388], 
+    [428416115662444551944569990512, -86295338055967446398288379504], [-73847839218896776794433781984, 
+    -326440524069378409963835634168], 
+    [75205430747364841389704803064, -181925059722826429944758324360], [-463859120229899753887667214160, 99784965254253024211527485856]
+, [-111312602759260819655438980424, 
+    -278485164722906377947605869236], 
+    [339646714721372661890033504648, 307986622784794761032216578172], [-510752364648839053383557529936, 
+    422373225565233067262325684680], 
+    [-131490104360051877014827369224, 191380113731952431772316828564], [-482334461436487490452687666776, 
+    623671504111285000810296048840], [6103581448273153727096252332,
+    -391267535529009791598962632546], 
+    [130032945046111920362669606680, 488945033516779296263890235480], [205335608100415000838890665180, 199683814540145209876350029224]
+, [539481674511503471995936555416, 
+    627809524677752240427502050824], 
+    [172134249647706629065429782808, 18791921053719015066606315136], [58085180442780459854653275960, -119388164940609111063806307692]
+, [-430933793369466723903089051260, 
+    254704823186631817198787922032], 
+    [528046405209935449924372506032, -301556114465970543031864863400], [-136521134753236752545365513944, 
+    243621034994666776775849210832], 
+    [469440194098795095763263411064, -548475182644595545931499428980], [-553454181342477827657953285184, 
+    416709980719267470290687658476], 
+    [-468685118472609207760480291936, 133294465807800990036166168824], [375378493881297688981873985672, 
+    -460478656811848022383986023008], 
+    [212140039553059077421797787164, -491631071103517832128950438268], [65196645493805574957939581772, -157283270382356931515256570780]
+, [-260175158628594231967635239880, 
+    -592550499137858519186056893040], 
+    [477471861336431783433670037296, -319537605467942863823886019352], [-565969918379577410028725330416, 
+    -411782594629986976167227362340], 
+    [306559278772415990538214468304, 493269229164082783678250069064], [541760975767641988242385038908, 466502103101997446472097547748]
+, [11758609970905489844319820092, 
+    -291295616993831139396229470564], 
+    [-515953426393025279108684189752, 633122889283942447655390006024], [230048196639645632872253347420, -68900367283443718404734354488]
+, [543726715829877650579450068896, 
+    392689259821872908561012493804], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-105637550019019116791391933781*F.1 - 
+        211275100038038233582783867562)*$.1 + 
+        (-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041))*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 7, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 6], [0, 20], [8, 4], [16, 24], [4, 16], [16, 24], [16, 12], O($.1^200), [0, 
+    20], [16, 8], [28, 28], [0, 16], [4, 28], [24, 12], [8], 
+    [0, 16], [28, 28], [24, 28], [8], [0, 16], [28, 8], [24, 20], [28, 4], [16, 16], [4, 14], [12, 20], [28], [16, 8], 
+    [12, 14], O($.1^200), [12, 16], [16, 8], [4, 4], [24, 8], [20, 14], [16, 16], [16, 28], [20],
+    [0, 24], [16], [16, 10], [28, 24], [4, 24], [8, 8], [4, 18],
+    [28, 4], [28, 14], O($.1^200), [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-105637550019019116791391933781*F.1 - 
+        211275100038038233582783867562)*$.1 + 
+        (-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041))*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [336294854368774191735665429646, 
+    95452012891850494180037925434], 
+    [-373583747779514194319320533496, -382715937476865195659196774160], [411247062852985825435388391048, 513608497686096856505881949436]
+, [-230640077688119951838099994128, 
+    -633621357930351970965193425288], 
+    [345922227604999337391100270352, 615342568140174473845965790720], [34473231237219018834664906536, 122971694978436728219467732128], [370245065925009629458436667624, 
+    -176458518319118593520774202748], 
+    [-435336961667771256717009526168, -112729892276573208304832064264], [-515405547680841938475346156112, 
+    582478337302044131160277316736], 
+    [503514181117526724081185476792, 53326932212665952767058830680], [-262085032363289164547830799448, 
+    -114956198147848812793376314152], 
+    [-460339006879405839649132583936, 252515335513080345972240125536], [596985845227421880346817730396, 340429888105073941421864752632]
+, [-119692267943170410328777007440, 
+    -572675460868299190073889241068], 
+    [-40025021793549754496263229872, -97825756401893017640755039348], [-258001234468740014106920506704, 
+    409173143175791271730616779576], 
+    [567258793241513375124024780920, 374955999743594485969524068192], [354344642109367135372328664192, 
+    -367535263804590777223901991744], 
+    [-612446581306401354291094572224, 283628367480087558953144683072], [-308799413561847371062830758376, 
+    194166664301180600791957353236], 
+    [195223384132105571811139874448, -483729428111671312929347037436], [-462643180008852330651788167112, 
+    -464687149577960312244471236504], 
+    [-82634227111897296689181504400, -349230028860501619901354753444], [124217979702272781988808785120, -20177597448112525871241155632]
+, [-623803773607129091587215151876, 
+    -537002848853929029110281813874], 
+    [546181173223459501792586720104, 341124729209319257793505794124], [-430146444592467390692361986164, 
+    -508017067445850046486134953184], 
+    [248536454467314531254327302920, 563092713971568339192817766936], [-496072434920780033029316868520, 
+    475546864413578256933862343856], 
+    [68748456494895325077415155648, -367122483612857130139943502156], [44314550422889695151308691636, -359332812896870095466609399648]
+, [134378888880968981228555101584, 
+    -11837387728941309966279722100], 
+    [225794532877795749244987084112, -602505740374311339580510290508], [497723890529328902869387059576, 
+    -376321210672587584429260362668], 
+    [199665780198868189096038186504, 176679440160866643723794855276], [348919034600719693148699237096, 471073987866723265961486282968]
+, [327769101093459198408206170976, 
+    75110919737814781329033724364], 
+    [221430560731584645783644396628, -306970974111601180021876124348], [-367027156659675581116356965564, 
+    351005062622800243579380742428], 
+    [578793452533780501004490419376, 252909557494215318869674028584], [108370548771484728185399011400, 
+    -323822214870182084469741090484], 
+    [161641843036167493164090181768, -284443677563673736391609808432], [367511673497190845194667139272, 
+    -413775884914727688306090859536], 
+    [-58477956471211545138257068668, 195261119659009738145739887836], [-460628187109503189440365570556, 
+    140066955587852207990750816320], 
+    [95732142899583204357292047832, -38705102349996970234767670188], [-569017997773787389528155653972, 30874171359416147561574858132]
+, [455673895382262948470916784544, 
+    156875814450899096738459668296], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-105637550019019116791391933781*F.1 - 
+        211275100038038233582783867562)*$.1 + 
+        (-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041))*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 8, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 22], [24, 20], [24, 20], O($.1^200), [16, 12], [24, 
+    8], [16, 4], [0, 4], [16, 8], [16, 24], [24, 16], [16],
+    [20, 12], [16, 8], O($.1^200), [24, 16], [4, 28], [8, 4], [24, 8],
+    [24, 8], [8], [24, 12], [28, 12], [8, 28], [20, 14], [12, 4], [28, 20], [24, 16], [28, 16], [8, 20], [28, 28], [4, 12], [0, 4], [16], [8, 4], [8,
+    8], [12, 16], [0, 16], [0, 28], [0, 20], [24, 14], [20, 12], [16, 20], [8, 28], [0, 4], [12, 4], [4, 30], [12, 24], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-105637550019019116791391933781*F.1 - 
+        211275100038038233582783867562)*$.1 + 
+        (-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041))*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [-544345061875870561657857793266, 
+    505571265107742619189922786906], 
+    [-176662061292792933022254079584, 244573355341638423344415377632], [-532247872259575843569984690344, 
+    -126001439408652128200895171092], 
+    [-424532263747157292082913807200, -407845793697337267135385127304], [-353022054652973897932562669264, 
+    547368848972343468532920247680], 
+    [-277746204862738019963865390456, 13119601652984809384064853800], [91638336620905498278086158168, -563001781784889708812911533516]
+, [88989555870921688971395822816, 
+    -506162413718176814770002023216], 
+    [129178774191957156661655625112, 135831290121833954053810273032], [-27019715569420839198236779160, 
+    -147677704255040354376705075448], 
+    [27245151952317282535614789080, -238176646428493731433640193488], [472481705002422720410877178624, 
+    -462171215875189180011331274504], 
+    [-26006897198225562699994626508, -588483774759739672260688964592], [211785064157998610056547189280, 282243096459982981408822544572]
+, [165072612458381780482640894624, 
+    -1355646197050917463472319772], 
+    [-186537709818225801386422803760, -428639449093581727947815735216], [-461377883702985421527316513648, 
+    -548494318683324481709593382368], 
+    [622885278632695858385633809384, 405467182593644143332105821352], [113622211909436265525803028800, 
+    -532738513020383128299793356496], 
+    [20905266347493448364304450776, -403419198007458185477204345588], [-577179509754351175796727616312, 
+    -619622573204131638582636283460], 
+    [425414676730471966761019130272, 103329060086176779741695111032], [155752503214529995502470544984, 322850258261648275668088017468]
+, [105601650282094028683786223784, 
+    440995557930173221842959827688], 
+    [266551494898497691024747991508, -257664585468911363446025178042], [623916962829798739591147276184, 
+    -332918524281189326091927564904], 
+    [-555326306840914435923950022148, 265593755879245822074324880664], [16939611077311384455205940504, -356691989401554165235967493896]
+, [131249220251240211993524411016, 
+    262391630944844753393789266008], 
+    [228227048875848446295350049752, 602604271135498047303781822620], [519849629494532587466717714196, 
+    -570101702799810402141657038304], 
+    [251609238429846323762136609264, 12689509991265071661836354008], [-437219885774748412413660389688, 
+    -75881840566438681341403670800], 
+    [-531897349742613320452940146104, -590536356498941496491019956116], [400018717910837875686949491392, 112743400620524399629987726100]
+, [480686453919608060077197769280, 
+    275279245435541045567021045624], 
+    [-493741305893600390561893846040, -228985922359929827643171120600], [-576422254061553798188980390284, 
+    344705998990540961085883381204], 
+    [-308619659397416541509171236116, -560984225195737768183191760404], [-205369916859282677688401450184, 32575317161505268666435926448]
+, [-11019547604237049983180028920, 
+    287845367723579331671610113304], 
+    [-568913077965505088499828183184, -521836274203418410851514333452], [-124232887939304521133008099184, 
+    -221045952913182544452832239008], 
+    [515690958860092804248708263452, 386413160062965692385765944356], [-146068926365925118237731661764, 
+    599394968325657710133385682084], 
+    [383508276234378964846115451384, -481114760433774140776063499696], [-588221752381119549309786628332, 
+    -480501888438904084859720107152], 
+    [543726715829877650579450068896, 392689259821872908561012493804], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-105637550019019116791391933781*F.1 - 
+        211275100038038233582783867562)*$.1 + 
+        (-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041))*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [26, 12], [0, 16], [0, 28], [0, 8], [8, 20],
+    [0, 16], [8, 4], [24, 24], [0, 22], [0, 16], [16, 24], [8], 
+    [12, 20], [16, 8], [16, 28], [8, 8], [0, 6], [16, 16], [0, 16], [24, 24], [28, 8], [16, 8], [8, 4], [16], [6, 4], 
+    O($.1^200), [12, 28], O($.1^200), [4, 28], 
+    O($.1^200), [20, 24], [24, 12], [2, 16], [0, 24], [8], [24, 28], 
+    [4, 22], [24], [12, 12], [0, 4], [14, 10], [16, 8], [12, 12], [8, 12], [12, 6], [8, 16], [28, 24], [16, 8], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((211275100038038233582783867562*F.1 + 
+        422550200076076467165567735127)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 
+        2))*$.1 + (-3*F.1 - 3)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 20], [16, 16], [16, 24], [0, 16], [20, 12], [8], [8, 4], [24], [14, 
+    4], [24, 8], [0, 16], [16], [0, 24], [24], [24, 8], 
+    [8, 24], [30, 6], O($.1^200), [0, 20], [24, 16], [16, 12], [16],
+    [16], [24, 8], [6, 6], [8, 24], [4, 4], [0, 24], [0, 26],
+    [16, 12], [20, 28], [16, 4], [22, 29]
+, [8, 20], [20], [24, 4],
+    [0, 14], [8, 20], [0, 20], [0, 12], [8, 6], [24, 24], [4, 28], [0, 12], [4, 10], [0, 28], [16, 12], [16, 4], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((211275100038038233582783867562*F.1 + 
+        422550200076076467165567735127)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 
+        2))*$.1 + (-3*F.1 - 3)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18, 8], [16, 24], [8, 4], [16, 16], [16, 16], [16, 8], [0, 4], [8, 24],
+    [24, 2], [16], [16, 8], [24, 8], [20, 20], [24], [24, 28],
+    [24, 16], O($.1^200), [24, 24], [24, 8], O($.1^200), [16, 4], [16, 16], [24, 4]
+, [16, 16], [30, 8], [8, 16], [20, 24], [8, 8], [8, 12], [8], [28, 28], [8, 28], 
+    [22, 12], [16, 8], [0, 4], [0, 12], [20, 10], [16, 4], [12, 8], [16, 28], [8, 20], [16, 28], [28, 8], [8, 24], [4, 28], O($.1^200), [4], [16, 24], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((211275100038038233582783867562*F.1 + 
+        422550200076076467165567735127)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 
+        2))*$.1 + (-3*F.1 - 3)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 4], [16], [16, 8], [0, 8], [28, 28], [24], [0, 20], [24, 16], 
+    [14, 28], [24, 8], [0, 8], [0, 8], [16, 24], [24, 24], [8, 8], [8, 8], [6, 22], [8, 24],
+    [24, 4], [8, 24], [8, 20], [24, 24], [16, 8], [16, 8], [22, 2], [8, 8], [4, 24], O($.1^200), [24, 18], [24, 20], [12, 24], [24, 20], [30, 13], [0, 12], [28, 4], [0, 4], [24, 18], [0, 12], [0, 20], [16, 12], [24, 30], [16, 4], [20, 8], [8, 20], [4, 30], [8, 24], [0, 12], [16, 20], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((211275100038038233582783867562*F.1 + 
+        422550200076076467165567735127)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 
+        2))*$.1 + (-3*F.1 - 3)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [26, 4], [16, 16], [0, 28], [0, 8], [24, 28], O($.1^200), [8, 4], [24, 24], [16, 30]
+, [16, 16], [16, 8], [8],
+    [28, 28], [0, 8], [16, 12], [8, 8], [16, 14], [0, 16], [16, 16], [24, 8], [28, 24], [16, 8], [24, 4], [16], [14, 28], 
+    [0, 8], [12, 12], [0, 16], [12, 20], [16, 16], [20, 8], [24, 12], [26, 24], [0, 16], [24], 
+    [24, 12], [4, 14], [24, 8], [12, 28], [0, 4], [22, 2], [16, 16], [28, 20], [24, 28], [20, 6], [24, 8], [28], [16, 8], 
+    [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((211275100038038233582783867562*F.1 + 
+        422550200076076467165567735127)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 
+        2))*$.1 + (-3*F.1 - 3)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10, 28], [16, 16], [16, 24], [0, 16], [4, 28], [8], [8, 4], [24], [14, 
+    4], [24, 24], [0, 16], [16], O($.1^200), [8, 16], [24, 24], [8, 24]
+, [22, 22], [0, 16], [16, 4], [24], [24, 4], [16, 16], 
+    [0, 16], [24, 8], [6, 22], [24, 8], [20, 20], [0, 24], [16, 18], [16, 20], [4, 12], [16, 4], [30, 21], [8, 12], [4], 
+    [24, 4], [8, 30], [24, 28], [0, 20], [0, 12], [16, 10], [8, 16], [20, 20], [16, 12], [20, 18], [0, 12], [0, 4], [16, 4],
+    [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((211275100038038233582783867562*F.1 + 
+        422550200076076467165567735127)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 
+        2))*$.1 + (-3*F.1 - 3)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 16], [0, 8], [8, 4], [16, 16], [16, 8], [16, 24], [0, 4], [8, 24], [8, 18], O($.1^200), [16, 8], [24, 8], [4, 12], [24], [24, 12], [24, 16], [16, 8], [8, 8], [8, 8], [0, 16], [16, 4],
+    [0, 16], [8, 20], [16, 16], [6, 24], [24, 24], [20, 24], [8, 24], [16, 20], [24], [28, 12],
+    [8, 28], [6, 4], [0, 16], [0, 20], [0, 12], [20, 2], [0, 4],
+    [12, 8], [16, 28], [16, 12], [0, 20], [12, 16], [24, 24], [12, 28], O($.1^200), [20, 24], [16, 24], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((211275100038038233582783867562*F.1 + 
+        422550200076076467165567735127)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 
+        2))*$.1 + (-3*F.1 - 3)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 28], [16, 16], [16, 8], [0, 8], [12, 12], [24], [0, 20], [24, 16], 
+    [14, 12], [24, 8], [0, 8], [0, 8], [16, 16], [24, 24], [8, 24], [8, 8], [30, 22], [8, 8],
+    [8, 4], [8, 8], [0, 12], [8, 8], [0, 8], [16, 8], [22, 2],
+    [24, 8], [20, 24], O($.1^200), [8, 26], [8, 28], [28, 24], [24, 20], [22, 5], [0, 4], [12, 4],
+    [0, 4], [16, 18], [0, 28], [0, 20], [16, 12], [16, 18], [0, 4], [20, 16], [24, 4], [20, 6], [24, 16], [0, 4], [16, 20], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((211275100038038233582783867562*F.1 + 
+        422550200076076467165567735127)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 
+        2))*$.1 + (-3*F.1 - 3)*$.1)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [26, 20], [0, 16], [24, 28], [16, 8], [16, 24], O($.1^200), [0, 28], [8, 16], [24, 30]
+, O($.1^200), [24, 28], [0, 8], [20, 
+    4], [16, 24], [24], [24], [4, 14], [0, 24], [24, 16], [8, 24], [12, 8], [16, 24], [16], [16], [6, 24], 
+    O($.1^200), [12, 8], [16, 24], [16, 4], [16], [28, 16], [16, 20],
+    [6, 12], [16, 8], [20, 24], [8], [0, 14], [24, 16], [0, 12], [0, 4], [10, 24], [24, 16], [4, 4], [8, 20], [0, 6], 
+    [24, 24], [24, 24], [8, 24], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735126)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 8], [16, 24], [8, 4], [16, 24], [0, 28], [16, 16], [16, 20], [8], 
+    [4, 6], [24], [16, 28], [16], [20, 20], [8, 8], [8], 
+    [16], [10, 4], [0, 8], [24, 4], [24, 24], [24, 8], [16, 16], [0, 28], [24], [2, 14], 
+    [16], [20, 12], [24, 24], [4, 4], [16, 16], [28, 4], [24, 28], [28, 24], [24, 4], [8, 20], [8, 16], [16, 14], [0, 20], [28, 28], [8, 12], [22], 
+    [16, 20], [0, 28], [0, 4], [24, 14], [24, 28], [24, 16], [0, 24], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735126)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18], [16], [24, 12], [16, 16], [0, 20], [0, 24], [8, 28], [24], 
+    [8, 30], [16, 8], [24, 4], [16, 8], [28, 4], [24, 24], [8], 
+    [8, 8], [20, 28], [24, 24], [16, 24], [16, 24], [8, 24], O($.1^200), [8, 
+    24], [8, 24], [22, 8], [16, 24], [20, 8], [24, 24], [12, 12], [24, 24], [4, 4], [16, 12], [22, 12], [8], [20, 4], 
+    [8, 8], [24, 18], [8, 20], [24, 12], [0, 20], [24, 2], [16, 12], [12, 16], [16, 24], [4, 4], [8, 16], [16, 16], [24, 28], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735126)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [26, 24], [0, 24], [0, 4], O($.1^200), [8, 20], [16, 8], [24, 12], [24, 24], [28, 22], [24, 16], [8, 12], [0, 8], [28, 28], [24], [24, 8], 
+    [16], [18, 20], [16], [16, 12], [0, 16], [24, 28], [24, 16], [24, 4], [0, 24], [10, 18], O($.1^200), [28, 24], [8, 24], [28, 
+    20], [0, 8], [20, 8], [8, 28], [20, 8], [24, 20], [8, 28], [8, 24], [16, 22], [16, 28], [20, 8], [8, 20], [22, 4], [16, 12], [0, 4], [8, 16], [28, 22], [0, 16], [8, 8], [16, 28], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735126)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [26, 12], [16], [24, 12], [16, 8], O($.1^200), [16, 
+    16], [0, 28], [8, 16], [24, 22], [16], [24, 28], [0, 8], 
+    [20, 28], [0, 24], [24], [24], [4, 6], [16, 8], [8, 16],
+    [8, 8], [12], [16, 8], O($.1^200), 
+    [16], [14, 24], [16, 8], [28, 8], [16, 8], [24, 12], [16, 8], [28], [16, 20], [30, 4], 
+    [0, 16], [20, 8], [8, 16], [16, 30], [24, 8], [16, 12], [0, 4], [2, 8], [24, 8], [4, 12],
+    [24, 4], [0, 22], [8], [8], [8, 24], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735126)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [18], [0, 8], [8, 4], [16, 24], [16, 20], [16, 16], [16, 4], [8], 
+    [20, 6], [24], [16, 12], [16], [4, 28], [24, 8], [8], 
+    [16], [26, 12], [16, 24], [8, 4], [24, 8], [8, 24], O($.1^200), [16, 28]
+, [24], [26, 14], [0, 8],
+    [4, 28], [24, 8], [28, 4], [0, 16], [28, 20], [24, 28], [20, 24], [24, 28], [24, 4], [8, 16], [24, 14], [16, 28], [28, 28], [8, 12], [30, 16], [0, 20], [16, 4], [16, 20], [0, 30], [8, 4], [24, 24], [0, 24], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735126)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [2, 24], [0, 16], [24, 28], [16, 16], [0, 12], [16, 24], [8, 28], [24], 
+    [8, 14], [0, 8], [24, 4], [16, 8], [28, 12], [24, 8], [8], 
+    [8, 8], [20, 20], [24, 8], [0, 8], [16, 8], [8, 16], [16], 
+    [24, 8], [8, 24], [14, 16], [0, 16], [4, 8], [24, 8], [20, 20], [8, 16], [4, 20], [16, 12], [6, 4], [8, 24], [20, 20], [8, 24], [24, 2], [8, 4],
+    [8, 12], [0, 20], [16, 10], [0, 28], [28, 8], [0, 8], [20, 20], [24, 16], [16, 24], [24, 28], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735126)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 13, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [10], [16, 24], [0, 4], O($.1^200), [24, 28], [16, 24]
+, [24, 28], [24, 24], [12, 6], [24, 16], [8, 28], [0, 8], [12, 20], [24], [24, 8], 
+    [16], [18, 12], [16], [0, 28], O($.1^200), [8, 28], [8], [8, 20], [0, 24], [2, 18], [16, 24], [12, 8], [8, 8], [4, 4], 
+    [16, 8], [20, 24], [8, 28], [12, 24], [24, 12], [24, 12], [8, 8], [8, 6], [0, 28], [20, 8],
+    [8, 20], [14, 28], [16, 20], [0, 28], [24, 16], [4, 6], [16],
+    [24], [16, 28], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-211275100038038233582783867563*F.1 - 
+        422550200076076467165567735126)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^6, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 7, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [473364139625105280045079869898, 
+    111022995588776727767950438710], 
+    [378348829653625263238271403808, -422788655951487851656931968600], [-619850370614142304984517674368, 
+    108813548245793060951197883584], 
+    [106831378760177711232908384560, 347749785207415701664906616960], [-631119335495560725816162321944, 
+    355371786801491826125667672484], 
+    [-202250035726643171341924236192, -279841476012786864710527436528], [473949199422238820020683058552, 279263651275375505886297071368]
+, [-468863501075052990121205103712, 
+    -316672778017456336437106682496], 
+    [339158405268974000460911106888, 520987478179058455864183056424], [-18122649471330273093824949168, 
+    -222297691560792357231790571248], 
+    [-344245978916645302960530624696, 77740011517398675616180711888], [-495321010982557055712233185136, 
+    344999270135827934031886548960], 
+    [-533877941737761414923624893988, 180204262976336254624515053272], [69399349907807777441733628752, 395052634493944457100522119376], [624985037463741933918031663696, 
+    -333815832929286991014925339272], 
+    [-260501335774287988969605168656, -631497538372587043588677982144], [-35111881773936231399961455792, 345588941328231228330914745368]
+, [46855399345118437996984281968, 
+    -141035364215522373838294597096], 
+    [-550298487779375878653526963360, -574757747104378505300166472392], [500131146955728722434675146656, 96562966348945604814702530792], [-445535337926693281161527801992, 
+    -611919272990387089286220942348], 
+    [-542395807790679363121580801288, -99814814898241816480720375288], [-221656584661747184416371359184, 
+    -173074123444898773545453457608], 
+    [-118219079014489764746750075616, 348256467438193186170786107776], [-502427624661732144395681588296, 
+    -559379205651180396572833982658], 
+    [-530034392618117422259998537632, -400793073172297146070863234272], [631625979649757231316512138104, 
+    -122613050875866209943724766976], 
+    [-311880609710399767895647306936, -92559706018163025773454799360], [287066130467267518868031134372, 
+    -574103251985569407174613946876], 
+    [339007197704663383342478164160, -241244894008778237203802280296], [-626616380423770563983512519024, 
+    330093787868886833080473151924], 
+    [-485586064055199884718116826048, 420667510691652222521661113952], [120117276067751022908120708640, 
+    -587603646373920771828767014116], 
+    [-192665983679339185449748627456, 394976911087269106790674046384], [-181952205243632399551518678248, 
+    -64213441102586454660986969832], 
+    [446910932445935906337172739872, 565205026063983074097163050328], [-76427211924261084855379695296, 
+    -456623001264824988237381187416], 
+    [238858095651508547938481558272, 545575247868295014032285761704], [-154998532542845891658403350848, -9835649785980003014210074856]
+, [450389080107815784509584373744, 
+    -207541050232355287042915000040], 
+    [280159095775706605094484074296, 550552863795038856909719785008], [-442399221232377193003993958656, 68319973899658450064386863376]
+, [596665152551029599233720215420, 
+    -402056814312497694070181323712], 
+    [-375127387364389908552733945432, -207918295244096603462518161152], [122809824971740495658618213164, 92188091794491599476923221276], [-261094897755941932945554256848, 
+    213082742541446203605575746108], 
+    [-181049193774243668197025714392, 296153556786360234458666322088], [-396546794730714203296411926912, 
+    -517882230189070451067025862016], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041)*$.1 - 140850066692025489055189245042*F.1
+        + 140850066692025489055189245041)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [-71398545922042840110904959702, 
+    -278275168632991963369710672786], 
+    [-54420950065749980140194374800, -281088191213790575378491700784], [-379130638101976446513409111888, 
+    -379406555599634592829310865216], 
+    [-201686219110746195288645206336, -87453073686438520257552631072], [174300903179541459176457942080, 376777131126159955562143755152]
+, [255926488306888169209215824608, 
+    -96055255748796336562121438600], 
+    [-33419303289884771146482146984, -401588264439504975570789304532], [-68715493054713447156171453120, 318286267231058288566020051008]
+, [141927673412096029643567628664, 
+    -340835674477446375294882152240], 
+    [-103079963563683244677397866352, -66004669620263223403758265816], [-530893395539679608172927672760, 59889954402940263873173269128]
+, [432578149586537832840975341824, 
+    -211407432530730943740053819784], 
+    [-273973817836700039552378539076, -113707765660455164039876618400], [103932815922457835950284995864, 201016796061581496406649549120]
+, [-377570803844770511728764359824, 
+    -580374248461512729051837522732], 
+    [-465665828325252698911336831280, 225312143031045150940167294432], [-376454986264839826085868234160, 
+    -377866761009944806988894901944], 
+    [614454213135442206361457320976, -239737004635335566607520762984], [476118650094729521965167110160, 94321108766519839814505270352], [612481217920156377182027393376, 
+    449605994664443861762836778588], 
+    [-483094190439202500922712303832, 31496404349554439839706726520], [-468041790631752537530838101104, 
+    446170803514745279907939818240], 
+    [312371521418412440006692932040, -104764568405702928548984531704], [-186757192712173727863204119320, 
+    -228830370653649116381768769632], 
+    [516905872575070292537368142144, -122944519694380399612068737466], [581292574513342385866569179672, 350123482391733241967175083312]
+, [-590642146868597419065809840000, 
+    -544453252550551833789117840872], 
+    [-197738688020763048119600463376, -572992389558483350438765984368], [-443218760860483393551235857168, 
+    -413572518581649090874098596104], 
+    [66722835360447427239275358728, -286964776277086242851301191040], [-494008235318115169836829429004, 
+    -412188635810031799908537757044], 
+    [3324251089107470694867766432, -125454279782194194497696581744], [39064063160223101259149848056, -372438905810844108639353627572]
+, [124784503299546233964738456136, 
+    379599487669408078557651081064], 
+    [-505286065247902265125603631472, 564155726802782087630193661940], [161217411673295161758793396760, 
+    -143965726201211064595921785240], 
+    [246522774242651362779330960840, 541431539478711321567699147152], [-365322246620049939777859189736, 
+    153972481008210321814409639308], 
+    [-626079230528601950206925926844, -62336077952740041053492972424], [96748444054708678203314647040, 523460261825104511481751758048], [-474129220350623183824752602272, 
+    -478665214032088518462207845672], 
+    [-561708416532894247706265164536, -632464079982255658287537236840], [291509333902696347091882858864, 
+    -500099075802873542158174875640], 
+    [-104393248311078364212142772292, 124071906657482090155343042464], [-431264093041831056394154671816, 
+    598182835429466579714951807016], 
+    [517697014200577361406658832512, -227403233026488357777431781368], [-311825783835970372189102749344, 
+    107181132062954084584951361692], 
+    [-191408607873699715846936539480, -116734822955810339022788239892], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041)*$.1 - 140850066692025489055189245042*F.1
+        + 140850066692025489055189245041)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 8, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [-119133930361889086004963081722, 
+    -302078919783850003539697646246], 
+    [593741506217257170866018371832, -512955018317584296790369003472], [-300137789602878049393154576800, 
+    -152318907516018321914496710080], 
+    [-433663594962753468152139129520, 298245138112942992233144482032], [211323603339850480427833029272, 93804124686267242264053271112], [388264021431819687428534033584, 
+    41625684440591040386942762072], 
+    [-364518130113846627362761386616, 51076331616872116562551710348], [130875472270789324450503794408, 
+    -500918189890449663275443532708], 
+    [-494786682658167266262107318544, 179897839613711546832754033328], [-317658558589269582569266601312, 
+    262316209653628336948416936992], 
+    [-60459090705488401812546203720, 426851193782060235500382765672], [515141452477105790644277440912, 
+    -303412536890144876748214788704], 
+    [122914697558882569991524548324, 234495966733093418841811386068], [478479156457408781853415901736, -66451840494408605585225755348]
+, [367866339273472056855678686944, 
+    -607655801351275783458817094604], 
+    [288194763972040842234861032288, 323423802188866662103928654624], [-420046940198964101811065102272, 
+    -120574789882256366130752290100], 
+    [-281942833748236567107244234344, 519269869791524838084879526192], [167342188141378366917399135768, 103282909253711561213284996564]
+, [-217992703433840076690522243912, 
+    -453274895283022283930922132160], 
+    [-196279645739556174031077348672, 145147974683777430411322701188], [-396242432944607813658027396136, 
+    -152246345070238525265747785328], 
+    [-604335283245819890305431905224, 504336823859273696554152101456], [334933886292809702361753812760, 
+    -106514279611673297331480753968], 
+    [464536544571081808678902023144, -491257443967217694997706643482], [-411663626365320814040153518296, 
+    -265528938330331884004881392660], 
+    [-433722446539691243931999951824, -570134880866371998118952138704], [-513292510219262039716720017200, 
+    599127410487381730934774580928], 
+    [-140229447046834081811802007232, -473754771202659344225481192892], [-475317832911954239454485242264, 
+    277637767895913741906056056536], 
+    [-199109647496598116525741178276, -544976592527974683512193547988], [-110163987491097001224986683660, 
+    -55091537856782119388449111736], 
+    [410686556981006871526327530456, 586996039996151045337607067512], [314865169687587293756056044400, 
+    -627838008919818747777738565384], 
+    [594611878407104222732496257560, 376186251081520071726460064580], [-367847714178411872938127539216, 
+    451814508663767404096371359976], 
+    [97423148571464612373636234884, 211075918730602441646856731944], [197803427992640695859786737836, -9479530720272456057576520452], [519623218843922398180128293556, 
+    467979879662055730849989544468], 
+    [-237953611976331905920066432784, -27019317562113016143286597072], [99854009787041117177790770412, 226764598590512220017675456420], [-212240438872480098847835528568, 
+    100209327005816173566836395620], 
+    [-407497309099459659009430255188, -20671580879838982474366363104], [574018508193359656594979868792, 74329295037048839084468280396], [113377636782904870856154701324, 
+    -209796694803381286826211835960], 
+    [591285266123055091163254161288, -212848267003620046444200365932], [-510558723896738628358215564960, 
+    -414605236556044972594925910160], 
+    [-181060457920262755630519004600, 490438387088150914502990015284], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041)*$.1 - 140850066692025489055189245042*F.1
+        + 140850066692025489055189245041)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [404913141838718936760591411498, 
+    -532481634865485338790549058818], 
+    [-470796195568325032639370922816, -334855953041343607224990218368], [114463344665052906098149820048, 
+    -344156189937771783034232767120], 
+    [-589653880261002952865244173376, 236100118853961262525887764544], [-512112101601741802231183200080, 
+    363097198150089623098955738240], 
+    [488501613147215430513070535968, -275970245983977169567268363512], [80119088661299799672760726040, -131537576415932278790706028932]
+, [552176976555720479118434711304, 
+    -583960384576849358642635019576], 
+    [-540696161749807688217358578424, -218704016381083220195374852928], [-113450960536064529209804755248, 1341680801429297018117801544], [478586379938836293373111309832, 
+    -446276744193926679937718106568], 
+    [-101794817434195924568331280128, -171965942766897942389497611720], [542833348030900514660633359748, 554835054041927981299983994416]
+, [-33569256736523981522653742888, 
+    618055822616341792877835427192], 
+    [307933842768113619551023060544, -230679027911425116008779132284], [96116743531110985726870673392, -536015652680387101259319167024]
+, [-135424189292903906359567780000, 
+    -340223008652485716929128951800], 
+    [-430114103831029097542746843744, -122568979107937093082524918640], [17886874681475019307102381328, 610146655288884097806771507720], [443790037899457743171840121504, 
+    471972285145763351251706101276], 
+    [-260348074769864277145269798352, -70427948873952760091306871576], [371387043848811913746779050752, 492264841077954662021932524680]
+, [-12950386218765169118769882200, 
+    374192250795141138454751236104], 
+    [-322092733645262956667461999608, 274397566512962347658929354176], [-504258325809802107369092697112, 
+    -499385497638105209036598130530], 
+    [-7504018469615495339858826344, -148900945182120117250127196120], [-617619868910424184407028701088, 
+    -334783789872093975502730839496], 
+    [-463285983692522214554313942272, -511237116573664981482037232880], [367527262385307932769729944304, 
+    -173318241397842392029798585280], 
+    [415736996615156674061685554216, -140161676249132643495862821376], [281220129995236137842185904436, 311389735537541859258426947732]
+, [113587053244898884587871060016, 
+    -346839236482185615889368251996], 
+    [-428830592396970224407105471752, -210084505440167638406006576412], [605542102232066898202865579400, 
+    -559019965219548123277672505720], 
+    [-594461150040805965938867187216, 176628173995619781069324150004], [-290709538787868499674635547624, 
+    151710620542763661774386466376], 
+    [246657565677019104983839871280, -287603998101592792094100372916], [-80246728707530385551072405976, 628250633345462443798408165236]
+, [-235209004975047410664490120812, 
+    147131262170101623238216354416], 
+    [463080549033756577964655022944, 109929487809275133910956994960], [-530768806783077964067398172272, 
+    398971008400177621523486963856], 
+    [-433263032728912048705021757680, -287081985454357382669648579432], [-194570306784575686159837308000, 
+    615020600430093566365375126408], 
+    [-271109194042064120019240384916, -6108453556686802112464561400], [387147173133327901518180644160, 231478160175333682916640719836]
+, [-58141774965584559697375338952, 
+    -621699602185250114306374545280], 
+    [-538821107560978705502216010544, -460455025776277367419136818668], [578955631418283290596365249720, 593292185660045016857010310740]
+, [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041)*$.1 - 140850066692025489055189245042*F.1
+        + 140850066692025489055189245041)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 7, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [-387523931887204874649000207850, 
+    171443667803213032947155507498], 
+    [385564786771818657569099427568, 411286158292196615089962757784], [-184816570637920121161165912544, 
+    417622834377231939027524414368], 
+    [451515054712698281022012643424, -131702096608151081936564687664], [614940666270669003446395415248, -15881672086639137369656549756]
+, [-32039529862407193215917507904, 
+    214595972299782193967402150080], 
+    [-490115099298942098483837318520, -300108318611853750348173835808], [344983088395830482817364907904, -27337107721415444794844041760]
+, [-436120409911031184633214205472, 
+    -595668258120085641058901663784], 
+    [517969627304657509624238133520, 606561122890920011310221221120], [-595540598688643965367788520152, 
+    -577302591481338548953532391752], 
+    [-333986879537760958707989322768, 362181306273743422185536335744], [473908152647578967472680367532, 
+    -579841604593626718040465449448], 
+    [-446399313931668066869368063312, -301000330708885863991952584752], [-278631595112306523646157792592, 
+    148728790942858001623576790776], 
+    [458216811715677596459922659856, 467288306270359117540141913856], [-382027926699197627033207344424, 
+    -255855292873976882397561508740], 
+    [472322001413144659184805967904, 584898981518630226400046982120], [-215107449918910977609198257120, 
+    -329122961462487232397874279904], 
+    [445411851320065602653682453680, -544408512160651598689673054328], [-618734196668110741643438330016, 
+    256118516067085920969366733100], 
+    [483325518674836559098739237960, 359188415024829234101479415360], [-337884356229900376841741976272, 
+    -502534656433912914739098091800], 
+    [237444573542926055689452791936, -544698987622861376386161393344], [-596505993076563749979601498112, 
+    240319615068367515069873126006], 
+    [-161684090538761879812863951472, 184139525499167919419869280504], [67739116500344378088948943736, -394160306372509331176043969136]
+, [77707890389641198884176874840, 
+    -175849949696067242610121146480], 
+    [-75647585991924788223787037060, 225746990352276926185586163028], [96787556268421334540362571584, 27121071017660038155007607816], [-402188399831700195488671764144, 
+    587945889850704074129725348980], 
+    [-332804489982361362145951021728, 440327985106766832373867848928], [-257901020606429018544093960656, 
+    -425092346394171386881718095520], 
+    [-534256832076482491725327494184, -291629357468610932261964512664], [217575347701402937775085583096, 326524584972916558594815642672]
+, [-82383014309398566064344747120, 
+    -394737366502301914219302130920], 
+    [-31093683657610651425519482300, 560777057868034749241239403752], [372891085744739771329121316720, 489714644930261288533143541000]
+, [-537347825037340777533820093088, 
+    536725744840334862299780996368], 
+    [-536583182069584632136733735952, 427319074011757269101037380040], [131352242595522561067645302164, 607888123764077932855572178172]
+, [-222649944957976358996808296032, 
+    406740266146315984376791545648], 
+    [141075961858969605455347447436, -137738111768562372778151024424], [-154049520215789520258703299352, 
+    -107058429533199612845813010032], 
+    [519101757450476021322840916692, -580751477733985655165178025932], [187345567064833041966375715440, 619062951303431390160105273444]
+, [-175518018250821764055102249816, 
+    -621100977577288079605043071912], 
+    [-396546794730714203296411926912, -517882230189070451067025862016], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041)*$.1 - 140850066692025489055189245042*F.1
+        + 140850066692025489055189245041)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [198960360512984825844442444666, 
+    -629807102457210958479944757082], 
+    [-579601551631774983747819960080, 568854334221025378099086199920], [355401238020195403480187062960, -25346739273682899594868588336]
+, [391740866967400532585611310208, 
+    586549891632168850954456008320], 
+    [506023041426534673913214273728, -523226541949375692857414523664], [522888949086009103244188591840, 379403968899327883451423631480]
+, [566759606067524056369089434504, 
+    384943874323948465882567323132], 
+    [558328774177103060218194986560, -177318031011542263042193946528], [594541777616567182551955692376, 
+    -571727530536987387066194962416], 
+    [508436539186543430600278631088, 315952944993230177277537442376], [493678354532074189611009134408, 
+    -242548356704347316822137085656], 
+    [415982308613344913863543829600, -311078330328262817674774435144], [390511767600820309794304681244, 360534984307433071769618480704]
+, [-74926148943693260086515139672, 
+    -146060746958507057664034816968], 
+    [-333177937916849832266673702272, -79489354686272976431390053468], [318406070009931215633576547024, 348776007907314487947896808160]
+, [57997380945279895828990693552, 
+    -462544988857276508556885624248], 
+    [-204994385469198914912535627696, -210613234662268451935702719848], [48284006234299325555789602976, 580313421926159257120012390528], [413724045958601473147197559936, 
+    520961850600971134559430053052], 
+    [-272743053928983902058097832856, -71916873509880476609284363208], [583792131605516845788637589328, 568823890298653078706649191968]
+, [60478866902130366124232691832, 
+    -551696540898785291756116775480], 
+    [341772946836192118697839110888, -10925523380624822666527800800], [313105909419575980420412570504, 
+    -562615804814241504050859391530], 
+    [195131817219953514836155291000, -487617911271718342913104389456], [553551929070551611058002556208, 
+    -106101168426576763939970520472], 
+    [-473241948687040958239711227152, -421568490618686845584035459344], [94970427647338024295348400144, 460280562771368228824626326696], [-584973209164174310591795276856, 
+    447091931946467099077601231504], 
+    [-309613724298726213291506093036, 58771333166096581044584268492], [302055912631919658011745987488, 75340153463379895215974830928], [184260324509254803942256025416, 
+    56063598405103511594915724332], 
+    [-305559675068802053445147489272, -216268085387456875716423939160], [-110192197184480290737502522752, 
+    -478507116617967230960101683340], 
+    [-287046709572725311435491067656, -464554451403011203839678535304], [462970695203766309329128764488, -73981771099425197271894764096]
+, [229795655650131037976539431456, 
+    -195761168489465419627932540300], 
+    [-374120362895478614100747792300, -611369848731241765070351869752], [-431066051487085599265007879168, 
+    347255963416140145363746287840], 
+    [285447552803750867169911837152, -10901565668603586394020941480], [-503793532906816824514147978424, 
+    -458604578162645012825590518344], 
+    [167602899380489587137339657168, -423695499410085481801120102128], [-412119990929078857190066563172, 
+    -303167068249133423340321960672], 
+    [72164040971130333449325882168, 586394198591908393808879859592], [-450617874900493578507713181248, 7080755647842594109106641144], [-150330813421666723695115484160, 
+    -151174821443575683392591204412], 
+    [-191408607873699715846936539480, -116734822955810339022788239892], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041)*$.1 - 140850066692025489055189245042*F.1
+        + 140850066692025489055189245041)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 8, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [466776003813790824593052750982, 
+    -610416283558611544420514781910], 
+    [560360224115380797141575351888, -176423074304218876742063318208], [-78913823397359708437057322608, -72424604508667212691970904872]
+, [-342796054579846052018023171504, 
+    630340679992825403837224313008], 
+    [-20956046786697218259009802456, 90817624434641810092749551240], [-344373411142183443037592728144, 
+    -72179925623234753603957042640], 
+    [-632290295896748641667503243352, -324443147163915349733418908428], [184250187951931734857510465496, 
+    -625402795220388271671854318900], 
+    [-375218784541241424193178707584, 176092293633394046923976047400], [596957586789867787325998468912, 
+    -122653657595394954907069121248], 
+    [351104260993850821924269966632, -142725620261415541682522949224], [282570262391663923214852748192, 189760815321031956371698121168]
+, [89560893496732672171585536340, 
+    -31602275528265436487601488276], 
+    [362369147910033580311164524848, 459210069657035072976227841468], [-125592883003896138545694488208, 
+    358685656099119745876468771292], 
+    [-27021295577148788765483147008, -116175964426186944502174577456], [-59910340029872887021599956256, 
+    -432422768113610332018497529692], 
+    [144532222963942882512301782904, 143322362994840183239816440816], [-410808437348330503530118446768, 7846887480437168077756202140], [81506320732289038063692079024, 
+    105233837509923979164169998264], 
+    [370853314391373280822960796816, -165095353861782602697901923316], [-107923629459899431991171996520, 
+    -297587394930297664261922233280], 
+    [454999913181393075033582256616, -468637305144076760796431283048], [-174835536016311011699371043720, 
+    443784435866624238310626556544], 
+    [215813502222233146101155484424, -220606618335925942125020238190], [-475026942708409887902818994008, 
+    448852427822680278188254989656], 
+    [284016873397860130667353695848, 340465348282073081509044334600], [554979894685869012379687280432, 
+    -234381170931505852094055610832], 
+    [617247773377163658673878413584, 93179637626015558429569311756], [628451474283185560396731770896, 22226491526893863510431399424], [502568888903719364191368435644, 9094710304165559244288415116]
+, [237594429436603717209326523156, 
+    371530927985454046388622385384], 
+    [-433254696198306873437316047728, -487475764595479651862497071296], [-19710883850422611285554308176, 415126512998462082003118341632]
+, [603898568513681095254100604904, 
+    448939669199404326469144763212], 
+    [243314174215261179068588008112, 467912147159727295185551431984], [-364826207663375469830109547748, 
+    324058309459765059372585461392], 
+    [-263489085506776833810737148740, 587286413298184990094780951512], [579138872267646416832568507780, 
+    -122550206862704021697732696244], 
+    [-28669587796734228350905283216, 140829399274162276675607239680], [533546258654414519218315936188, 516276899819033403954337586724]
+, [-266889346829333569286591038952, 
+    -203804141528785313698876910644], 
+    [288980438020767025956015325684, -407150843021448228741260536396], [27545088632196701267767194656, 372484984130910894819942204896], [-172073729442407149308425988292, 
+    533441823382676683538547083064], 
+    [245491970720374987021251458520, 110568725230852461309796310204], [525078759220995660387022407880, 
+    -588581141271029579928069408296], 
+    [-181060457920262755630519004600, 490438387088150914502990015284], [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041)*$.1 - 140850066692025489055189245042*F.1
+        + 140850066692025489055189245041)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+[* "exceptional SL(2,3)", 24, 10, 4,
+    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | [-363104443973657515913635321366, 
+    542510237983098491523317824678], 
+    [-88483256390445437760899349552, 175184429982347426007818779632], [18421327989999356964575253136, -579043367882758232548544488128]
+, [362751668516363922303175587136, 
+    -340714569079234908570328950816], 
+    [574122620657415011234918929552, 339845113433094110850885690688], [64331259936818653225647268000, 192600253925675056397916752888], [577060539537336011144094914344, 
+    469762126501131642606012359996], 
+    [-37170516835790760136737047736, -123981498226902151816649359768], [517835237416630178056248452168, 
+    -186122448326079091740973135648], 
+    [274458173247078416350438719088, -295159453691830298694945572600], [155254266746157549569438761480, -70787856023950786287567445768]
+, [163656817087025102624849231776, 
+    -324170736985637323145352649192], 
+    [599284813997205784469415858948, 358894696828147262947237019248], [536945972078995959145014433592, 75034144178151739164698874736], [341610295958331227183324135792, 
+    578111443778614403958940360036], 
+    [-237820828511760435904226421648, -420989848264402300857576683344], [575987887812558016272552331936, 
+    -338542002611192391029833733336], 
+    [-331788655640218939098655498912, -426233570357001819257845744192], [-490712273013135156428620088640, 
+    390204540262040608842828184856], 
+    [-237926357159871725431265638368, 287092694219534159714319355948], [-322847206525763159996501572912, 
+    -353417376652111700682941358552], 
+    [174849752772708305271250521888, 485571634706775727851956593384], [595330647183550335511036813336, 
+    -503341148949458415984093954536], 
+    [-86117074024637450601134791928, 543805664351982473635397137792], [-10642696602276878382676956560, 
+    -204611675588688055789651767866], 
+    [-339748434218780856745160799304, -357483010210646354710108559888], [-295450306084273355130692525936, 
+    -419658106503377582070143337880], 
+    [-318973891502837787417231989568, -91075962874493628025766365584], [103738395326408750058326843920, 346810630379055521392707197344]
+, [555296558957096558728646223256, 
+    519398192884049684101191476752], 
+    [-102637564117429974335276212780, -77855263323219460286088329740], [-81604361379114627269755358928, 
+    -314300540377878187564466034140], 
+    [414073389943386622641790696808, -574157068104062803938106675196], [144891104748854490709772906024, 
+    -419983573053749444288204492472], 
+    [-554512720571846709932309230336, -367903722020747155992826679516], [519628744838945641068195061720, 189614572456772683183764914456]
+, [631703350592269902629775214624, 
+    186853963004667539963374007788], 
+    [386540904214131172572662953696, -196711453806038162135624567340], [537884214986163992627301419332, 461314879187239202943685016016]
+, [-109032277402089760202165459488, 
+    -380260787960804040381274841200], 
+    [-309182548993419256758840881776, -111680692173089293262601115200], [-126279011444490273892263693152, 
+    379262869695722087945332740232], 
+    [560827011102693274568325800128, -348770079014156958513314250352], [425206801574898621102149947228, 
+    -447957048235840040534091232712], 
+    [-300785336137331765979454579184, 285997836332879504037823928460], [377028211367459529975539943960, 
+    -446282352022849051084164005040], 
+    [-514785152573119932541896966432, -459781666193787367905170171476], [578955631418283290596365249720, 593292185660045016857010310740]
+, [1]]),
+    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])> | -4*F.1 - 5, -3*F.1 + 
+        3, (-F.1 + 1)*F.1, 2*F.1 + 7, 
+        (211275100038038233582783867563*F.1 - 
+        211275100038038233582783867563)*F.1^2, 3, 1]),
+    Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 6
+, 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
+    2, 100)|Polynomial([pAdicRing(2, 100) | 6, 2, 1])>|2> | [[0, 1]], O($.1^200), O($.1^200), [[1]]])> | ((-140850066692025489055189245042*F.1 + 
+        140850066692025489055189245041)*$.1 - 140850066692025489055189245042*F.1
+        + 140850066692025489055189245041)*$.1, 
+        (70425033346012744527594622521*F.1 - 
+        70425033346012744527594622521)*$.1^3, 1])
+*]
+,
+*];
