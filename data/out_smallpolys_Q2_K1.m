@@ -1,865 +1,746 @@
 Qp := pAdicField(2, 100);
 F := FieldOfFractions(AllExtensions(Qp,2)[1]);
+Fx<x> := PolynomialRing(F);
 
 Twist := 
-[ ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | F.1, F.1 + 1, (F.1 + 
+[ F.1, F.1 + 1, (F.1 + 
     1)*F.1, 5, 5*F.1, F.1 + 5, (F.1 + 5)*F.1, 2*F.1 + 5, (2*F.1 + 5)*F.1, 3*F.1 + 1, (3*F.1 + 1)*F.1, 2*F.1 + 1, (2*F.1 + 1)*F.1, 3*F.1 + 5, (3*F.1 + 
     5)*F.1 ]
 ;
 data := [*
 [* "principal series", 2, 4, 2,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [0, 1], [1]])
-*]
-,
+    Fx!([[0, 1], [0, 1], [1]])
+*],
 [* "principal series", 4, 6, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [2], [0, 1], [2], [1]])
-*]
-,
+    Fx!([[0, 1], [2], [0, 1], [2], [1]])
+*],
 [* "principal series", 2, 8, 2,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [2, 2], [1]])
-*]
-,
+    Fx!([[0, 1], [2, 2], [1]])
+*],
 [* "principal series", 2, 8, 2,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [2], [1]])
-*]
-,
+    Fx!([[0, 1], [2], [1]])
+*],
 [* "principal series", 4, 8, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [0, 2], [0, 3], [2], [1]])
-*]
-,
+    Fx!([[0, 1], [0, 2], [0, 3], [2], [1]])
+*],
 [* "principal series", 2, 10, 2,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [], 
+    Fx!([[0, 1], [], 
     [1]])
-*]
-,
+*],
 [* "principal series", 2, 10, 2,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 1], [], 
+    Fx!([[4, 1], [], 
     [1]])
-*]
-,
+*],
 [* "principal series", 2, 10, 2,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 3], [], 
+    Fx!([[2, 3], [], 
     [1]])
-*]
-,
+*],
 [* "principal series", 4, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [0, 2], [4, 3], [], [1]])
-*]
-,
+    Fx!([[0, 1], [0, 2], [4, 3], [], [1]])
+*],
 [* "principal series", 2, 10, 2,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 1], [], 
+    Fx!([[2, 1], [], 
     [1]])
-*]
-,
+*],
 [* "principal series", 4, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 5], [4, 6], [6, 7], [4], [1]])
-*]
-,
+    Fx!([[4, 5], [4, 6], [6, 7], [4], [1]])
+*],
 [* "principal series", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [4, 4], [6, 2], [4], [1]])
-*]
-,
+    Fx!([[0, 1], [4, 4], [6, 2], [4], [1]])
+*],
 [* "principal series", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [8, 3], [4], [6, 4], [4], [1]])
-*]
-,
+    Fx!([[8, 3], [4], [6, 4], [4], [1]])
+*],
 [* "principal series", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 3], [4, 4], [6, 6], [4], [1]])
-*]
-,
+    Fx!([[0, 3], [4, 4], [6, 6], [4], [1]])
+*],
 [* "principal series", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [4], [6, 4], [4], [1]])
-*]
-,
+    Fx!([[0, 1], [4], [6, 4], [4], [1]])
+*],
 [* "principal series", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [4, 4], [6, 6], [4], [1]])
-*]
-,
+    Fx!([[0, 1], [4, 4], [6, 6], [4], [1]])
+*],
 [* "principal series", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [8, 3], [4], [6], [4], [1]])
-*]
-,
+    Fx!([[8, 3], [4], [6], [4], [1]])
+*],
 [* "principal series", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 3], [4, 4], [6, 2], [4], [1]])
-*]
-,
+    Fx!([[0, 3], [4, 4], [6, 2], [4], [1]])
+*],
 [* "principal series", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [4], [6], [4], [1]])
-*]
-,
+    Fx!([[0, 1], [4], [6], [4], [1]])
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [], 
+    Fx!([[0, 1], [], 
     [], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 15], [],
+    Fx!([[14, 15], [],
     [], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [8, 9], [], 
+    Fx!([[8, 9], [], 
     [0, 12], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 1], [], 
+    Fx!([[2, 1], [], 
     [], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 9], [], 
+    Fx!([[4, 9], [], 
     [0, 12], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 3], [], 
+    Fx!([[2, 3], [], 
     [0, 4], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [12, 1], [], 
+    Fx!([[12, 1], [], 
     [], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 3], [], 
+    Fx!([[2, 3], [], 
     [], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [], 
+    Fx!([[0, 1], [], 
     [8], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 7], [], 
+    Fx!([[6, 7], [], 
     [], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [], 
+    Fx!([[0, 1], [], 
     [0, 4], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 7], [], 
+    Fx!([[6, 7], [], 
     [0, 4], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 9], [], 
+    Fx!([[4, 9], [], 
     [8, 4], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 3], [], 
+    Fx!([[2, 3], [], 
     [8, 4], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [12, 1], [], 
+    Fx!([[12, 1], [], 
     [8], [], [1]])
-*]
-,
+*],
 [* "principal series", 4, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [10, 11], [],
+    Fx!([[10, 11], [],
     [], [], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 3, 2, 3,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [3], [3], [6], [7], [6], [3], [1]])
-*]
-,
+    Fx!([[3], [3], [6], [7], [6], [3], [1]])
+*],
 [* "supercuspidal unramified", 6, 4, 6,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [1], [0, 1], [1, 1], [0, 1], [], [0, 1], [1, 1], [], [0, 1], 
+    Fx!([[1], [0, 1], [1, 1], [0, 1], [], [0, 1], [1, 1], [], [0, 1], 
     [], [1], [], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 6, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [3], [], [2, 
+    Fx!([[3], [], [2, 
     1], [2], [1, 1], [2], 
     [], [], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 6, 8, 6,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [3], [0, 2], [1, 1], [0, 2], [0, 1], 
+    Fx!([[3], [0, 2], [1, 1], [0, 2], [0, 1], 
     [], [3], [2], [0, 2], [2], [1], [2], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 8, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [1, 2], [2], [0, 3], [2], [1, 1], [2, 
+    Fx!([[1, 2], [2], [0, 3], [2], [1, 1], [2, 
     2], [0, 2], [], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 6, 8, 6,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [3], [], [1, 
+    Fx!([[3], [], [1, 
     1], [], [0, 3], [0, 2], [3, 
     2], [2], [], [2], [1], [2], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 6, 10, 6,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [7], [2, 2], [3, 1], [2], [0, 1], [2, 
+    Fx!([[7], [2, 2], [3, 1], [2], [0, 1], [2, 
     2], [1, 2], [6], [2], 
     [2], [5], [6], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 6, 10, 6,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [7], [2, 2], [3, 3], [2], [0, 3], [2, 
+    Fx!([[7], [2, 2], [3, 3], [2], [0, 3], [2, 
     2], [1, 2], [6], [2], 
     [2], [5], [6], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 6, 10, 6,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [7], [6, 2], [5, 3], [2], [2, 3], [6, 
+    Fx!([[7], [6, 2], [5, 3], [2], [2, 3], [6, 
     2], [5, 2], [6], [2], 
     [2], [5], [6], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [3, 2], [4, 2], [0, 3], [], [5, 3], [4, 2], [6, 2], [4], [1]])
-*]
-,
+    Fx!([[3, 2], [4, 2], [0, 3], [], [5, 3], [4, 2], [6, 2], [4], [1]])
+*],
 [* "supercuspidal unramified", 4, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [5], [0, 2], [2, 3], [], [7, 3], [0, 2], [2, 2], [4], [1]])
-*]
-,
+    Fx!([[5], [0, 2], [2, 3], [], [7, 3], [0, 2], [2, 2], [4], [1]])
+*],
 [* "supercuspidal unramified", 6, 10, 6,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [7], [6, 2], [1, 1], [2], [6, 1], [6, 
+    Fx!([[7], [6, 2], [1, 1], [2], [6, 1], [6, 
     2], [5, 2], [6], [2], 
     [2], [5], [6], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [9, 1], [4, 4], [4], [12, 4], [5], [0, 4]
+    Fx!([[9, 1], [4, 4], [4], [12, 4], [5], [0, 4]
 , [10, 4], [12], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [13, 5], [12], [4, 6], [12, 4], [13, 6],
+    Fx!([[13, 5], [12], [4, 6], [12, 4], [13, 6],
     [], [10], [12], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [5, 1], [12, 4], [], [4], [9, 4], [], 
+    Fx!([[5, 1], [12, 4], [], [4], [9, 4], [], 
     [10], [12], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [5, 1], [12], [4, 6], [12, 4], [13, 6],
+    Fx!([[5, 1], [12], [4, 6], [12, 4], [13, 6],
     [], [10], [12], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [9, 3], [12], [12, 2], [12, 4], [5, 2],
+    Fx!([[9, 3], [12], [12, 2], [12, 4], [5, 2],
     [], [10], [12], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [1, 3], [12, 4], [8, 4], [4], [1], 
+    Fx!([[1, 3], [12, 4], [8, 4], [4], [1], 
     [], [10], [12], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [7, 5], [12], [8, 6], [4, 4], [1, 6], 
+    Fx!([[7, 5], [12], [8, 6], [4, 4], [1, 6], 
     [], [10], [12], [1]])
-*]
-,
+*],
 [* "supercuspidal unramified", 4, 12, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [5, 3], [4, 4], [4], [12, 4], [5], [0, 4]
+    Fx!([[5, 3], [4, 4], [4], [12, 4], [5], [0, 4]
 , [10, 4], [12], [1]])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 5, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [2], [2], [], [2], [], [0, 
+    Fx!([[0, 1], [2], [2], [], [2], [], [0, 
     1], [2], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 1)*F.1
+    Fx!([-1*F.1, (F.1 + 1)*F.1
 , 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 5, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 1], [2], [2], [], [], [2], [2, 
+    Fx!([[2, 1], [2], [2], [], [], [2], [2, 
     1], [2], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (-F.1 - 1)*F.1, (F.1 
+    Fx!([(-F.1 - 1)*F.1, (F.1 
         + 1)*F.1, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 8, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 3], [], 
+    Fx!([[0, 3], [], 
     [], [], [2], [0, 2], [2, 1], [2, 2], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 1)*F.1
+    Fx!([-1*F.1, (F.1 + 1)*F.1
 , 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 8, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 1], [0, 2], [6], [4], [2], [0, 2], [4, 1], [6], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (-F.1 - 1)*F.1, (F.1 
+    Fx!([[6, 1], [0, 2], [6], [4], [2], [0, 2], [4, 1], [6], [1]]),
+    Fx!([(-F.1 - 1)*F.1, (F.1 
         + 1)*F.1, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 5], [0, 4], [4], [4, 2], [6, 6], [4], [6, 1], [4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 1)*F.1
+    Fx!([[4, 5], [0, 4], [4], [4, 2], [6, 6], [4], [6, 1], [4], [1]]),
+    Fx!([-1*F.1, (F.1 + 1)*F.1
 , 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 1], [4], [6], [0, 2], [6], [0, 2], [0, 1], [4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 1)*F.1
+    Fx!([[4, 1], [4], [6], [0, 2], [6], [0, 2], [0, 1], [4], [1]]),
+    Fx!([-1*F.1, (F.1 + 1)*F.1
 , 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 1], [4], [6, 2], [0, 2], [], [4, 2], [4, 3], [4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (-F.1 - 1)*F.1, (F.1 
+    Fx!([[2, 1], [4], [6, 2], [0, 2], [], [4, 2], [4, 3], [4], [1]]),
+    Fx!([(-F.1 - 1)*F.1, (F.1 
         + 1)*F.1, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 1], [], 
+    Fx!([[2, 1], [], 
     [4], [4, 2], [0, 2], [], [2, 
     1], [4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (-F.1 - 1)*F.1, (F.1 
+    Fx!([(-F.1 - 1)*F.1, (F.1 
         + 1)*F.1, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 7], [], 
+    Fx!([[4, 7], [], 
     [4, 2], [4], [], [0, 4], [0, 
     4], [4, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 3)*F.1, (F.1
+    Fx!([(2*F.1 + 3)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 3], [], 
+    Fx!([[2, 3], [], 
     [4, 2], [4], [4], [4], 
     [0, 2], [4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 3)*F.1, (F.1
+    Fx!([(2*F.1 + 3)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 7], [], 
+    Fx!([[4, 7], [], 
     [4, 2], [4], [4], [], [0, 4], [4, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 3)*F.1, (F.1
+    Fx!([(2*F.1 + 3)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 3], [], 
+    Fx!([[6, 3], [], 
     [4, 2], [4], [4], [4], 
     [0, 2], [4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 
+    Fx!([-1*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 5], [], 
+    Fx!([[4, 5], [], 
     [0, 2], [4, 4], [4], [], [0, 
     6], [4, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 3)*F.1, (F.1
+    Fx!([(2*F.1 + 3)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 5], [], 
+    Fx!([[0, 5], [], 
     [0, 2], [4, 4], [4], [], [0, 
     6], [4, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 
+    Fx!([-1*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 7], [], 
+    Fx!([[2, 7], [], 
     [4, 6], [4, 4], [], [4], 
     [], [4, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -3*F.1, (F.1 + 
+    Fx!([-3*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 7], [], 
+    Fx!([[0, 7], [], 
     [0, 6], [4, 4], [4, 4], [], 
     [0, 2], [4, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -3*F.1, (F.1 + 
+    Fx!([-3*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 1], [0, 4], [0, 6], [4, 4], [], [4], [4, 2], [0, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -3*F.1, (F.1 + 
+    Fx!([[6, 1], [0, 4], [0, 6], [4, 4], [], [4], [4, 2], [0, 4], [1]]),
+    Fx!([-3*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 3], [], 
+    Fx!([[6, 3], [], 
     [4, 2], [4], [4], [4], 
     [], [4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 1)*F.1, (F.1
+    Fx!([(2*F.1 + 1)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 3], [], 
+    Fx!([[2, 3], [], 
     [0, 2], [4], [], [4], [4], [], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -3*F.1, (F.1 + 
+    Fx!([-3*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 7], [], 
+    Fx!([[0, 7], [], 
     [4, 2], [4], [], [0, 4], [0, 
     4], [4, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 
+    Fx!([-1*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 7], [], 
+    Fx!([[6, 7], [], 
     [0, 6], [4, 4], [0, 4], [4, 4], [4], [], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 1)*F.1, (F.1
+    Fx!([(2*F.1 + 1)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 7], [], 
+    Fx!([[0, 7], [], 
     [4, 2], [4], [4], [], [0, 4], [4, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 
+    Fx!([-1*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 5], [], 
+    Fx!([[2, 5], [], 
     [0, 6], [4], [0, 4], [4], [0, 6], [], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 1)*F.1, (F.1
+    Fx!([(2*F.1 + 1)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 11, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 7], [], 
+    Fx!([[4, 7], [], 
     [0, 6], [4, 4], [4, 4], [], 
     [0, 2], [4, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 1)*F.1, (F.1
+    Fx!([(2*F.1 + 1)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [12, 3], [], 
+    Fx!([[12, 3], [], 
     [12, 4], [0, 4], [14, 6], [8], [0, 6], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 3)*F.1, (F.1
+    Fx!([(2*F.1 + 3)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [8, 7], [8], [4], [0, 4], [6, 2], 
+    Fx!([[8, 7], [8], [4], [0, 4], [6, 2], 
     [], [0, 2], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 
+    Fx!([-1*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 3], [], 
+    Fx!([[4, 3], [], 
     [12, 4], [0, 4], [14, 6], [8], [8, 6], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 3)*F.1, (F.1
+    Fx!([(2*F.1 + 3)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 7], [8], [4], [0, 4], [14, 2], 
+    Fx!([[4, 7], [8], [4], [0, 4], [14, 2], 
     [], [8, 2], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 3)*F.1, (F.1
+    Fx!([(2*F.1 + 3)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 5], [0, 4], [0, 6], [0, 4], [8, 5], 
+    Fx!([[0, 5], [0, 4], [0, 6], [0, 4], [8, 5], 
     [8], [4, 4], [8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 1)*F.1
+    Fx!([-1*F.1, (F.1 + 1)*F.1
 , 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [8, 15], [8, 8], [12], [0, 4], [14, 10], 
+    Fx!([[8, 15], [8, 8], [12], [0, 4], [14, 10], 
     [8], [8, 2], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 
+    Fx!([-1*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 1], [], 
+    Fx!([[0, 1], [], 
     [4, 4], [0, 4], [6, 2], [], 
     [0, 2], [0, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -3*F.1, (F.1 + 
+    Fx!([-3*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 1], [], 
+    Fx!([[14, 1], [], 
     [8], [8, 4], [10, 4], [0, 4], [8, 2], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -3*F.1, (F.1 + 
+    Fx!([-3*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [8, 13], [8, 8], [12, 8], [0, 12], [6, 6],
+    Fx!([[8, 13], [8, 8], [12, 8], [0, 12], [6, 6],
     [8], [8, 6], [8, 12], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -3*F.1, (F.1 + 
+    Fx!([-3*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 5], [8], [0, 4], [8, 4], [2], [0, 
+    Fx!([[6, 5], [8], [0, 4], [8, 4], [2], [0, 
     4], [0, 6], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -3*F.1, (F.1 + 
+    Fx!([-3*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 15], [8, 8], [12], [0, 4], [6, 2], [8]
+    Fx!([[4, 15], [8, 8], [12], [0, 4], [6, 2], [8]
 , [0, 2], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 3)*F.1, (F.1
+    Fx!([(2*F.1 + 3)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [12, 11], [0, 12], [0, 10], [0, 12], [12, 15], [8, 8], [4, 4], [8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 1)*F.1
+    Fx!([[12, 11], [0, 12], [0, 10], [0, 12], [12, 15], [8, 8], [4, 4], [8], [1]]),
+    Fx!([-1*F.1, (F.1 + 1)*F.1
 , 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 3], [], 
+    Fx!([[0, 3], [], 
     [12, 4], [0, 4], [6, 6], [8], [8, 6], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 
+    Fx!([-1*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [0, 3], [], 
+    Fx!([[0, 3], [], 
     [4, 4], [0, 4], [6, 6], [], 
     [0, 6], [0, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 
+    Fx!([-1*F.1, (F.1 + 
         1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 5], [8, 4], [4, 6], [8, 4], [10, 5], 
+    Fx!([[2, 5], [8, 4], [4, 6], [8, 4], [10, 5], 
     [8], [12], [8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (-F.1 - 1)*F.1, (F.1 
+    Fx!([(-F.1 - 1)*F.1, (F.1 
         + 1)*F.1, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 7], [8, 4], [4, 2], [8, 4], [2, 7], 
+    Fx!([[2, 7], [8, 4], [4, 2], [8, 4], [2, 7], 
     [8], [4], [8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (-F.1 - 1)*F.1, (F.1 
+    Fx!([(-F.1 - 1)*F.1, (F.1 
         + 1)*F.1, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 1], [8, 4], [4, 6], [8, 4], [10, 1], 
+    Fx!([[2, 1], [8, 4], [4, 6], [8, 4], [10, 1], 
     [8], [12], [8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (-F.1 - 1)*F.1, (F.1 
+    Fx!([(-F.1 - 1)*F.1, (F.1 
         + 1)*F.1, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [10, 11], [8, 12], [4, 2], [8, 12], [2, 11],
+    Fx!([[10, 11], [8, 12], [4, 2], [8, 12], [2, 11],
     [8], [12], [8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (-F.1 - 1)*F.1, (F.1 
+    Fx!([(-F.1 - 1)*F.1, (F.1 
         + 1)*F.1, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [10, 1], [], 
+    Fx!([[10, 1], [], 
     [8], [8, 4], [2, 4], [0, 4], [0, 2], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 1)*F.1, (F.1
+    Fx!([(2*F.1 + 1)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [12, 1], [], 
+    Fx!([[12, 1], [], 
     [4, 4], [0, 4], [14, 2], [], 
     [8, 2], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 1)*F.1, (F.1
+    Fx!([(2*F.1 + 1)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [4, 13], [8, 8], [12, 8], [0, 12], [14, 14], [8], [0, 6], [8, 12], [1]
+    Fx!([[4, 13], [8, 8], [12, 8], [0, 12], [14, 14], [8], [0, 6], [8, 12], [1]
 ]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 1)*F.1, (F.1
+    Fx!([(2*F.1 + 1)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [10, 5], [8], [0, 4], [8, 4], [10, 4], 
+    Fx!([[10, 5], [8], [0, 4], [8, 4], [10, 4], 
     [8, 4], [8, 6], [8, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | (2*F.1 + 1)*F.1, (F.1
+    Fx!([(2*F.1 + 1)*F.1, (F.1
         + 1)*F.1^2, 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [12, 7], [0, 4], [0, 2], [0, 4], [4, 3], 
+    Fx!([[12, 7], [0, 4], [0, 2], [0, 4], [4, 3], 
     [8], [12, 4], [8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 1)*F.1
+    Fx!([-1*F.1, (F.1 + 1)*F.1
 , 1])
-*]
-,
+*],
 [* "supercuspidal ramified", 8, 14, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [8, 9], [0, 4], [8, 6], [0, 4], [8, 13], 
+    Fx!([[8, 9], [0, 4], [8, 6], [0, 4], [8, 13], 
     [8, 8], [4, 12], [8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -1*F.1, (F.1 + 1)*F.1
+    Fx!([-1*F.1, (F.1 + 1)*F.1
 , 1])
-*]
-,
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22, 12], [16], [24, 20], [16, 16], [8, 24], [0, 16], [0, 28], [24], 
+    Fx!([[22, 12], [16], [24, 20], [16, 16], [8, 24], [0, 16], [0, 28], [24], 
     [28, 14], [16, 16], [16, 8], [8], [28, 28], [0, 8], [8], 
     [24, 24], [12, 26], [], [24, 16], [0, 8], [4, 8], [16, 24],
     [0, 16], [0, 16], [2, 8], [0, 24], [20, 4], [24, 8], [0, 20], [0, 16], [28, 28], [8, 28], [26, 28], [16, 16], [24, 8], [16, 28], [28, 14], [24, 16], [16, 20], [8, 20], [14, 14], [16, 16], [28, 12], [24],
     [12, 22], [24, 8], [16, 16], [16], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, (F.1 + 
-        1)*$.1^6, 1])
-*]
-,
+        1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 28], [0, 8], [8, 8], [0, 24], [20, 12], [8], [16, 20], [8, 8], 
+    Fx!([[6, 28], [0, 8], [8, 8], [0, 24], [20, 12], [8], [16, 20], [8, 8], 
     [2, 28], [24, 24], [0, 4], [16], [24, 16], [8, 24], [16, 4], [8, 16], [18, 10], [8], 
     [0, 12], [0, 24], [4, 28], [0, 8], [24, 20], [0, 8], [2, 14], [16, 8], [12, 8], [0, 16], [20, 6], [24, 28], [4, 28], [8, 4], [16, 9], [8, 20],
     [24], [16, 12], [20, 6], [16, 20], [], [24, 4], [8, 4], [16, 20], [0, 8], [8, 24], [8, 10], [16, 4], [0, 20], [0, 20], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, (F.1 + 
-        1)*$.1^6, 1])
-*]
-,
+        1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 16], [],
+    Fx!([[14, 16], [],
     [8, 12], [16, 24], [16, 20], [16], [24, 20], [24, 8], [20, 22], [16, 24], [24, 24], [24, 24], [4, 28], [8, 16], [8, 24], [24, 8], [24, 20], [24, 24], [8, 24], [8, 24], [8, 4],
     [16, 8], [24], [0, 8], [10, 12], [16], [20, 4], [16], [20,
     12], [], [20, 8], [0, 4], 
     [10, 28], [24], [24], [24, 4], [20, 18], [8, 28], [16, 28], [16, 20], [28, 12], [24, 4], [4, 28], [8, 12], [0, 4],
     [16, 8], [24, 24], [24, 24], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, (F.1 + 
-        1)*$.1^6, 1])
-*]
-,
+        1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 20], [0, 24], [8, 16], [16, 16], [28, 4], [8], [8, 12], [8], [18, 
+    Fx!([[14, 20], [0, 24], [8, 16], [16, 16], [28, 4], [8], [8, 12], [8], [18, 
     12], [8], [8, 12], [16, 8], [8, 16], [24], [8, 20], 
     [24, 16], [18, 26], [16, 24], [8, 4], [0, 24], [28, 28], [24, 24], [0, 4], [24, 24], [10, 10], [16, 24], [4, 12], [16], 
     [4, 30], [16, 4], [12], [24, 20], [8, 9], [8, 20], [8], [8,
     12], [12, 26], [24, 4], [8], [8, 4], [24, 20], [8, 8],
     [0, 16], [0, 24], [0, 30], [8], [16, 28], [24, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, (F.1 + 
-        1)*$.1^6, 1])
-*]
-,
+        1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22, 20], [0, 16], [24, 4], [16, 16], [24], 
+    Fx!([[22, 20], [0, 16], [24, 4], [16, 16], [24], 
     [], [0, 28], [24], [28, 6], 
     [0, 16], [16, 24], [8], [12, 20], [0, 8], [8], [24, 24], 
     [12, 2], [16, 16], [8], [0, 24], [4, 8], [0, 24], [16], 
     [0, 16], [10, 16], [], [4, 20], [24, 24], [24, 20], [16],
     [28, 28], [8, 28], [18, 28], [0, 24], [8, 24], [16, 12], [12, 6], [24, 16], [0, 20], [8, 20], [22, 14], [16, 24], [28, 20], [8], [4, 30], [8, 8], 
     [16, 8], [16], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, (F.1 + 
-        1)*$.1^6, 1])
-*]
-,
+        1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 20], [0, 24], [8, 24], [0, 24], [4, 28], [8, 16], [16, 20], [8, 8], [2, 12], [24, 24], [0, 20], [16], [24, 24], [24, 8], 
+    Fx!([[6, 20], [0, 24], [8, 24], [0, 24], [4, 28], [8, 16], [16, 20], [8, 8], [2, 12], [24, 24], [0, 20], [16], [24, 24], [24, 8], 
     [16, 4], [8, 16], [26, 18], [8, 16], [16, 28], [0, 8], [12, 28], [0, 8], [8, 4], [0, 8], 
     [18, 6], [16, 8], [28, 8], [0, 16], [4, 14], [8, 20], [20, 12], [8, 4], [16, 9], [24, 28], [8], [16, 12], [12, 30], 
     [0, 12], [], [24, 4], [0, 8],
     [0, 20], [16, 16], [24, 24], [24, 2], [0, 4], [16, 12], [0, 20], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, (F.1 + 
-        1)*$.1^6, 1])
-*]
-,
+        1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [30, 8], [16, 16], [8, 28], [16, 24], [16, 28], [16, 16], [24, 20], [24, 8], [20, 6], [0, 8], [24, 8],
+    Fx!([[30, 8], [16, 16], [8, 28], [16, 24], [16, 28], [16, 16], [24, 20], [24, 8], [20, 6], [0, 8], [24, 8],
     [24, 24], [20, 4], [24], [8, 24], [24, 8], [8, 12], [8, 24], [24, 8], [8, 8], [8, 4], 
     [16, 8], [8], [0, 8], [18, 28], [16, 8], [4, 4], [16, 16], [12, 12], [16, 16], [20, 8], [0, 4], [26, 20], [8, 24], [8], [24, 4], [4, 10], 
     [24, 20], [0, 28], [16, 20], [20, 28]
 , [8, 12], [4, 20], [24, 28], [24, 28], [], [8], [24, 24], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, (F.1 + 
-        1)*$.1^6, 1])
-*]
-,
+        1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 28], [0, 8], [8], [16, 16], [12, 20], 
+    Fx!([[14, 28], [0, 8], [8], [16, 16], [12, 20], 
     [8, 16], [8, 12], [8], [18, 12], [8, 16], [8, 28], [16, 8], [8, 8], [24, 16], [8, 20], [24, 16], [26, 2], [16, 8], [24, 4], [0, 8], [20, 28], [8, 24], [16, 4], [24, 24], [26, 18], [0, 8], [20, 28], [16], [20, 22], [16, 28],
     [28], [24, 20], [24, 25], [24, 28], [24, 16], [8, 12], [20, 2], [24, 20], [8], [8, 4], 
     [16, 24], [8], [0, 24], [16, 24], [16, 22], [24, 24], [16, 20], [24, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (3*$.1^2 + (-3*F.1 - 1)*$.1)*$.1, (F.1 + 
-        1)*$.1^6, 1])
-*]
-,
+        1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 3, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 10], [8, 20], [28, 28], [0, 18], [24, 14], [0, 28], [16, 26], [8, 12], [12, 26], [8, 24], [4, 16], [16, 24], [16, 6], [8, 12], [], [28, 4], [26, 18], [20, 
+    Fx!([[6, 10], [8, 20], [28, 28], [0, 18], [24, 14], [0, 28], [16, 26], [8, 12], [12, 26], [8, 24], [4, 16], [16, 24], [16, 6], [8, 12], [], [28, 4], [26, 18], [20, 
     28], [20], [8, 10], [8, 26], [8, 18], [22], [24], [22,
     16], [6, 4], [26, 14], [0, 22], [10, 28], [6], [16, 20], 
     [12, 8], [14, 6], [26, 6], [4, 2], [26, 12], [4, 9], [20, 6], [22, 24], [24, 14], [4, 13], [20, 24], [6, 18], [20, 24], [12, 6], [10, 23], [14, 16], [6, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22, 8], [8, 28], [28, 14], [0, 8], [0, 16], [16, 4], [4, 2], [8, 8], 
+    Fx!([[22, 8], [8, 28], [28, 14], [0, 8], [0, 16], [16, 4], [4, 2], [8, 8], 
     [16, 28], [28, 24], [20, 10], [8, 28]
 , [26, 28], [28], [28, 24], [0, 12], [28, 26], [4], 
     [18, 30], [20], [16, 18], [24, 24], [4, 12], [12, 20], [22, 12], [8, 12], [30, 20], [28], 
     [8, 22], [16, 24], [2, 4], [16, 24], [14, 20], [28, 30], [6, 24], [4], [6, 18], [28, 30], 
     [0, 2], [4, 18], [22, 22], [0, 30], [30, 29], [20, 8], [0, 30], [4, 22], [0, 4], [8, 28],
     [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 8, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [2, 28], [12, 28], [4, 18], [28, 12], [8], 
+    Fx!([[2, 28], [12, 28], [4, 18], [28, 12], [8], 
     [28, 4], [28, 22], [4, 16], [20, 24], [28, 28], [28, 22], [20, 16], [14, 24], [8, 24], [28, 28], [20, 24], [16, 6], [0, 4], [26, 2], [20, 20], [24, 22], [8, 6], [20], [8, 4], 
     [10, 6], [24, 22], [18, 12], [12, 24]
 , [12, 6], [20, 10], [14, 16], [4, 16], [30, 6], [20, 24], [14, 20], [28, 28], [30, 16], [28, 6], [0, 22], [20], 
     [6, 24], [28, 26], [22, 5], [8, 30], [12, 16], [18, 12], [24, 12], [8, 24], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22], [0, 4], [24, 18], [0, 24], [8, 24], [16, 12], [16, 10], [24],
+    Fx!([[22], [0, 4], [24, 18], [0, 24], [8, 24], [16, 12], [16, 10], [24],
     [0, 20], [12, 16], [0, 10], [8, 12], [30, 20], [28], [28, 20],
     [0, 28], [24, 22], [20, 16], [22, 10]
 , [12, 8], [8, 30], [8, 24], [12, 12], [28, 20], [22, 12], [24, 28], [6, 24], [12, 20], [12, 22], [8], [18, 20], 
     [0, 8], [10, 12], [8, 14], [2, 24], [12], [22, 14], [24, 26],
     [4, 14], [4, 30], [18, 26], [20, 30], [0, 5], [4, 16], [16, 6], [12, 18], [8, 24], [8, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 4, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [26], [24, 2], [28, 18], [28, 28], [24, 22], [28, 6], [4, 24], [20, 8], [16, 20], [4, 16], [28, 4], [4, 28], [14, 4], [28, 22], [24, 14], [12, 6], [28, 16], [28, 30], [30, 24], [4, 22], [20, 8], [14, 12], [16], 
+    Fx!([[26], [24, 2], [28, 18], [28, 28], [24, 22], [28, 6], [4, 24], [20, 8], [16, 20], [4, 16], [28, 4], [4, 28], [14, 4], [28, 22], [24, 14], [12, 6], [28, 16], [28, 30], [30, 24], [4, 22], [20, 8], [14, 12], [16], 
     [16, 14], [18, 14], [30, 8], [18, 22]
 , [14, 28], [2], [6, 18],
     [6, 20], [10], [2, 14], [12, 22], [14, 16], [14, 20], [14, 6], [14, 26], [14, 2], [4, 30], [12, 2], [2, 10], [18, 5], [10, 10], [18, 20], [24, 17], [8, 26], [14, 18], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [30, 8], [8, 28], [20, 22], [0, 8], [16, 16], [16, 4], [12, 18], [8, 8], [0, 12], [12, 8], [28, 10], [24, 28], [18, 4], [28, 16], [12, 24], [0, 12], [4, 2], [20], [2, 30], [20], [24,
+    Fx!([[30, 8], [8, 28], [20, 22], [0, 8], [16, 16], [16, 4], [12, 18], [8, 8], [0, 12], [12, 8], [28, 10], [24, 28], [18, 4], [28, 16], [12, 24], [0, 12], [4, 2], [20], [2, 30], [20], [24,
     2], [8, 24], [4, 12], [12, 20], [30, 28], [24, 4], [22, 12], [12, 16], [16, 6], [0, 24], [2, 12], [16, 24], [22, 28], [20, 22], [22, 24], [20, 16], [22, 18], [4, 30], [8, 18], [4, 26], [14, 30], [8, 6], [10, 21], [20, 24], [16, 30], [4, 30], [0, 28], [8, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 8, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [26, 16], [12, 20], [12, 14], [28, 12], [24, 24], [28, 20], [12, 18], [20, 8], [4, 16], [28, 12], [28, 26], [20, 16], [6, 4], [24, 8], [12, 20], [4, 24], [8, 18], [24, 28], [2, 26], [20, 4], [0, 2], [24, 30], [20, 16], [16, 4], [18, 6], [24, 10], [18, 8], [20], [12, 10], 
+    Fx!([[26, 16], [12, 20], [12, 14], [28, 12], [24, 24], [28, 20], [12, 18], [20, 8], [4, 16], [28, 12], [28, 26], [20, 16], [6, 4], [24, 8], [12, 20], [4, 24], [8, 18], [24, 28], [2, 26], [20, 4], [0, 2], [24, 30], [20, 16], [16, 4], [18, 6], [24, 10], [18, 8], [20], [12, 10], 
     [12, 6], [22, 16], [12], [6, 6], [12, 8], [6, 28], [28, 28], [30, 28], [28, 18], [16, 26], [12, 16], [30], [4, 14], 
     [14, 11], [8, 30], [28, 28], [30, 4], [16, 4], [8, 24], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [30, 24], [0, 4], [16, 2], [0, 24], [24, 8], [16, 12], [8, 18], [24], 
+    Fx!([[30, 24], [0, 4], [16, 2], [0, 24], [24, 8], [16, 12], [8, 18], [24], 
     [16, 20], [28], [24, 2], [24, 28], [6, 4], [28, 16], [28, 4], [0, 28], [0, 22], [4, 16], [22, 26], [12, 8], [0, 22], [24, 24], [12, 28], [28, 20], [30, 4], [8, 20], [14, 24], [28, 4], [20, 14], [24, 16], [18, 28], [0, 8], [2, 28], [16, 14], [18, 8], [28], 
     [6, 14], [0, 2], [12, 22], [20, 6], [10, 26], [12, 30], [20, 9], [4], [0, 22], [28, 10], 
     [24], [8, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (F.1 + 1)*$.1, (F.1 + 1)*$.1, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 9, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [30, 14], [16, 16], [16, 16], [0, 16], [0, 8], [0, 8], [], [8, 24], [8, 20], [0, 16], [24], [16, 28], 
+    Fx!([[30, 14], [16, 16], [16, 16], [0, 16], [0, 8], [0, 8], [], [8, 24], [8, 20], [0, 16], [24], [16, 28], 
     [16, 20], [16, 16], [0, 24], [16, 16]
 , [0, 12], [16, 16], [16, 24], [16, 8], [20, 4], [16, 16], [0, 24], [24], [16, 6], 
     [16], [0, 16], [16, 8], [24, 24], [16], [16], [0, 12], [20,
     4], [0, 24], [16, 12], [28, 8], [8, 28], [0, 16], [0, 20], [16, 24], [12, 24], [8], 
     [16], [8, 8], [16, 10], [16, 16], [], [0, 20], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [-303507056551806523661631609590, 
+    Fx!([[-303507056551806523661631609590, 
     -399820625552127793160545429342], 
     [355626516106128655948370488000, 426863141631031229689243718688], [532591353266546948799757025248, 99184834902140474076324929176], [-420318782418428759218967628160, 
     -76353939229511969895701192624], 
@@ -905,31 +786,29 @@ data := [*
     556995156941920850551430066412], 
     [-30995377518546714429220600060, -56229027290425057405214509212], [-210239284682070477532715081992, 
     -458823472515593261553573209976], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 9, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [26, 18], [16], [16], [0, 16], [16, 24], 
+    Fx!([[26, 18], [16], [16], [0, 16], [16, 24], 
     [24, 16], [8, 24], [24], [24, 20], [16, 16], [0, 24], [16, 4], [16, 12], [8], [16], [16,
     16], [24, 20], [16, 20], [24, 24], [8, 8], [12, 4], [8, 16],
     [24, 20], [24, 4], [28, 2], [16, 16], [24], [0, 8], [24, 16],
     [24, 4], [8, 12], [16, 28], [12, 24], [0, 24], [16, 8], [28, 28], [0, 12], [16, 28], [8, 12], [], [12, 8], [28, 20], [8, 20]
 , [24, 20], [12, 18], [16, 28], [12, 24], [28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [76785977712693905711333178394, 
+    Fx!([[76785977712693905711333178394, 
     -114522114776107654808317106006], 
     [-429569115345241704877379124512, -129690624392011449956066180320], [417851289647771901008954934048, 
     -336560144842064715012319993256], 
@@ -976,29 +855,27 @@ data := [*
     -554076345619608143713585337604], 
     [162525129522511156204669932500, 489818290337977268331948903416], [362793698867465405522521801784, 
     -474211381130228606402700099640], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 9, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 14], [16, 16], [16], [0, 16], [8, 8], 
+    Fx!([[14, 14], [16, 16], [16], [0, 16], [8, 8], 
     [24, 24], [16, 16], [8, 8], [16, 20], [0, 16], [8, 16], [0, 12], [16, 12], [0, 16], [], [16], [24, 28], [], [0, 24], [16], [20, 28], [], [16, 16], [8, 
     16], [8, 30], [0, 16], [16, 24], [16, 8], [16, 4], [24, 4], [16, 16], [0, 12], [20, 16], [0, 24], [0, 4], [28, 24], [0, 12], [16, 24], [8, 4], [16, 8], [20, 12], [8, 24], [0, 24], [16, 8], [16, 2], [16], [0, 16], [0, 20], 
     [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [277544520430727445631777030170, 
+    Fx!([[277544520430727445631777030170, 
     -366001526931907606572480028038], 
     [-65331131302574582535639351296, -568928197026922055753078954608], [-123982627587899825052780203968, 
     535702470363048521174599734296], 
@@ -1044,31 +921,29 @@ data := [*
     [-147208817872571796904816152672, 543860695098941772579768800556], [-468941004733870954986064021692, 
     -323033337671212477443681280836], 
     [-210239284682070477532715081992, -458823472515593261553573209976], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 9, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [26, 10], [16, 16], [16], [0, 16], [24, 16], 
+    Fx!([[26, 10], [16, 16], [16], [0, 16], [24, 16], 
     [0, 16], [24, 8], [24, 16], [0, 28], [0, 16], [], [0, 28], [0, 4], [24, 8], [0, 24], [16], 
     [24, 12], [16, 20], [8, 16], [24, 16]
 , [28, 20], [24], [8, 12], [24, 4], [12, 26], [16, 16], [8, 8], [0, 24], [0, 20],
     [24, 8], [8, 28], [16, 28], [28, 28], [0, 16], [8, 8], [4, 4], [24, 4], [8, 28], [16, 28], [0, 16], [4, 8], [28, 20], [0, 28], [16, 4], [4, 2],
     [0, 28], [12, 8], [28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [146831232091989604993960837402, 
+    Fx!([[146831232091989604993960837402, 
     328265065177967481319805615970], 
     [-370573665119126231164802754624, -17938725730635766630837741648], [97124056903102780122050361152, 330563238589243456442128132536], [-121429790753088627087837420704, 
     -400829190259126952459523499504], 
@@ -1114,142 +989,132 @@ data := [*
     148128963546458508178303537740], 
     [-109320880266797021617081254620, -70069214467356094160629037152], [362793698867465405522521801784, 
     -474211381130228606402700099640], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | $.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 20], [16, 16], [0, 12], [], [24, 28], [0, 16]
+    Fx!([[6, 20], [16, 16], [0, 12], [], [24, 28], [0, 16]
 , [8, 12], [24, 24], [4, 6], [16], [8, 4], [], [4, 20], [0, 24], [24, 4], [8, 16], [24, 26], [0, 8], [0, 16], [0, 16], [20, 12], [16, 24], [24, 8], [16, 16], [18, 28], [16, 8], [4, 24], [8, 8],
     [12, 28], [0, 16], [20, 12], [0, 4], [6, 24], [16, 16], [20, 28], [0, 16], [8, 6], [24, 16], [28, 20], [8, 12], [14, 24], [8, 24], [12, 4], [16, 24], [4, 26], [8, 16], [16, 4], [24], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 16], [16], [24, 12], [16, 16], [8], 
+    Fx!([[14, 16], [16], [24, 12], [16, 16], [8], 
     [0, 8], [24, 4], [8, 16], [8, 2], [8, 8], [0, 28], [0, 8], 
     [20, 28], [8, 24], [24, 4], [0, 24], [6], [16], [24, 24], [24]
 , [0, 24], [], [8, 20], [16, 
     16], [26, 22], [8, 24], [20, 12], [0, 16], [8], [8, 8], 
     [12, 4], [8, 12], [12, 16], [0, 12], [16, 24], [24, 24], [12, 6], [16, 4], [0, 28], [16, 28], [26], [8, 28], [12, 28], 
     [24, 28], [4, 22], [8, 28], [28, 16], [16, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [30, 8], [16, 8], [24, 4], [16, 8], [24], 
+    Fx!([[30, 8], [16, 8], [24, 4], [16, 8], [24], 
     [0, 8], [16, 4], [24, 16], [4, 26], [], [16, 12], [], [28, 4], [8, 16], [16, 12], [8, 16], [12, 16], [24, 16], [16, 16], [8, 24], [8, 12], [], [0, 24], [8], [10, 12], [8, 24],
     [4, 28], [0, 24], [0, 20], [8, 16], [28], [24, 4], [10, 16], 
     [16], [28, 20], [], [0, 26], 
     [24, 4], [12, 8], [16, 12], [8, 22], [16, 4], [4, 28], [24, 28], [12, 16], [16], [24, 8], 
     [24, 20], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6], [16, 16], [0, 28], [16, 24], [16, 24], [16], [16, 20], [8, 16], 
+    Fx!([[6], [16, 16], [0, 28], [16, 24], [16, 24], [16], [16, 20], [8, 16], 
     [8, 10], [8, 16], [24, 20], [0, 8], [28, 28], [8, 16], [0, 28], [0, 16], [22, 8], [16, 24], [8, 8], [0, 24], [24, 12], [8, 24], [16, 20], [8], 
     [10, 26], [8, 24], [12, 8], [0, 8], [16], [8, 8], [20], [0, 
     28], [12, 4], [8, 12], [0, 16], [16, 8], [20, 22], [0, 12], [0, 20], [16, 12], [26, 12], [0, 20], [4, 8], [16, 24], [16, 6], [0, 16], [4, 12], [16, 8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 28], [0, 16], [0, 12], [], [8, 4], [16, 16], [8, 12], [24, 24], [20, 30], [], [8, 20], [], [4, 12], [0, 8], [24, 4], [8, 16],
+    Fx!([[6, 28], [0, 16], [0, 12], [], [8, 4], [16, 16], [8, 12], [24, 24], [20, 30], [], [8, 20], [], [4, 12], [0, 8], [24, 4], [8, 16],
     [8, 2], [16, 8], [16], [], 
     [20, 4], [0, 8], [8, 8], [16, 16], [10, 12], [0, 16], [4, 24], [8, 24], [4, 28], [0, 8],
     [20, 12], [0, 4], [14, 8], [16, 8], [4, 28], [], [8, 6], [8], [12, 20], [8, 12], [22], 
     [8, 16], [28, 12], [0, 24], [20, 10], [8], [16, 28], [24], 
     [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [30, 8], [0, 16], [24, 28], [16, 16], [24, 8], [0, 24], [24, 20], [8, 16], [8, 18], [8, 24], [0, 12], [0, 8], [4, 4], [24, 24],
+    Fx!([[30, 8], [0, 16], [24, 28], [16, 16], [24, 8], [0, 24], [24, 20], [8, 16], [8, 18], [8, 24], [0, 12], [0, 8], [4, 4], [24, 24],
     [24, 4], [0, 24], [6, 8], [],
     [8, 24], [24, 16], [16, 8], [16], [24, 4], [16, 16], [18, 6], [8], [20, 28], [], [0, 8], [8, 24], [12, 4], [8, 12], [4], [16, 4], [16, 24], 
     [24, 8], [4, 14], [0, 28], [0, 12], [16, 28], [2, 16], [24, 12], [12, 4], [8, 12], [12, 14], [24, 20], [28, 8], [16, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 16], [0, 24], [24, 4], [16, 8], [24, 8], [16, 24], [16, 4], [24, 16], [20, 26], [16, 16], [16, 12], [], [28, 12], [24], [16, 12], [8, 16], [12, 24], [24, 16], [0, 16], [8, 8], [8, 20],
+    Fx!([[14, 16], [0, 24], [24, 4], [16, 8], [24, 8], [16, 24], [16, 4], [24, 16], [20, 26], [16, 16], [16, 12], [], [28, 12], [24], [16, 12], [8, 16], [12, 24], [24, 16], [0, 16], [8, 8], [8, 20],
     [], [16, 8], [8], [18, 4], 
     [8, 16], [4, 28], [0, 8], [24, 4], [24, 8], [28], [24, 4], 
     [10, 8], [16, 24], [28, 4], [0, 16], [16, 26], [8, 28], [28, 8], [16, 12], [0, 22], [16, 4], [4, 4], [8, 28], [12], 
     [0, 8], [8, 16], [24, 20], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22, 8], [], 
+    Fx!([[22, 8], [], 
     [0, 12], [16, 24], [0, 16], [16], [16, 4], [8, 16], [8, 10], [8, 16], [24, 4], [0, 8],
     [12, 20], [8], [0, 28], [0, 16], [6, 16], [16, 24], [24, 24], [0, 8], [8, 12], [24, 8],
     [0, 20], [8], [2, 26], [24, 16], [12, 24], [0, 24], [24, 24], [8, 8], [20], [0, 28], 
     [4, 4], [24, 20], [], [16, 8], [28, 14], [16, 28], [0, 4], [16, 12], [18, 20], [0, 28], [20], [0, 8], [24, 14], 
     [], [20, 20], [16, 8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 4)*$.1^2 + (-F.1 - 1)*$.1 + (2*F.1 + 3))*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 9, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 14], [16, 16], [], [0, 16], [0, 8], [0, 24], [], [8, 24], [8, 12], [0, 16], [8, 16], [0, 20], [16, 28], [16, 16], [0, 16], [16, 16], [16, 20], [16, 16], [16, 24], [16, 24], [20, 12], [16, 16], [16, 24], [24, 16], [0, 18], [16], [0, 8], [16, 24], 
+    Fx!([[14, 14], [16, 16], [], [0, 16], [0, 8], [0, 24], [], [8, 24], [8, 12], [0, 16], [8, 16], [0, 20], [16, 28], [16, 16], [0, 16], [16, 16], [16, 20], [16, 16], [16, 24], [16, 24], [20, 12], [16, 16], [16, 24], [24, 16], [0, 18], [16], [0, 8], [16, 24], 
     [8, 8], [16], [16, 16], [0, 4], [4, 28], [0, 8], [0, 12],
     [12], [8, 20], [0, 16], [24, 28], [16, 24], [12], [8, 16], 
     [0, 16], [8, 24], [8, 14], [16, 16], [0, 24], [0, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [393608177149412080579049112182, 
+    Fx!([[393608177149412080579049112182, 
     -597603316954828641667120429522], 
     [331763158458366689218461955744, 485761326456883010628241905128], [-467576787402796139535240386352, 
     -243799616229041383069203168840], 
@@ -1298,31 +1163,29 @@ data := [*
     133132220045616018341681163012], 
     [-600142037822538778308687846772, -556331379208536005141369549612], [-474712376197493543101902001160, 
     339916984295338558880293426472], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 9, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [26, 2], [16, 16], [16, 16], [0, 16], [24], 
+    Fx!([[26, 2], [16, 16], [16, 16], [0, 16], [24], 
     [0, 16], [24, 24], [24], [16, 4], [0, 16], [16, 16], [16, 20], [0, 28], [24, 24], [16], 
     [16], [24, 4], [16, 28], [8], [24], [28, 20], [24, 16],
     [24, 4], [8, 28], [12, 22], [16, 16], [24, 24], [0, 8], [0, 28], [24, 24], [24, 4], [16, 20], [28, 28], [0, 16], [24], 
     [4, 4], [8, 12], [24, 4], [8, 20], [], [20, 8], [28, 28], [0, 20]
 , [16, 28], [4, 14], [0, 4], [28], [28, 8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [261503391421578735504968382742, 
+    Fx!([[261503391421578735504968382742, 
     502087502348184878713763391198], 
     [-296725127709680738435612022576, 536254067031550556200459296792], [532539043670315547870971080576, 553997195821051876182740991320]
 , [-325075108986675894845342196992, 
@@ -1369,30 +1232,28 @@ data := [*
     [507751944994001400867842879952, -372561157702697453617160316124], [-438207211123702788432710001860, 
     199345107476208458067660610960], 
     [384591559050319454541746362424, -292175201196363914731666799768], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 9, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [30, 14], [16, 16], [], [0, 16], [24, 24], [8, 8], [16, 16], [8, 8], [0, 28], [0, 16], [24], [16, 4], 
+    Fx!([[30, 14], [16, 16], [], [0, 16], [24, 24], [8, 8], [16, 16], [8, 8], [0, 28], [0, 16], [24], [16, 4], 
     [16, 4], [0, 16], [0, 24], [16], [24, 20], [], [0, 24], [16], [4, 20], [], [0, 16], [8], [24, 26], [0, 16], [], [16, 
     24], [16, 20], [24, 4], [16], [0, 4], [4, 8], [0, 8], 
     [16, 20], [12, 16], [0, 4], [16, 24], [16, 12], [16, 8], [4, 20], [8, 24], [16, 8], [16, 24], [24, 14], [16], [0, 8], 
     [0, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [36070150276329478243135441494, 
+    Fx!([[36070150276329478243135441494, 
     -222867875741636902796342672330], 
     [419662782472070576717901487104, 605986929713949932280254789336], [-164883186711959778937423162896, 
     -162222814513542256274271333768], 
@@ -1439,29 +1300,27 @@ data := [*
     [-542742066973148913334185340352, -10316241910678859513314784764], [-283366008291683089496020223636, 
     567996277027897430136758710908], 
     [-474712376197493543101902001160, 339916984295338558880293426472], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 9, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [26, 26], [16], [16], [0, 16], [16, 24], 
+    Fx!([[26, 26], [16], [16], [0, 16], [16, 24], 
     [24], [8, 8], [24, 16], [24, 12], [16, 16], [16, 24], [0, 12], [16, 20], [8], [0, 24], 
     [16, 16], [24, 28], [16, 28], [24, 
     24], [8, 8], [28, 20], [8], [8, 28], [8, 28], [28, 30], [16, 16], [24, 16], [0, 24], [8, 16], [24, 28], [24, 20], [16, 20], [28, 24], [0, 8], [], [28, 12], [16, 4], [0, 4], [0, 20], [0, 16], [28, 24], [28, 12], [8, 28], [24, 28], [28, 6], [16, 4], [28, 16], [28, 8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [-134770250827911217827527420762, 
+    Fx!([[-134770250827911217827527420762, 
     -509336678453948895443857867690], 
     [-325009621337952932300387854448, 89582994844722176313209204296], [353576133156602872368905429792, 597892984239208155330048139416]
 , [505903378523797366272146428064, 
@@ -1508,16 +1367,15 @@ data := [*
     -557867162482788390501212535532], 
     [-527035499714803959951083378612, 492928771270026969244208677128], [384591559050319454541746362424, 
     -292175201196363914731666799768], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | 3*$.1, (F.1 + 1)*$.1^4, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 7, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [18, 18], [0, 20], [0, 28], [0, 24], [20], 
+    Fx!([[18, 18], [0, 20], [0, 28], [0, 24], [20], 
     [16, 8], [24, 28], [], [0, 8], [8], [20, 8], [0, 8], 
     [28], [8, 4], [0, 8], [0, 16], [28], [24, 20], [16, 4], 
     [16, 8], [0, 20], [16, 4], [20], [16, 16], [12, 10], [4], 
@@ -1526,16 +1384,15 @@ data := [*
     [28, 6], [24], [24], [4, 20], [0, 24], [16, 16], [12, 18], [4], [0, 8], [0, 16], 
     [12, 24], [20, 28], [4, 10], 
     [], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [-4395132138785996910862619182, 
+    Fx!([[-4395132138785996910862619182, 
     -269483968930817754346760444926], 
     [-73034863723902805537531360440, -491894492591014818754152798696], [-58692448981988669434614427400, 
     -207126806706341077947901857388], 
@@ -1581,31 +1438,29 @@ data := [*
     -490726560996696183077629047672], 
     [-372916168469141548286909361080, 416065316849939362663435157180], [296769531164423088343434930884, 80361096589798503537563125992], [-196313674962279585856608394904, 
     439786656758452492784345844464], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 8, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22, 14], [24, 20], [8, 20], [0, 16], [16, 4], [0, 16], [16, 20], [16, 28], [0, 12], [16, 8], [16, 24], [0, 24], [4, 20], [8], 
+    Fx!([[22, 14], [24, 20], [8, 20], [0, 16], [16, 4], [0, 16], [16, 20], [16, 28], [0, 12], [16, 8], [16, 24], [0, 24], [4, 20], [8], 
     [0, 8], [8, 16], [4, 28], [16, 16], [8], [8, 8], [0, 16], 
     [24, 12], [4, 4], [0, 20], [12, 10], [4, 12], [20, 28], [24], 
     [12, 8], [0, 16], [20, 12], [4, 28], [28, 28], [], [24, 24], [0, 8]
 , [12], [0, 12], [0, 8], 
     [16, 4], [24, 22], [24, 8], [24, 28], [16, 12], [0, 28], [20, 12], [20, 18], [4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [97179721347928341939422666706, 
+    Fx!([[97179721347928341939422666706, 
     -182975962339052632619594190974], 
     [616423120359498021628900896448, -520299929551050679690731504224], [-299038187041854604864492466104, 
     -418228835029625149173010891676], 
@@ -1653,27 +1508,25 @@ data := [*
     [532100912216282346155455142552, 479475600487656107319008056456], [432640597491989782687473869388, 419208574292593586227565020572]
 , [-238598229279484462010323883136, 
     118316769627035975998551516572], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 7, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 14], [16, 12], [8, 20], [16, 8], [20, 16], [16, 24], [0, 20], [], [0, 4], [16, 8], [4, 12], [16, 8], [20, 28], [24, 4], [16, 16], [0, 16], [12, 20], [16, 12], [24, 8], [0, 16], [16, 4], [24, 28], [4, 4], [16, 16], [20, 10], [12, 4], [28, 4], [0, 24], [4, 30], [8, 24], [20, 8], [16, 8], [20, 8], [8, 8], [12, 18], [8], 
+    Fx!([[6, 14], [16, 12], [8, 20], [16, 8], [20, 16], [16, 24], [0, 20], [], [0, 4], [16, 8], [4, 12], [16, 8], [20, 28], [24, 4], [16, 16], [0, 16], [12, 20], [16, 12], [24, 8], [0, 16], [16, 4], [24, 28], [4, 4], [16, 16], [20, 10], [12, 4], [28, 4], [0, 24], [4, 30], [8, 24], [20, 8], [16, 8], [20, 8], [8, 8], [12, 18], [8], 
     [16, 28], [4, 16], [16], [16], [16, 2], [28, 8], [12, 8], [24, 24], [28, 4], [4, 12], [12, 18], [], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [196228392005135341352204646578, 
+    Fx!([[196228392005135341352204646578, 
     -620031803327477525335484540342], 
     [311752437051598683382468557048, 328903909691064288425657499160], [340959961109214017445814704840, 
     -579077843797969326640232782076], 
@@ -1722,31 +1575,29 @@ data := [*
 , [-605372013979619401064498319476, 
     -259573939307391293965381400264], 
     [-196313674962279585856608394904, 439786656758452492784345844464], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 8, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 22], [16, 12], [24, 12], [16], [8, 28], 
+    Fx!([[6, 22], [16, 12], [24, 12], [16], [8, 28], 
     [16, 16], [16, 28], [0, 28], [0, 4], [16, 24], [8], [16], [28,
     4], [], [16, 16], [8], [12], [16, 24], [16, 8], [], [0, 16]
 , [24, 28], [12, 20], [16, 4], [28, 22], [12, 8], [4, 20], [24, 8], [20, 12], [0, 16], [4, 4], [4, 28], [28, 4],
     [], [0, 28], [8], [4, 20], 
     [0, 8], [0, 24], [16, 4], [4, 30], [0, 16], [24, 8], [8, 24], [0, 20], [12, 4], [4, 30], [4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [527268688373079247661149323874, 
+    Fx!([[527268688373079247661149323874, 
     200391450062249669914074118890], 
     [-50469121398454298281969274112, -555625910225795302557563232720], [-3610531251607502075038190632, 44974960217652236941519929060], [-198898469442439827447437186496, 
     -382585688574229053028738251864], 
@@ -1792,267 +1643,249 @@ data := [*
     [-26715840163865890034399498200, 531101820970482208297997161808], [-508214468919547935799220986700, 
     -205087786788804212840747287340], 
     [-238598229279484462010323883136, 118316769627035975998551516572], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((F.1 + 2)*$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22], [0, 16], [16, 20], [0, 8], [24, 28], [0, 16], [8, 28], [24, 24], [24, 10], [0, 16], [16, 16], [24, 16], [4, 4], [16, 24], [0, 20], [8, 8], [16, 26], [16, 16], [16, 8], [8, 24], [4], [16, 24], [8, 20], 
+    Fx!([[22], [0, 16], [16, 20], [0, 8], [24, 28], [0, 16], [8, 28], [24, 24], [24, 10], [0, 16], [16, 16], [24, 16], [4, 4], [16, 24], [0, 20], [8, 8], [16, 26], [16, 16], [16, 8], [8, 24], [4], [16, 24], [8, 20], 
     [16], [2, 20], [0, 16], [20, 12], [16, 16], [12, 28], [0, 16], [28], [8, 4], [22, 12], 
     [0, 8], [], [8, 12], [4, 14],
     [8], [20, 4], [16, 28], [10, 22], [16, 24], [28, 12], [8, 12], [12, 30], [24], [28, 16],
     [16, 24], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-2*F.1 - 1)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 2))*$.1 + 
-        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22, 8], [16], [16, 8], [0, 16], [28, 20], [24], [8, 12], [24], [2, 
+    Fx!([[22, 8], [16], [16, 8], [0, 16], [28, 20], [24], [8, 12], [24], [2, 
     24], [24, 24], [], [16], [0, 
     16], [8, 16], [8, 8], [24, 8], [2, 30], [0, 16], [16, 4], [24, 16], [24, 20], [], [16, 
     16], [8, 24], [10, 10], [8, 8], [28, 20], [0, 24], [8, 10], [16, 28], [12, 20], [0, 12], [10, 25], [8, 12], [28], 
     [8, 20], [16, 22], [24, 4], [24, 20], [16, 12], [8, 18], [24, 16], [4, 12], [16, 28], [4, 18], [0, 4], [16, 20], [16, 20], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-2*F.1 - 1)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 2))*$.1 + 
-        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 28], [16, 8], [8, 28], [16, 16], [16, 16], [16, 24], [0, 28], [8, 24], [16, 30], [16], [16, 16],
+    Fx!([[14, 28], [16, 8], [8, 28], [16, 16], [16, 16], [16, 24], [0, 28], [8, 24], [16, 30], [16], [16, 16],
     [8, 8], [12, 20], [8], [8, 20], [24], [8, 16], [24, 8], 
     [8], [16], [16, 12], [16, 16], [24, 4], [16], [26, 16], 
     [24], [12, 8], [24, 8], [8, 28], [24], [4, 12], [24, 4], 
     [18, 24], [16, 24], [8, 28], [0, 28], [20, 26], [0, 20], [20, 8], [0, 20], [8], [16, 4], 
     [28, 16], [8, 16], [20, 28], [0, 16], [4], [0, 8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-2*F.1 - 1)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 2))*$.1 + 
-        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 24], [16], [16, 24], [0, 24], [4, 4], [8, 16], [0, 12], [24, 16], [18, 16], [24, 24], [0, 8], [0, 8], [], [8, 8], [24, 24], [24, 24], [26, 30], [24, 24], [24, 20], [24, 8], [16, 28], [8, 24], [16, 8], [16, 8], [10, 14], [24, 8], [12, 16], [], [16, 2], [8, 20], [4, 24], [24, 12], [2, 1], [16, 20], [4, 28], [16, 4], [8, 10], [0, 12], [24, 12], [16, 12], [8, 2], [16, 28], [20, 24], [24, 28], [20, 6], [24, 24], [16, 20], [0, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([[14, 24], [16], [16, 24], [0, 24], [4, 4], [8, 16], [0, 12], [24, 16], [18, 16], [24, 24], [0, 8], [0, 8], [], [8, 8], [24, 24], [24, 24], [26, 30], [24, 24], [24, 20], [24, 8], [16, 28], [8, 24], [16, 8], [16, 8], [10, 14], [24, 8], [12, 16], [], [16, 2], [8, 20], [4, 24], [24, 12], [2, 1], [16, 20], [4, 28], [16, 4], [8, 10], [0, 12], [24, 12], [16, 12], [8, 2], [16, 28], [20, 24], [24, 28], [20, 6], [24, 24], [16, 20], [0, 4], [1]]),
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-2*F.1 - 1)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 2))*$.1 + 
-        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22, 8], [16, 16], [16, 20], [0, 8], [8, 4],
+    Fx!([[22, 8], [16, 16], [16, 20], [0, 8], [8, 4],
     [], [8, 28], [24, 24], [8, 18], [16, 16], [16], [24, 16],
     [20, 28], [0, 24], [0, 4], [8, 8], [0, 2], [0, 16], [0, 8], 
     [8, 8], [4], [16, 24], [24, 20], [16], [26, 12], [0, 8], 
     [20, 12], [16], [20, 4], [16], [28], [8, 4], [14, 4], 
     [0, 16], [16, 16], [8, 28], [4, 22], [8, 8], [20, 20], [16, 28], [18, 14], [16, 16], [12, 20], [24, 28], [20, 14], [8, 24], [28, 24], [16, 24], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-2*F.1 - 1)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 2))*$.1 + 
-        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22], [16], [16, 8], [0, 16], [12, 20], [24], [8, 12], [24], [2, 
+    Fx!([[22], [16], [16, 8], [0, 16], [12, 20], [24], [8, 12], [24], [2, 
     24], [24, 8], [], [16], [0, 
     24], [24], [8, 24], [24, 8], [10, 30], [], [0, 20], [24], [16, 28], [0, 16], [], [8, 24]
 , [10, 26], [24, 8], [12, 20], [0, 24], [8, 18], [16, 4], [28, 20], [0, 12], [18, 17], [8, 4], [12], [8, 20], 
     [8, 6], [8, 28], [24, 4], [16, 12], [16, 22], [8, 24], [20, 20], [0, 28], [20, 26], [0, 20], [0, 28], [16, 20], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-2*F.1 - 1)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 2))*$.1 + 
-        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [30, 20], [0, 24], [8, 28], [16, 16], [16, 8], [16, 8], [0, 28], [8, 24], [0, 30], [], [16, 16], [8, 8], [28, 28], [8], [8, 4], 
+    Fx!([[30, 20], [0, 24], [8, 28], [16, 16], [16, 8], [16, 8], [0, 28], [8, 24], [0, 30], [], [16, 16], [8, 8], [28, 28], [8], [8, 4], 
     [24], [24, 24], [8, 24], [24], [16, 16], [16, 28], [0, 16], [8, 20], [16], [18, 16], 
     [8, 24], [12, 24], [24, 24], [16, 20]
 , [8], [4, 12], [24, 4], 
     [18, 16], [0, 16], [8, 28], [0, 28], [20, 18], [16, 4], [20, 8], [0, 20], [16, 8], [0, 12], [12, 24], [24, 16], [28, 12], [], [20, 24], [0, 8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-2*F.1 - 1)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 2))*$.1 + 
-        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14], [16, 16], [16, 24], [0, 24], [20, 4], [8, 16], [0, 12], [24, 16], [18], [24, 24], [0, 8], 
+    Fx!([[14], [16, 16], [16, 24], [0, 24], [20, 4], [8, 16], [0, 12], [24, 16], [18], [24, 24], [0, 8], 
     [0, 8], [0, 24], [8, 8], [24, 8], [24, 24], [2, 30], [24, 8], [8, 20], [24, 24], [24, 20], [24, 8], [0, 8], [16, 8],
     [10, 14], [8, 24], [28], [], 
     [16, 26], [24, 28], [20, 8], [24, 12]
 , [26, 9], [16, 12], [20, 28], [16, 4], [16, 26], [0, 28], [24, 28], [16, 12], [16, 22], [0, 12], [20, 16], [8, 12], [4, 14], [8], [16, 28], 
     [0, 4], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-2*F.1 - 1)*$.1^2 + ((2*F.1 + 2)*$.1 + (2*F.1 + 2))*$.1 + 
-        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+        (-3*F.1 - 3)*$.1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 16], [0, 16], [8, 20], [16, 24], [16, 16], [], [0, 20], [8, 16], [16, 2], [], [8, 28], [0, 24], [12, 
+    Fx!([[6, 16], [0, 16], [8, 20], [16, 24], [16, 16], [], [0, 20], [8, 16], [16, 2], [], [8, 28], [0, 24], [12, 
     12], [16, 8], [24, 24], [24], [20, 10], [0, 24], [8, 24], [24, 24], [20, 16], [16, 8], [0, 16], [16], [2], 
     [], [4], [16, 24], [8, 12], 
     [16, 16], [4, 24], [0, 12], [2, 16], [16, 24], [20], [24, 16],
     [24, 30], [8], [8, 28], [16, 12], [30], [24, 16], [20, 4], 
     [8, 4], [0, 14], [8, 8], [24, 8], [8, 8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [30, 20], [16, 24], [24, 12], [16, 8], [16, 12], [16], [0, 12], [8, 16], 
+    Fx!([[30, 20], [16, 24], [24, 12], [16, 8], [16, 12], [16], [0, 12], [8, 16], 
     [4, 26], [24, 16], [0, 12], 
     [], [12, 20], [24, 24], [8, 24], [], [22, 24], [0, 24], [24, 
     20], [24, 8], [24, 24], [0, 16], [16, 4], [24], [6, 18], 
     [16], [28, 28], [8, 8], [4, 20], [16, 16], [4, 20], [8, 20], [12, 12], [8, 28], [0, 28], [8, 8], [24, 22], [0, 20], [28, 20], [24, 12], [18, 4], [16, 28], [0, 4], [16, 20], [16, 6], [8, 20], [], [16], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [30, 12], [16, 16], [24, 4], [16], [0, 20], 
+    Fx!([[30, 12], [16, 16], [24, 4], [16], [0, 20], 
     [0, 8], [8, 20], [24], [0, 10], [16, 8], [24, 4], [16, 8], [4, 12], [8, 24], [24, 24], [8, 8], [28, 4], [24, 24], [16, 16], [0, 8], [24, 24], [0, 16], [8, 8], [24, 8],
     [2, 24], [0, 24], [12, 24], [24, 24], [28, 20], [8, 8], [28, 20], [0, 4], [10, 8], [8, 16],
     [20, 28], [8, 8], [0, 18], [24, 4], [16, 4], [0, 12], [24, 2], [0, 4], [28, 16], [], [28, 20]
 , [8, 16], [0, 16], [8, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [22, 4], [0, 8], [16, 28], [], [24, 4], [16, 8]
+    Fx!([[22, 4], [0, 8], [16, 28], [], [24, 4], [16, 8]
 , [8, 4], [24, 24], [28, 10], [24, 16], [8, 28], [16, 8], [20, 28], [8], [8], [0, 
     16], [14, 8], [16, 16], [0, 28], [0, 16], [8, 4], [8], [8,
     28], [16, 24], [14, 14], [16], [4], [8, 8], [28, 4], 
     [16, 24], [12], [24, 4], [20, 28], [8, 12], [0, 12], [24, 16], [24, 14], [16, 28], [4], 
     [8, 20], [18, 24], [0, 4], [0, 28], [24, 24], [28, 22], [16],
     [16, 16], [16, 20], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 24], [16], [8, 4], [16, 24], [0, 24], [16, 16], [0, 20], [8, 16], [16, 10], [16], [8, 28], 
+    Fx!([[6, 24], [16], [8, 4], [16, 24], [0, 24], [16, 16], [0, 20], [8, 16], [16, 10], [16], [8, 28], 
     [0, 24], [12, 20], [0, 8], [24, 24], [24], [20, 18], [16, 8], 
     [24, 24], [24, 8], [20, 8], [16, 24], [16, 16], [16], [26, 16], [16, 24], [20, 16], [16, 8], [16, 4], [16, 24], [4, 24], [0, 12], [10, 24], [0, 16], [20, 16], [24], [8, 30], 
     [8, 24], [24, 12], [16, 12], [6], [24, 24], [20, 12], [24, 20], [16, 30], [24], [8], [8, 
     8], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 28], [0, 8], [24, 12], [16, 8], [0, 4], [16], [0, 28], [8, 16], 
+    Fx!([[14, 28], [0, 8], [24, 12], [16, 8], [0, 4], [16], [0, 28], [8, 16], 
     [20, 10], [24, 16], [0, 28], 
     [], [28, 12], [8, 24], [8, 24], [], [6], [16, 8], [8, 20], [24, 24], [8, 8], [16], 
     [0, 4], [24], [14, 2], [0, 24], [12, 28], [8, 24], [28, 4], [0, 16], [4, 20], [8, 20], [4, 12], [8, 20], [16, 28], [8, 8], [0, 22], [16, 12], [28, 20], [24, 12], [10, 20], [0, 12], [16, 12], [0, 4], [24, 22], [24, 28], [0, 8], [16], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 20], [],
+    Fx!([[14, 20], [],
     [24, 20], [16], [0, 12], [16, 8], [8, 20], [24], [0, 26], 
     [0, 8], [24, 4], [16, 8], [4, 4], [8, 8], [24, 24], [8, 8],
     [28, 12], [24, 8], [], [0, 24], [24, 16], [16, 16], [24, 24], [24, 8], [10], [16], [28,
     8], [24, 8], [4, 12], [24], [28, 20], [0, 4], [26], 
     [8, 24], [20, 12], [8, 24], [0, 2], [24, 4], [0, 20], [0, 12], [0, 26], [16, 4], [12, 8], [16, 16], [28, 4], [24, 16], [0, 8], [8, 28], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 13, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [6, 28], [16, 8], [16, 28], [], [8, 12], [16, 
+    Fx!([[6, 28], [16, 8], [16, 28], [], [8, 12], [16, 
     24], [8, 20], [24, 24], [12, 10], [24, 16], [8, 12], [16, 8], [4, 4], [8], [8], [0, 16]
 , [14], [16, 16], [16, 12], [], [24, 4], [24, 16], [24, 
     12], [16, 24], [22, 14], [0, 8], [20], [8, 24], [4, 20], 
     [0, 24], [12], [24, 4], [12, 28], [8, 4], [16, 12], [24], 
     [16, 14], [0, 28], [4], [8, 20], [26, 16], [0, 12], [0, 20], [8, 24], [4, 6], [], [0, 8], [16, 20], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
-    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])
-*]
-,
+    2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | ((-3*F.1 - 6)*$.1^2 + (-3*F.1 - 3)*$.1 + 1)*$.1, (F.1 + 1)*$.1^6, 1])*/
+*],
 [* "exceptional SL(2,3)", 24, 7, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [14, 14], [0, 24], [], [16, 16], [8, 4], [16, 16]
+    Fx!([[14, 14], [0, 24], [], [16, 16], [8, 4], [16, 16]
 , [8], [], [24], [], 
     [8, 16], [0, 8], [12, 8], [],
     [16, 16], [16], [16, 8], [8, 24], [0, 24], [0, 24], [12, 12], [8, 16], [16, 8], [], [0, 18], [0, 16], [0, 28], [8, 16], [12, 12], [16, 16], [8, 12], [0, 16], [24, 20], [0, 16], [24, 16], [8, 16], [16], 
     [16, 8], [24, 24], [16, 8], [16, 24], [8, 8], [20, 24], [24, 16], [8, 2], [24, 4], [16, 8],
     [], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (-$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1
-])
-*]
-,
+])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [144222089379144842880408197166, 
+    Fx!([[144222089379144842880408197166, 
     -18302079438189152704021277114], 
     [-115300514181416323975792907856, -589217299657780225841626151144], [-40952974265661539220989000896, 
     -137909942804094349072202739272], 
@@ -2099,17 +1932,16 @@ data := [*
     [19448742980159579004803251544, -68406992152408988719399262648], [-5433494356299150977997292520, -365688808287330683732623673708]
 , [443308299668500445543355558952, 
     -503805321684194532527988369556], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (-$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1
-])
-*]
-,
+])*/
+*],
 [* "exceptional SL(2,3)", 24, 8, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [-524306774182389714941158072262, 
+    Fx!([[-524306774182389714941158072262, 
     275253308318132987342764262802], 
     [606628146251053856990922901680, -245018431634900047449641180264], [336998908373783041736532780496, 
     -233197285604606048623703995624], 
@@ -2157,17 +1989,16 @@ data := [*
     [194395158110630915642758385376, -332380906456710770183198092924], [585631248043327827146506968824, 469011253285532034665899600128]
 , [272816921959766874900991036952, 
     -265082562469940717161261658044], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (-$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1
-])
-*]
-,
+])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [206416652627224970057549614782, 
+    Fx!([[206416652627224970057549614782, 
     295705634174705516576556451590], 
     [-175782879191675694356673863344, -51040520734714061008606432976], [-192494989079967994938745912224, 
     491654469142556534930901684728], 
@@ -2215,32 +2046,30 @@ data := [*
     [37963583820891308487277755008, -114015407512874769869124786432], [-69966361862378417240930405608, 513505779349754298001212401260]
 , [382068097111772142041242661776, 
     -239840388203287867108183634236], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (-$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1
-])
-*]
-,
+])*/
+*],
 [* "exceptional SL(2,3)", 24, 7, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [10, 2], [16, 8], [], [], [0, 4], [16, 16], [8, 8], [], [0, 28], [16], [24, 8], [0, 8], [12], 
+    Fx!([[10, 2], [16, 8], [], [], [0, 4], [16, 16], [8, 8], [], [0, 28], [16], [24, 8], [0, 8], [12], 
     [], [16], [16], [24, 28], [8]
 , [16, 8], [16, 24], [28, 16], [8, 8], [0, 24], [0, 16],
     [0, 26], [0, 8], [24, 12], [24, 16], [4, 12], [16, 16], [24, 12], [0, 16], [4, 8], [8], 
     [24, 24], [8, 8], [12], [16, 8], [24, 16], [16, 24], [20, 20], [16, 24], [12, 16], [24, 16], [8, 2], [24, 28], [16, 8], [], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (-$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1
-])
-*]
-,
+])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [-114429724750077240677276545954, 
+    Fx!([[-114429724750077240677276545954, 
     229324656513965904187963410414], 
     [-630705996714355675535627314256, 197803710155894842696513455336], [482449318697590170976294188224, 
     -413794895287421806160999869304], 
@@ -2287,17 +2116,16 @@ data := [*
     -201391684031019385461746366760], 
     [441090585327384812851934563192, -516606601694018118127998629028], [443308299668500445543355558952, 
     -503805321684194532527988369556], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (-$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1
-])
-*]
-,
+])*/
+*],
 [* "exceptional SL(2,3)", 24, 8, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [491269493140565956305567819162, 
+    Fx!([[491269493140565956305567819162, 
     -570126353496244081418935338222], 
     [97532070596253314071853094040, -575831567557898025402918393784], [176646397353404023964761823040, 182166547361635635564292533312]
 , [-353149680138143681315641600944, 
@@ -2346,17 +2174,16 @@ data := [*
     -607687461345492863643981847660], 
     [-285755211213729860949801194368, -579947053705962465352214022536], [272816921959766874900991036952, 
     -265082562469940717161261658044], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (-$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1
-])
-*]
-,
+])*/
+*],
 [* "exceptional SL(2,3)", 24, 10, 4,
-    Polynomial([ext<pAdicRing(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | [-25180872649629289920330796162, 
+    Fx!([[-25180872649629289920330796162, 
     379721622526150406771038302110], 
     [-190675374991644856040897189312, -578554126686343429461065654320], [-148140334779349935493586940896, 
     -533841456095291117035274814520], 
@@ -2403,13 +2230,12 @@ data := [*
     [411055632963190751292523990272, 227020404281829122055123085216], [299239976502202959846302357288, 
     -164224861273586979941631710140], 
     [382068097111772142041242661776, -239840388203287867108183634236], [1]]),
-    Polynomial([ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])> | -4*F.1 - 1, -3*F.1 + 
+    Fx!([-4*F.1 - 1, -3*F.1 + 
         3, (-3*F.1 - 3)*F.1, 2*F.1 + 7, 
-        (3*F.1 + 3)*F.1^2, 3, 1]),
+        (3*F.1 + 3)*F.1^2, 3, 1])/*,
     Polynomial([ext<ext<ext<pAdicField(2, 100)|Polynomial([pAdicRing(2, 100) | 2
 , 2, 1])>|2>|Polynomial([ext<ext<pAdicRing(\
     2, 100)|Polynomial([pAdicRing(2, 100) | 2, 2, 1])>|2> | [[0, 1]], [], [], [[1]]])> | (-$.1 - 1)*$.1, (F.1 + 1)*$.1^3, 1
-])
-*]
-,
+])*/
+*],
 *];
