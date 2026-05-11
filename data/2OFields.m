@@ -30,10 +30,11 @@ E[7] := EllipticCurve([0, 0, 0, 3, Q2!2]);
 E[8] := EllipticCurve([0, 0, 0, 12, Q2!16]);
 
 for i in [1..8] do                       
-        L:=SplittingField(P[i]);
-        GroupName(AutomorphismGroup(L,Q2));
-        Degree(L,Q2);
-        RamificationDegree(L,Q2);                                 
-        Valuation(Conductor(BaseChange(E[i],L)));
+    L:=SplittingField(P[i]);
+    E[i];
+    printf "Gal(L/Q2) = %o\n", GroupName(AutomorphismGroup(L,Q2));
+    printf "[L:Q2] = %o\n", Degree(L,Q2);
+    printf "e = %o\n", RamificationDegree(L,Q2);                                 
+    printf "v(N) = %o\n", Valuation(Conductor(BaseChange(E[i],L)));
     print("-----------");                    
 end for;
