@@ -407,7 +407,7 @@ procedure InFieldsTwist(~Tau, Twist : aut := 1)
     end while;
 end procedure;
 
-intrinsic SupercuspidalRamified(F::FldPad : QuadExt := [], Twist := [], InFields:=InFields) -> SeqEnum[SCRInType]
+intrinsic SupercuspidalRamified(F::FldPad : QuadExt := [], Twist := [], InFields:=false) -> SeqEnum[SCRInType]
 {Returns all SCR types}
     p := Prime(F);
     if #QuadExt eq 0 or #Twist eq 0 then
