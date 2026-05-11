@@ -459,7 +459,7 @@ intrinsic InField(tau::InType : Recompute:=false) -> FldPad
                 M := CharInField(ChSquare(tau`Character));
             end if;
 
-            M2 := ChangePrecision(M,Max(Precision(F), 200));
+            M2 := ChangePrecision(M,Min(Precision(M), Max(Precision(F), 200)));//there is probably a better way to set the precision
             UM, UMtoM := UnitGroup(M2);
             MtoUM := Inverse(UMtoM);
             Utors := sub<UM|[g : g in Generators(UM)| not IsZero(Order(g))]>;
